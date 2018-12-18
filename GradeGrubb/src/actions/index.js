@@ -125,7 +125,7 @@ export const loginUser = ({email, password}) => {
         dispatch({type: 'LoginUserFail', payload: "Empty Field"});
     }
     else{
-    fetch('http://'+IP+':80/GGfiles/Ap/login.php', {
+    fetch('http://'+IP+':80/GG/Ap/login.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -155,7 +155,7 @@ export const delacoun = ({Id}) => {
     dispatch({type: 'Login_user'});
 
     
-    fetch('http://'+IP+':80/GGfiles/Ap/delacoo.php', {
+    fetch('http://'+IP+':80/GG/Ap/delacoo.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -185,7 +185,7 @@ export const delacoun2 = ({Id}) => {
     dispatch({type: 'Login_user'});
 
     
-    fetch('http://'+IP+':80/GGfiles/Ap/delacoo2.php', {
+    fetch('http://'+IP+':80/GG/Ap/delacoo2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -222,7 +222,7 @@ else if(password != password2){
     
     else{
         
-    fetch('http://'+IP+':80/GGfiles/Ap/Cp.php', {
+    fetch('http://'+IP+':80/GG/Ap/Cp.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -265,7 +265,7 @@ else if(password != password2){
     
     else{
         
-    fetch('http://'+IP+':80/GGfiles/Ap/Cpf.php', {
+    fetch('http://'+IP+':80/GG/Ap/Cpf.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -300,7 +300,7 @@ export const signupUser = ({Name, email,password,password2}) => {
     
     else{
         
-    fetch('http://'+IP+':80/GGfiles/Ap/Signup.php', {
+    fetch('http://'+IP+':80/GG/Ap/Signup.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -335,7 +335,7 @@ export const fetchTeach = ({valll,nname}) => {
     dispatch({type: 'Login_user2'});
    
         
-    fetch('http://'+IP+':80/GGfiles/Ap/ghomeFetch.php', {
+    fetch('http://'+IP+':80/GG/Ap/ghomeFetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -358,7 +358,7 @@ export const setdevice = ({fcmtoken,apnstoken,Id}) => {
     dispatch({type: 'Login_user2'});
    
         
-    fetch('http://'+IP+':80/GGfiles/Ap/setdevice.php', {
+    fetch('http://'+IP+':80/GG/Ap/setdevice.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -384,7 +384,7 @@ export const SubFetch = ({valll,nname}) => {
     
  dispatch({type: 'Login_user2'});
         
-    fetch('http://'+IP+':80/GGfiles/Ap/Subfetch.php', {
+    fetch('http://'+IP+':80/GG/Ap/Subfetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -409,7 +409,7 @@ export const SubTinfo = ({valll,nname}) => {
     
  dispatch({type: 'Login_user2'});
         
-    fetch('http://'+IP+':80/GGfiles/Ap/infol.php', {
+    fetch('http://'+IP+':80/GG/Ap/infol.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -432,7 +432,7 @@ export const SubTinfos = ({valll,nname}) => {
     
  dispatch({type: 'Login_user2'});
         
-    fetch('http://'+IP+':80/GGfiles/Ap/infols.php', {
+    fetch('http://'+IP+':80/GG/Ap/infols.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -455,7 +455,7 @@ export const SubFetchS = ({valll,nname}) => {
     
  dispatch({type: 'Login_user2'});
         
-    fetch('http://'+IP+':80/GGfiles/Ap/SubfetchS.php', {
+    fetch('http://'+IP+':80/GG/Ap/SubfetchS.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -475,7 +475,7 @@ name: nname
 export const AnnoucFetch = ({valll,nname}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('http://'+IP+':80/GGfiles/Ap/AnnocFetchS.php', {
+    fetch('http://'+IP+':80/GG/Ap/AnnocFetchS.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -496,7 +496,7 @@ name: nname
 export const eleFetch = ({name,Sname}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('http://'+IP+':80/GGfiles/Ap/elefetch.php', {
+    fetch('http://'+IP+':80/GG/Ap/elefetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -515,7 +515,7 @@ Sname: Sname
 export const stuFetch = ({name,Sname,room}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('http://'+IP+':80/GGfiles/Ap/stufetch.php', {
+    fetch('http://'+IP+':80/GG/Ap/stufetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -536,7 +536,7 @@ room: room
 export const greFetch = ({name,Sname,worth,ele}) => {
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/grafetch.php', {
+fetch('http://'+IP+':80/GG/Ap/grafetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -558,7 +558,7 @@ dispatch({type: 'GrFetchDone', payload: users});
 export const fechstuclass = ({School,classRoom}) => {
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/fetchstuclass.php', {
+fetch('http://'+IP+':80/GG/Ap/fetchstuclass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -578,7 +578,7 @@ Sname: classRoom,
 export const fechstuclass2 = ({School,classRoom,Subname}) => {
         return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/fetchstuclass2.php', {
+fetch('http://'+IP+':80/GG/Ap/fetchstuclass2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -600,7 +600,7 @@ room:classRoom,
 export const remstuclass2 = ({School,classRoom,Subname}) => {
             return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/remstuclass.php', {
+fetch('http://'+IP+':80/GG/Ap/remstuclass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -620,7 +620,7 @@ room:classRoom,
 export const remstuclass = ({School,Subname}) => {
             return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/remeleclass.php', {
+fetch('http://'+IP+':80/GG/Ap/remeleclass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -643,7 +643,7 @@ Sname: Subname,
 export const markFetch2 = ({name,Sname,sid}) => {
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/markFetch2.php', {
+fetch('http://'+IP+':80/GG/Ap/markFetch2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -663,7 +663,7 @@ export const markFetch = ({name,Sname,sid}) => {
     
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/markfetch.php', {
+fetch('http://'+IP+':80/GG/Ap/markfetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -685,7 +685,7 @@ sid: sid,
 export const grademarks = ({name,Sname,ele,Ids,scores,room,worth,RealSubNAme}) => {
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/grademarks.php', {
+fetch('http://'+IP+':80/GG/Ap/grademarks.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -713,7 +713,7 @@ RealSubNAme:RealSubNAme
 export const Creareclass = ({Students,Subname,School,Tid,name,classRoom,classRoom2}) => {
 return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/step3app.php', {
+fetch('http://'+IP+':80/GG/Ap/step3app.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -746,7 +746,7 @@ export const removELEE = ({Students,Subname,School,classRoom}) => {
 
 return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/removELEE.php', {
+fetch('http://'+IP+':80/GG/Ap/removELEE.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -775,7 +775,7 @@ export const removstud = ({Students,Subname,School,Tid}) => {
 
 return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/removstud.php', {
+fetch('http://'+IP+':80/GG/Ap/removstud.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -805,7 +805,7 @@ export const adstu = ({Students,Subname,School,Tid}) => {
 
 return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('http://'+IP+':80/GGfiles/Ap/adstu.php', {
+fetch('http://'+IP+':80/GG/Ap/adstu.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -841,7 +841,7 @@ if(email == '' || typeof email == 'undefined' ){
         dispatch({type: 'LoginUserFail', payload: "Empty Field"});
     }
     else{
-    fetch('http://'+IP+':80/GGfiles/Ap/forgotpass.php', {
+    fetch('http://'+IP+':80/GG/Ap/forgotpass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -875,7 +875,7 @@ export const codePass = ({Name}) => {
         dispatch({type: 'LoginUserFail', payload: "Empty field"});
     }
     else{
-    fetch('http://'+IP+':80/GGfiles/Ap/codepass.php', {
+    fetch('http://'+IP+':80/GG/Ap/codepass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -911,7 +911,7 @@ export const resendcodePass2 = ({vall}) => {
     
     else{
         
-    fetch('http://'+IP+':80/GGfiles/Ap/resendcodePass2.php', {
+    fetch('http://'+IP+':80/GG/Ap/resendcodePass2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -946,7 +946,7 @@ export const codePass2 = ({Name}) => {
     
     else{
         
-    fetch('http://'+IP+':80/GGfiles/Ap/codePass2.php', {
+    fetch('http://'+IP+':80/GG/Ap/codePass2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -978,7 +978,7 @@ if(Name == '' || (typeof Name == 'undefined')){
         dispatch({type: 'LoginUserFail', payload: "Empty Field"});
     }
 else{
-fetch('http://'+IP+':80/GGfiles/Ap/cn.php', {
+fetch('http://'+IP+':80/GG/Ap/cn.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1006,7 +1006,7 @@ if( typeof users.Id != 'undefined'){
 export const fetchPro = ({vall}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('http://'+IP+':80/GGfiles/Ap/fetchele.php', {
+    fetch('http://'+IP+':80/GG/Ap/fetchele.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1027,7 +1027,7 @@ export const fetchPro = ({vall}) => {
 export const fetchNotice = ({valll}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('http://'+IP+':80/GGfiles/Ap/fetchNotice.php', {
+    fetch('http://'+IP+':80/GG/Ap/fetchNotice.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1046,7 +1046,7 @@ export const fetchNotice = ({valll}) => {
 export const RemoveNotif = ({valll}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('http://'+IP+':80/GGfiles/Ap/RemoveNotif.php', {
+    fetch('http://'+IP+':80/GG/Ap/RemoveNotif.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1083,7 +1083,7 @@ RNFetchBlob.config({
 // add this option that makes response data to be stored as a file,
 // this is much more performant.
 fileCache : true,
-}).fetch('POST', 'http://'+IP+':80/GGfiles/Ap/saveim.php', {
+}).fetch('POST', 'http://'+IP+':80/GG/Ap/saveim.php', {
 Authorization : "Bearer access-token",
 otherHeader : "foo",
 'Content-Type' : 'multipart/form-data',
@@ -1124,7 +1124,7 @@ export const fetchclass = ({nname}) => {
             
 return (dispatch) => {
 dispatch({type: 'Login_user2'});
-    fetch('http://'+IP+':80/GGfiles/Ap/step2.php', {
+    fetch('http://'+IP+':80/GG/Ap/step2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1148,7 +1148,7 @@ if((typeof password== 'undefined') || password== '' || password2== '' || (typeof
         dispatch({type: 'LoginUserFail', payload: "Empty Field"});
     }
     else{
-     fetch('http://'+IP+':80/GGfiles/Ap/fetchclass.php', {
+     fetch('http://'+IP+':80/GG/Ap/fetchclass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1192,7 +1192,7 @@ export const delpro = ({Id,Pid}) =>{
 return (dispatch) => {
      dispatch({type: 'Login_user2'});
     
-    fetch('http://'+IP+':80/GGfiles/Ap/delpro.php', {
+    fetch('http://'+IP+':80/GG/Ap/delpro.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1204,7 +1204,7 @@ activeRowKey:Id
 
     }),
     }).then((response) => response.json()).then(users => {
-   /* fetch('http://'+IP+':80/GGfiles/Ap/fetchele.php', {
+   /* fetch('http://'+IP+':80/GG/Ap/fetchele.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1232,7 +1232,7 @@ export const cn22 = ({nname,sub,Name,num}) => {
     
     else{
         
-    fetch('http://'+IP+':80/GGfiles/Ap/cn22.php', {
+    fetch('http://'+IP+':80/GG/Ap/cn22.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
