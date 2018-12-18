@@ -1,0 +1,67 @@
+AsyncStorage.getItem("profile",(err,result) =>{
+            console.log(result);
+            this.setState({fuck: result});
+            
+        });
+
+
+         text-overflow: ellipsis; overflow:hidden; white-space:nowrap; display: inline-block;
+
+
+
+const ds = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2
+  });
+  this.dataSource = ds.cloneWithRows(this.getElements())
+     return <ListView
+    dataSource={this.dataSource}
+    renderRow={this.renderRow}/>;
+  }
+  }
+
+
+
+<View style={{marginTop:40,marginBottom:20, alignItems:'center'}} >
+        <Text style={{fontSize:30, fontWeight:'bold'}}>{this.state.item.name} </Text>
+        <Text style={{fontSize:25,  fontWeight:'bold'}}>({this.state.item.school})</Text>
+        </View>
+
+
+
+
+
+
+desigh anypage that looks off.
+do all navigation
+center header text
+check when empty stuff needs to come down from data base
+
+change go back from students and elemts to go to home page and students respectuflly.
+
+
+
+smaller buttond
+new element form chsng 
+bsck arrow to big
+select all selectnon should be smaller 
+
+
+
+
+download our app.
+swich profiles with appicons
+
+reg expression checcks: 
+login :-> pass "(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$", email "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,3}$"
+forgotpass
+code
+reset password
+signup
+add profile "[a-zA-Z][a-zA-Z0-9-\s_\.]{1,25}$"
+addnew
+
+
+testinput 
+regexpression
+oninput well
+keyboard

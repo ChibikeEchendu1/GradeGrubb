@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "613029667005",
+    "firebase_url": "https://gradegrubb-220017.firebaseio.com",
+    "project_id": "gradegrubb-220017",
+    "storage_bucket": "gradegrubb-220017.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613029667005:android:768b71f1b3071c1b",
+        "android_client_info": {
+          "package_name": "com.gradegrubb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613029667005-vdp50husi337rn11n5d9fi4t6ic3uhqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA06gOqZUJ5y1yPs7p_OOwnDg-Y0zhSpAU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
