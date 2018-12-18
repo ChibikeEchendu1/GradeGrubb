@@ -126,7 +126,7 @@ class ElementView extends Component {
                 
                   </Button>
               
-                <View style={{height:"67%"}}> 
+                <View style={{height:"89%"}}> 
            
                 {this.renderButton()}
           </View>

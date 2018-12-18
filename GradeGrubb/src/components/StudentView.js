@@ -126,7 +126,7 @@ constructor(props){
                
                   </Button>
              
-        <View style={{height:"67%"}}> 
+        <View style={{height:"89%"}}> 
         {this.renderButton()}
           </View>
       </View>
