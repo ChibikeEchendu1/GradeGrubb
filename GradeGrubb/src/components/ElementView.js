@@ -5,9 +5,9 @@
  */
 import _ from 'lodash';
 import React, { Component } from 'react';
-import {Spinner,HomeHeader} from './index';
+import {Spinner} from './index';
 import ElementListItem from './ElementListItem';
-import { Container, Header, Content, Button } from 'native-base';
+import { Button } from 'native-base';
 import {eleFetch} from '../actions';
 import {connect} from 'react-redux';
 import {
