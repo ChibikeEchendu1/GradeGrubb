@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 import {FormInput,FormButton,Link,Spinner} from './index';
 import {connect} from 'react-redux';
-import {codeChanged,codeChanged2,Addprofilecode} from '../actions';
+import {codeChanged,Addprofilecode} from '../actions';
 import { AsyncStorage } from "react-native"
 import {
   
@@ -55,19 +55,17 @@ onPasswordChanged(text){
  }
  
  
- onPasswordChanged2(text){
-    this.props.codeChanged2(text);
- }
+ 
 
 
 
 
 onButtonPress(){
   const {Id} = this.state;
-    const {password,password2} = this.props;
+    const {password} = this.props;
     //console.log(Id);
     
-   this.props.Addprofilecode({Id,password,password2});
+   this.props.Addprofilecode({Id,password});
  }
  
 
@@ -116,9 +114,7 @@ renderButton(){
         <View style={{height:'12%', marginBottom:30}}>
         <FormInput val={this.props.password} ct={this.onPasswordChanged.bind(this)}  bool = {true} ph = {"Enter code from school"}/>
         </View>
-        <View style={{height:'12%', marginBottom:30}}>
-        <FormInput val={this.props.password2} ct={this.onPasswordChanged2.bind(this)}  bool = {true} ph = {"Enter code2 from school"}/>
-        </View>
+        
         <View style={{height:'15%'}}>
         {this.renderButton()}
         </View>
@@ -152,12 +148,12 @@ const styles = StyleSheet.create({
 const mapStateToProps = state =>{
   return{
      password: state.auth.codeone,
-     password2: state.auth.codetwo,
+  
      loading: state.auth.loading,
      done: state.auth.done,
      error:state.auth.error,
   }
 };
 
-export default connect(mapStateToProps,{codeChanged,codeChanged2,Addprofilecode})(AddProfileForm) ;
+export default connect(mapStateToProps,{codeChanged,Addprofilecode})(AddProfileForm) ;
 

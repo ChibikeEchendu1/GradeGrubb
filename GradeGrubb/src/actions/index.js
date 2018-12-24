@@ -1,8 +1,9 @@
 //const IP = '192.168.2.48'
 
-const IP = 'www.gradegrubb.com'
+//const IP = 'https://www.gradegrubb.com'
 //const IP = '10.192.79.207'
-//const IP = '127.0.0.1'
+const IP = 'http://172.20.10.9/gg/gg' 
+//const IP = 'http://127.0.0.1/gg/gg'
 
 
 import ImagePicker from 'react-native-image-crop-picker'
@@ -125,7 +126,7 @@ export const loginUser = ({email, password}) => {
         dispatch({type: 'LoginUserFail', payload: "Empty Field"});
     }
     else{
-    fetch('https://www.gradegrubb.com/Ap/login.php', {
+    fetch(IP+'/Ap/login.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -155,7 +156,7 @@ export const delacoun = ({Id}) => {
     dispatch({type: 'Login_user'});
 
     
-    fetch('https://www.gradegrubb.com/Ap/delacoo.php', {
+    fetch(IP+'/Ap/delacoo.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -185,7 +186,7 @@ export const delacoun2 = ({Id}) => {
     dispatch({type: 'Login_user'});
 
     
-    fetch('https://www.gradegrubb.com/Ap/delacoo2.php', {
+    fetch(IP+'/Ap/delacoo2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -222,7 +223,7 @@ else if(password != password2){
     
     else{
         
-    fetch('https://www.gradegrubb.com/Ap/Cp.php', {
+    fetch(IP+'/Ap/Cp.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -265,7 +266,7 @@ else if(password != password2){
     
     else{
         
-    fetch('https://www.gradegrubb.com/Ap/Cpf.php', {
+    fetch(IP+'/Ap/Cpf.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -300,7 +301,7 @@ export const signupUser = ({Name, email,password,password2}) => {
     
     else{
         
-    fetch('https://www.gradegrubb.com/Ap/Signup.php', {
+    fetch(IP+'/Ap/Signup.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -335,7 +336,7 @@ export const fetchTeach = ({valll,nname}) => {
     dispatch({type: 'Login_user2'});
    
         
-    fetch('https://www.gradegrubb.com/Ap/ghomeFetch.php', {
+    fetch(IP+'/Ap/ghomeFetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -358,7 +359,7 @@ export const setdevice = ({fcmtoken,apnstoken,Id}) => {
     dispatch({type: 'Login_user2'});
    
         
-    fetch('https://www.gradegrubb.com/Ap/setdevice.php', {
+    fetch(IP+'/Ap/setdevice.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -384,7 +385,7 @@ export const SubFetch = ({valll,nname}) => {
     
  dispatch({type: 'Login_user2'});
         
-    fetch('https://www.gradegrubb.com/Ap/Subfetch.php', {
+    fetch(IP+'/Ap/Subfetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -409,7 +410,7 @@ export const SubTinfo = ({valll,nname}) => {
     
  dispatch({type: 'Login_user2'});
         
-    fetch('https://www.gradegrubb.com/Ap/infol.php', {
+    fetch(IP+'/Ap/infol.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -432,7 +433,7 @@ export const SubTinfos = ({valll,nname}) => {
     
  dispatch({type: 'Login_user2'});
         
-    fetch('https://www.gradegrubb.com/Ap/infols.php', {
+    fetch(IP+'/Ap/infols.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -455,7 +456,7 @@ export const SubFetchS = ({valll,nname}) => {
     
  dispatch({type: 'Login_user2'});
         
-    fetch('https://www.gradegrubb.com/Ap/SubfetchS.php', {
+    fetch(IP+'/Ap/SubfetchS.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -475,7 +476,7 @@ name: nname
 export const AnnoucFetch = ({valll,nname}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('https://www.gradegrubb.com/Ap/AnnocFetchS.php', {
+    fetch(IP+'/Ap/AnnocFetchS.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -496,7 +497,7 @@ name: nname
 export const eleFetch = ({name,Sname}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('https://www.gradegrubb.com/Ap/elefetch.php', {
+    fetch(IP+'/Ap/elefetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -515,7 +516,7 @@ Sname: Sname
 export const stuFetch = ({name,Sname,room}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('https://www.gradegrubb.com/Ap/stufetch.php', {
+    fetch(IP+'/Ap/stufetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -536,7 +537,7 @@ room: room
 export const greFetch = ({name,Sname,worth,ele}) => {
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/grafetch.php', {
+fetch(IP+'/Ap/grafetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -558,7 +559,7 @@ dispatch({type: 'GrFetchDone', payload: users});
 export const fechstuclass = ({School,classRoom}) => {
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/fetchstuclass.php', {
+fetch(IP+'/Ap/fetchstuclass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -578,7 +579,7 @@ Sname: classRoom,
 export const fechstuclass2 = ({School,classRoom,Subname}) => {
         return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/fetchstuclass2.php', {
+fetch(IP+'/Ap/fetchstuclass2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -600,7 +601,7 @@ room:classRoom,
 export const remstuclass2 = ({School,classRoom,Subname}) => {
             return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/remstuclass.php', {
+fetch(IP+'/Ap/remstuclass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -620,7 +621,7 @@ room:classRoom,
 export const remstuclass = ({School,Subname}) => {
             return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/remeleclass.php', {
+fetch(IP+'/Ap/remeleclass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -643,7 +644,7 @@ Sname: Subname,
 export const markFetch2 = ({name,Sname,sid}) => {
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/markFetch2.php', {
+fetch(IP+'/Ap/markFetch2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -663,7 +664,7 @@ export const markFetch = ({name,Sname,sid}) => {
     
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/markfetch.php', {
+fetch(IP+'/Ap/markfetch.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -685,7 +686,7 @@ sid: sid,
 export const grademarks = ({name,Sname,ele,Ids,scores,room,worth,RealSubNAme}) => {
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/grademarks.php', {
+fetch(IP+'/Ap/grademarks.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -713,7 +714,7 @@ RealSubNAme:RealSubNAme
 export const Creareclass = ({Students,Subname,School,Tid,name,classRoom,classRoom2}) => {
 return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/step3app.php', {
+fetch(IP+'/Ap/step3app.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -746,7 +747,7 @@ export const removELEE = ({Students,Subname,School,classRoom}) => {
 
 return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/removELEE.php', {
+fetch(IP+'/Ap/removELEE.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -775,7 +776,7 @@ export const removstud = ({Students,Subname,School,Tid}) => {
 
 return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/removstud.php', {
+fetch(IP+'/Ap/removstud.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -805,7 +806,7 @@ export const adstu = ({Students,Subname,School,Tid}) => {
 
 return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch('https://www.gradegrubb.com/Ap/adstu.php', {
+fetch(IP+'/Ap/adstu.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -841,7 +842,7 @@ if(email == '' || typeof email == 'undefined' ){
         dispatch({type: 'LoginUserFail', payload: "Empty Field"});
     }
     else{
-    fetch('https://www.gradegrubb.com/Ap/forgotpass.php', {
+    fetch(IP+'/Ap/forgotpass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -875,7 +876,7 @@ export const codePass = ({Name}) => {
         dispatch({type: 'LoginUserFail', payload: "Empty field"});
     }
     else{
-    fetch('https://www.gradegrubb.com/Ap/codepass.php', {
+    fetch(IP+'/Ap/codepass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -911,7 +912,7 @@ export const resendcodePass2 = ({vall}) => {
     
     else{
         
-    fetch('https://www.gradegrubb.com/Ap/resendcodePass2.php', {
+    fetch(IP+'/Ap/resendcodePass2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -946,7 +947,7 @@ export const codePass2 = ({Name}) => {
     
     else{
         
-    fetch('https://www.gradegrubb.com/Ap/codePass2.php', {
+    fetch(IP+'/Ap/codePass2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -978,7 +979,7 @@ if(Name == '' || (typeof Name == 'undefined')){
         dispatch({type: 'LoginUserFail', payload: "Empty Field"});
     }
 else{
-fetch('https://www.gradegrubb.com/Ap/cn.php', {
+fetch(IP+'/Ap/cn.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1006,7 +1007,7 @@ if( typeof users.Id != 'undefined'){
 export const fetchPro = ({vall}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('https://www.gradegrubb.com/Ap/fetchele.php', {
+    fetch(IP+'/Ap/fetchele.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1046,7 +1047,7 @@ export const fetchNotice = ({valll}) => {
 export const RemoveNotif = ({valll}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('https://www.gradegrubb.com/Ap/RemoveNotif.php', {
+    fetch(IP+'/Ap/RemoveNotif.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1083,7 +1084,7 @@ RNFetchBlob.config({
 // add this option that makes response data to be stored as a file,
 // this is much more performant.
 fileCache : true,
-}).fetch('POST', 'https://www.gradegrubb.com/Ap/saveim.php', {
+}).fetch('POST', IP+'/Ap/saveim.php', {
 Authorization : "Bearer access-token",
 otherHeader : "foo",
 'Content-Type' : 'multipart/form-data',
@@ -1124,7 +1125,7 @@ export const fetchclass = ({nname}) => {
             
 return (dispatch) => {
 dispatch({type: 'Login_user2'});
-    fetch('https://www.gradegrubb.com/Ap/step2.php', {
+    fetch(IP+'/Ap/step2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1141,14 +1142,14 @@ name: nname
 
 
 
-export const Addprofilecode = ({Id,password,password2}) => {
+export const Addprofilecode = ({Id,password}) => {
 return (dispatch) => {
           dispatch({type: 'Login_user'});
-if((typeof password== 'undefined') || password== '' || password2== '' || (typeof password2 == 'undefined')){
+if((typeof password== 'undefined') || password== ''){
         dispatch({type: 'LoginUserFail', payload: "Empty Field"});
     }
     else{
-     fetch('https://www.gradegrubb.com/Ap/fetchclass.php', {
+     fetch(IP+'/Ap/fetchclass.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1158,7 +1159,7 @@ if((typeof password== 'undefined') || password== '' || password2== '' || (typeof
 
 Id: Id,
 code1: password,
-code2: password2,
+
     }),
     }).then((response) => response.json()).then(users => {
     if( typeof users.Id != 'undefined'){
@@ -1192,7 +1193,7 @@ export const delpro = ({Id,Pid}) =>{
 return (dispatch) => {
      dispatch({type: 'Login_user2'});
     
-    fetch('https://www.gradegrubb.com/Ap/delpro.php', {
+    fetch(IP+'/Ap/delpro.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -1232,7 +1233,7 @@ export const cn22 = ({nname,sub,Name,num}) => {
     
     else{
         
-    fetch('https://www.gradegrubb.com/Ap/cn22.php', {
+    fetch(IP+'/Ap/cn22.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
