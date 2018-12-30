@@ -73,8 +73,6 @@ class LoginForm extends Component {
         AsyncStorage.setItem('logged',JSON.stringify(vall));
       AsyncStorage.setItem('blocked', JSON.stringify(Active));
       this.props.navigation.navigate('Profile', {vall});
-      
-      
       }
     }
 

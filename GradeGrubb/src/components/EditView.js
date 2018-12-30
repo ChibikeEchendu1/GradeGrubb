@@ -29,22 +29,25 @@ export default class EditView extends Component{
             <Text style={{fontSize:20}}>Edit Name </Text>
             </TouchableOpacity>
             </View>
-             <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
-          <TouchableOpacity  onPress={() =>
-            this.props.navigation.navigate("RemoveElement", {ClassRoom:this.state.classRoom,Name: this.state.Name, School:this.state.School, Tid:this.state.Tid, id:this.state.id, Subname:this.state.Subname })}>
-            <Text style={{fontSize:20}}>Edit Subject</Text>
-            </TouchableOpacity>
-            </View>
+             
             <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
           <TouchableOpacity onPress={() =>
             this.props.navigation.navigate("AddStudent2", {ClassRoom:this.state.classRoom,Name: this.state.Name, School:this.state.School, Tid:this.state.Tid,id:this.state.id, Subname:this.state.Subname })}>
             <Text style={{fontSize:20}}>Add Student </Text>
             </TouchableOpacity>
             </View>
+            
             <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
           <TouchableOpacity onPress={() =>
             this.props.navigation.navigate("RemoveStudent", {ClassRoom:this.state.classRoom,Name: this.state.Name, School:this.state.School, Tid:this.state.Tid, id:this.state.id, Subname:this.state.Subname })}>
             <Text style={{fontSize:20}}>Remove Student</Text>
+            </TouchableOpacity>
+            </View>
+
+            <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
+          <TouchableOpacity  onPress={() =>
+            this.props.navigation.navigate("RemoveElement", {ClassRoom:this.state.classRoom,Name: this.state.Name, School:this.state.School, Tid:this.state.Tid, id:this.state.id, Subname:this.state.Subname })}>
+            <Text style={{fontSize:20}}>Remove Element</Text>
             </TouchableOpacity>
             </View>
         </View>

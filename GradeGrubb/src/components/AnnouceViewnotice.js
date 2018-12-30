@@ -28,6 +28,9 @@ class AnnouceViewnotice extends Component {
 
   this.state = {
     item:'',
+    name:  this.props.navigation.state.params.item.School,
+      
+      sid:  this.props.navigation.state.params.item.StudentId,
     //valll: 18,
     //nname: 'Trinity'
     }
@@ -46,9 +49,9 @@ class AnnouceViewnotice extends Component {
    componentDidMount(){
     AsyncStorage.getItem("pro").then((value) => {
       this.setState({"item":JSON.parse(value)});
-      let valll = this.state.item.id;
-      let nname = this.state.item.school;
-      //console.log(valll,nname);
+      let valll = this.state.sid;
+      let nname = this.state.name;
+      console.log(valll,nname);
       
       this.props.AnnoucFetch({valll,nname});
      

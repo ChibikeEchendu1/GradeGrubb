@@ -66,10 +66,6 @@ class ElementView extends Component {
     this.dataSource = ds.cloneWithRows(this.getElements())
    }
   componentDidMount(){
-
-    
-    
-
     const {name,Sname} = this.state;
     this.props.eleFetch({name,Sname});
     console.log(name,Sname);

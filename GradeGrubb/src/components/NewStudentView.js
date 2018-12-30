@@ -5,7 +5,7 @@
  */
 import _ from 'lodash';
 import React, { Component } from 'react';
-import {Spinner,HomeHeader} from './index';
+import {Spinner2,HomeHeader} from './index';
 import NewStudentListItem from './NewStudentListItem';
 import {fetchclass} from '../actions';
 import {connect} from 'react-redux';
@@ -68,7 +68,7 @@ class NewStudentView extends Component {
    renderButton(){
     //.log(this.props.loading);
     if(this.props.loading){
-      return <Spinner size="large"/>;
+      return <Spinner2 size="large"/>;
     }
     else{
       // return <Spinner size="large"/>;
@@ -111,7 +111,7 @@ class NewStudentView extends Component {
        
        
        
-        <View style={{justifyContent: 'flex-start', height: '85%', width:'100%'}}>
+        <View style={{justifyContent: 'flex-start', height: '85%',marginTop:'3%', width:'100%'}}>
         {this.renderButton()}
         </View>
         

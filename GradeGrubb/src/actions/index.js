@@ -1,8 +1,8 @@
 //const IP = '192.168.2.48'
 
-//const IP = 'https://www.gradegrubb.com'
-//const IP = '10.192.79.207'
-const IP = 'http://172.20.10.9/gg/gg' 
+const IP = 'https://www.gradegrubb.com'
+//const IP = '10.192.79.207' 172.20.10.9
+//const IP = 'http://172.20.10.9/gg/gg' 
 //const IP = 'http://127.0.0.1/gg/gg'
 
 
@@ -1028,7 +1028,7 @@ export const fetchPro = ({vall}) => {
 export const fetchNotice = ({valll}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch('httpss://'+IP+':80/GG/Ap/fetchNotice.php', {
+    fetch(IP+'/Ap/fetchNotice.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',

@@ -63,6 +63,7 @@ constructor(props){
        const {navigate} = this.props
   }
 
+  
    
   /* componentWillMount(){ //componentDidMount
     AsyncStorage.getItem("logged").then((value) => {
@@ -130,7 +131,7 @@ constructor(props){
     
     <SafeAreaView style={styles.container}>
         <HeaderSet ti='Profiles' per = {this.state.vall} active ={(this.props.redup == 1) ? 'true' : 'false'} pro={this.props.profiles}   nav={this.props.navigation.navigate}/>
-        <View style={{justifyContent: 'flex-start', height: '78%', width:'100%'}}>
+        <View style={{justifyContent: 'flex-start', height: '74%', width:'100%'}}>
         {this.renderButton()}
         </View>
           
