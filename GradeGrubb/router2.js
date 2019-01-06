@@ -16,11 +16,13 @@ import SettingsOption from './src/pages/SettingsOption';
 import Notice from './src/pages/Notice';
 import Element from './src/pages/Element';
 import Grade from './src/pages/Grade';
-import Code3 from './src/pages/Code3';
+//import Code3 from './src/pages/Code3';
 import EditOptions from './src/pages/EditOptions';
 import NewName from './src/pages/NewName';
 import AddStudent from './src/pages/AddStudent';
 import Addprofile from './src/pages/Addprofile';
+import Code2 from './src/pages/Code2';
+import Code3 from './src/pages/Code3';
 import Tsubject from './src/pages/Tsubject';
 import AddStudent2 from './src/pages/AddStudent2';
 import NewStudent from './src/pages/NewStudent';
@@ -173,10 +175,28 @@ import SElementnotice from './src/pages/SElementnotice'
     gesturesEnabled: false,
     headerLeft:null
 }, },
-  ForgotPassword: {screen:ForgotPassword},
-  Code: {screen:Code},
-  ChangePasswordForgot: {screen:ChangePasswordForgot},
-  SignUp: { screen: SignUp },
+ForgotPassword: {screen:ForgotPassword},
+Code: {screen:Code , navigationOptions: {
+  gesturesEnabled: false,
+  headerLeft:null
+},},
+ChangePasswordForgot: {screen:ChangePasswordForgot , navigationOptions: {
+  gesturesEnabled: false,
+  headerLeft:null
+},},
+SignUp: { screen: SignUp },
+Code2: { screen: Code2 , navigationOptions: {
+  gesturesEnabled: false,
+  headerLeft:null
+}, },
+Profile: {screen: Profile, navigationOptions: {
+  gesturesEnabled: false,
+  headerLeft:null
+},},
+Code3: { screen: Code3 , navigationOptions: {
+  gesturesEnabled: false,
+  headerLeft:null
+},},
 
 
 

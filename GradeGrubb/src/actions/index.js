@@ -1,5 +1,4 @@
 //const IP = '192.168.2.48'
-
 const IP = 'https://www.gradegrubb.com'
 //const IP = '10.192.79.207' 172.20.10.9
 //const IP = 'http://172.20.10.9/gg/gg' 
@@ -644,7 +643,7 @@ Sname: Subname,
 export const markFetch2 = ({name,Sname,sid}) => {
     return (dispatch) => {
 dispatch({type: 'Login_user2'});
-fetch(IP+'/Ap/markFetch2.php', {
+fetch(IP+'/Ap/markfetch2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -939,22 +938,22 @@ export const codePass2 = ({Name}) => {
     
     return (dispatch) => {
     dispatch({type: 'Login_user'});
-//console.log(Name);
+
 
     if(Name == '' || (typeof Name == 'undefined')   ){
         dispatch({type: 'LoginUserFail', payload: "Empty field"});
     }
     
     else{
-        
-    fetch(IP+'/Ap/codePass2.php', {
+        //    console.log(Name);
+    fetch(IP+'/Ap/codepass2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-Name: Name,
+    Name: Name,
     }),
     }).then((response) => response.json()).then(users => {
         
