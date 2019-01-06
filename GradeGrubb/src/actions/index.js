@@ -475,7 +475,7 @@ name: nname
 export const AnnoucFetch = ({valll,nname}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
-    fetch(IP+'/Ap/AnnocFetchS.php', {
+    fetch(IP+'/Ap/AnnocfetchS.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
