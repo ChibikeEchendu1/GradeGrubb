@@ -25,18 +25,18 @@ const HeaderSet = (props) =>{
     <View style={{alignSelf:'center',alignItems:'center',margin:'auto'}}>
         <Text numberOfLines={1} style={{fontSize:20,fontWeight:'bold', color:'#282828'}}>{props.ti}</Text>
         </View>
-       {/*  <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto'}}  onPress={() =>
+        <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto'}}  onPress={() =>
             props.nav("Notice", {per:props.per,pro:props.pro})}> 
           <Icon name="bell" size={25} color={props.active} style={{ marginRight:20}}/>
            
-        </TouchableOpacity>  */}
-         <Button badge vertical transparent style={{ alignSelf:'center',alignItems:'center',margin:'auto'}} onPress={() =>
+        </TouchableOpacity>  
+        {/*  <Button style={{ alignSelf:'center',alignItems:'center',margin:'auto'}} onPress={() =>
             props.nav("Notice", {per:props.per,pro:props.pro})}>
              
               <Icon name="bell"  color={'#787878'} size={28} style={{ marginRight:20}} />
               {this.showNotification(props.active)}
               
-            </Button>
+            </Button> */}
     </View>
     );
 }

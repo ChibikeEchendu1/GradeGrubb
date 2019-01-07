@@ -58,8 +58,7 @@ export default (state = INITIAL_STATE , action) => {
     case 'Login_user':
         return {...state, loading: true, error:''}; 
         
-    case 'justdone':
-        return {...state, loading: false, error:''}; 
+     
 
     default:
         return state;

@@ -60,7 +60,7 @@ class SettingsView extends Component{
                                     {text: 'No', onPress:() => console.log('Cancel Pressed'), style:'cancel'},
                                     {text: 'Yes', onPress:() => {
                                       const Id = this.props.navigation.state.params.per
-                                      this.props.delacoun2({Id});
+                                      //this.props.delacoun2({Id});
                                       AsyncStorage.removeItem('logged');
                                       this.props.navigation.navigate('Login');
                                      }},

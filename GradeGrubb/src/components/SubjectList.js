@@ -30,7 +30,7 @@ export default class  SubjectList extends React.Component{
                     Class Average: {this.props.item.Average}% 
                 </Text>
                 <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
-                    Class: {this.props.item.Room2}%
+                    Class: {this.props.item.Room2}
                 </Text>
               </Body>
             </CardItem>

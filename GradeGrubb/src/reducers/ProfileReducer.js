@@ -38,6 +38,9 @@ export default (state = INITIAL_STATE , action) => {
     case 'Login_user2':
         return {...state, loading1: true};
 
+    case 'justdone':
+        return {...state, loading1: false, error:''};
+
     case 'mark_changed':
             return {...state, gra: action.payload.grade, scores:action.payload.score }
 
