@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import RNRestart from 'react-native-restart';
 import {Text,StyleSheet,View,TouchableOpacity,Alert,AsyncStorage} from 'react-native';
 import {HomeHeader,Spinner2} from './index';
 import {connect} from 'react-redux';
@@ -30,7 +31,8 @@ class SettingsView extends Component{
                         AsyncStorage.removeItem('logged');
                                       
                         this.props.delacoun({Id});
-                        this.props.navigation.navigate('Login');
+                        RNRestart.Restart();
+                        //this.props.navigation.navigate('Login');
                       }},
                   ],
                   {cancelable:true}
@@ -62,7 +64,8 @@ class SettingsView extends Component{
                                       const Id = this.props.navigation.state.params.per
                                       //this.props.delacoun2({Id});
                                       AsyncStorage.removeItem('logged');
-                                      this.props.navigation.navigate('Login');
+                                      RNRestart.Restart();
+                                      //this.props.navigation.navigate('Login');
                                      }},
                                 ],
                                 {cancelable:true}
@@ -75,7 +78,7 @@ class SettingsView extends Component{
             {this.renderButton()}
             </View>
         </View>
-        {this.goback()}
+      
          </View>
     );
 };

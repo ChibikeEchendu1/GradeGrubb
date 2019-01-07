@@ -34,7 +34,7 @@ const HeaderSet = (props) =>{
             props.nav("Notice", {per:props.per,pro:props.pro})}>
              
               <Icon name="bell"  color={'#787878'} size={28} style={{ marginRight:20}} />
-              {this.showNotification(props.active)}
+         
               
             </Button> */}
     </View>
