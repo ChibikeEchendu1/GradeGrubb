@@ -154,6 +154,7 @@ dexOptions {
 }
 
 dependencies {
+    compile project(':react-native-restart')
     //compile project(':react-native-fetch-blob')
     //compile project(':react-native-fetch-blob')
     compile project(':react-native-fcm')
