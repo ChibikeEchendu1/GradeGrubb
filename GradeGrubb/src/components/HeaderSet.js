@@ -15,7 +15,7 @@ const HeaderSet = (props) =>{
     <View style={styles.viewStyle}>
 
          <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto'}}  onPress={() =>
-            props.nav("SettingsOption", {per:props.per})}> 
+            props.nav.navigate("SettingsOption", {per:props.per})}> 
          <Icon name="cogs" size={25}  style={{ marginLeft:20}}
             color={'#1995ad'}
         />
