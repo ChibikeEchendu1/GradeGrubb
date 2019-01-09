@@ -6,6 +6,7 @@ import Tools from './src/pages/Tools';
 import SignUp from './src/pages/SignUp';
 import Splash from './src/pages/Splash';
 import Profile from './src/pages/profile';
+import Notice from './src/pages/Notice';
 import FooterTab from './src/components/FooterTab';
 import FooterTab2 from './src/components/FooterTab2';
 import Performance from './src/pages/Performance';
@@ -13,6 +14,8 @@ import Elements from './src/pages/Elements';
 import Students from './src/pages/Students';
 import Thome from './src/pages/Thome';
 import SettingsOption from './src/pages/SettingsOption';
+import Annoucmentnotice from './src/pages/Annoucmentnotice';
+import SElementnotice from './src/pages/SElementnotice';
 import Element from './src/pages/Element';
 import Grade from './src/pages/Grade';
 import EditOptions from './src/pages/EditOptions';
@@ -70,6 +73,12 @@ import TeacherList from './src/pages/TeacherList'
 },},
   SettingsOption:{screen: SettingsOption},
  // PushNotificationController:{screen:PushNotificationController},
+ Notice:{screen: Notice , navigationOptions: {
+  gesturesEnabled: false,
+  headerLeft:null
+},},
+Annoucmentnotice:{ screen: Annoucmentnotice},
+SElementnotice:{screen:SElementnotice},
   ChangePassword:{screen: ChangePassword }, 
   Addprofile:{screen:Addprofile},
 
