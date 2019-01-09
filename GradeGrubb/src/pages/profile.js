@@ -30,7 +30,7 @@ export default class Profile extends Component {
   const {navigation} = this.props;
     return (
       <Provider store={createStore(reducers, {},applyMiddleware(ReduxThunk))}>
-        <ProfileView navigation={navigation} />
+        <ProfileView navigation={navigation}/>
         </Provider>
      
     );

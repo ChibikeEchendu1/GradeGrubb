@@ -1,7 +1,7 @@
 //const IP = '192.168.2.48'
-const IP = 'https://www.gradegrubb.com'
+//const IP = 'https://www.gradegrubb.com'
 //const IP = '10.192.79.207' 172.20.10.9
-//const IP = 'http://172.20.10.9/gg/gg' 
+const IP = 'http://192.168.0.11/gg/gg' 
 //const IP = 'http://127.0.0.1/gg/gg'
 
 
