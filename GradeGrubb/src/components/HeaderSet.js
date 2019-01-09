@@ -26,7 +26,7 @@ const HeaderSet = (props) =>{
         <Text numberOfLines={1} style={{fontSize:20,fontWeight:'bold', color:'#282828'}}>{props.ti}</Text>
         </View>
         <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto'}}  onPress={() =>
-            props.nav("Notice", {per:props.per,pro:props.pro})}> 
+            props.nav.navigate("Notice", {per:props.per,pro:props.pro})}> 
           <Icon name="bell" size={25} color={props.active} style={{ marginRight:20}}/>
            
         </TouchableOpacity>  
