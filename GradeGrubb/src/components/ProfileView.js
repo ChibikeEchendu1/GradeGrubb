@@ -87,7 +87,7 @@ constructor(props){
     
 } */
 
-   /*componentWillReceiveProps(){
+  /*  componentWillReceiveProps(){
 
       
       const {vall} = this.state;
@@ -100,7 +100,7 @@ constructor(props){
       });
       this.dataSource = ds.cloneWithRows(this.getProfiles())
 
-   }*/
+   } */
 
    renderButton(){
     if(this.props.loading){
