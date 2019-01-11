@@ -34,7 +34,7 @@ class NewNameView extends Component{
         else{
          return <TouchableOpacity onPress = {this.onFinButtonPress.bind(this)}>
          <View>
-         <Text style={{fontSize:20, marginRight:10, color:"#63B8FF"}}> Finish </Text>
+         <Text style={{fontSize:20, marginRight:10, color:"#1995ad"}}> Finish </Text>
          </View>
          </TouchableOpacity>;
         }
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
  
     container: {
         flex: 1,
-        backgroundColor: '#F4F2F3',
+        backgroundColor: '#A1D6E2',
       }
    
 });

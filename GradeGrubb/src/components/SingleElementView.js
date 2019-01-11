@@ -112,7 +112,7 @@ class SingleElementView extends Component {
    
         <View style ={styles.container}>
         <HomeHeader navigate={this.props.navigation.goBack} ti={this.state.studentname}/>{/* //this.state.studentname}/> */}
-        <View style={{marginTop:0, alignItems:'center',justifyContent:"center",  height:'35%', backgroundColor: '#E8E8E8'}}>
+        <View style={{marginTop:0, alignItems:'center',justifyContent:"center",  height:'35%', backgroundColor: '#A1D6E2'}}>
         {this.renderImage()}
         <Text style={{fontSize:22, fontWeight:'bold', textAlign:'center'}}>Average</Text>
         <Text style={{fontSize:20, marginBottom:30, fontWeight:'bold', textAlign:'center'}}>{this.props.Av}</Text>

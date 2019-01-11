@@ -58,7 +58,7 @@ export default class EditView extends Component{
 const styles = StyleSheet.create({  
     container: {
         flex: 1,
-        backgroundColor: '#F4F2F3',
+        backgroundColor: '#A1D6E2',
       }
    
 });

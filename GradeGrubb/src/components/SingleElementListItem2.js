@@ -106,8 +106,9 @@ const styles = StyleSheet.create({
         alignItems:'center',
         width:'100%',
         //height:'10%',
-        borderBottomWidth:1,
-        borderColor:"#C0C0C0"
+        borderTopWidth:0.5,
+        backgroundColor: '#fbfaf0',
+        borderColor:"black"
     }
 
    

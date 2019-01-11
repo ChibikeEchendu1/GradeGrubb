@@ -45,7 +45,7 @@ class SettingsView extends Component{
     return(
         <View style ={styles.container}>
         <HomeHeader ti="Settings" navigate={this.props.navigation.goBack}/>
-        <View style={{marginTop:150}}>
+        <View style={{marginTop:100}}>
        
          <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
           <TouchableOpacity onPress={() =>

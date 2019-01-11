@@ -44,7 +44,7 @@ componentWillReceiveProps(){
             onClick={this.onvalChanged.bind(this,data.num,data)}
             isChecked={this.state.check}//this.props.Students[data.num]["check"]}
             leftText={leftText}
-            checkBoxColor={"#63B8FF"}
+            checkBoxColor={"#1995ad"}
         />);
 }
     

@@ -149,7 +149,7 @@ class TeacherListView extends Component {
     <View style ={styles.container}>
    
       <HomeHeader ti="Teacher List" navigate={this.props.navigation.goBack}/>
-     <View style={{borderBottomWidth:1, height:'35%', backgroundColor: '#E8E8E8'}}>
+     <View style={{borderBottomWidth:1, height:'35%', backgroundColor: '#A1D6E2'}}>
             
             <TouchableOpacity onPress={this.onButtonPress.bind(this)} style={{flexDirection:'row', alignSelf:'center', marginTop:'5%',alignItems:'center',margin:'auto', justifyContent:'center',  height: '50%', width:'70%'}}>
         
@@ -167,7 +167,7 @@ class TeacherListView extends Component {
         <Text style={{fontSize:25,marginTop:3, fontWeight:'bold', textAlign:'center'}}>{this.props.navigation.state.params.item.Name}</Text>
         </View>
         
-        <View style={{alignItems:'center', marginTop:10}}>
+        <View style={{alignItems:'center', backgroundColor:'#fbfaf0',borderBottomWidth:1,}}>
             <Text style={{fontSize:20, fontWeight:'bold'}}>
                 Teachers
             </Text>

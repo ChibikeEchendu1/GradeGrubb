@@ -120,7 +120,7 @@ this.setState({"Image":data});
    
         <View style ={styles.container}>
         <HomeHeader navigate={this.props.navigation.goBack} ti={this.state.studentname} boo=""/>{/* //this.state.studentname}/> */}
-        <View style={{marginTop:0, alignItems:'center', justifyContent:'center',  height:'30%', backgroundColor: '#E8E8E8'}}>
+        <View style={{marginTop:0, alignItems:'center', justifyContent:'center',  height:'30%', backgroundColor: '#A1D6E2'}}>
         {this.renderImage()}
         <Text style={{fontSize:18, fontWeight:'bold',marginTop:5, textAlign:'center'}}>Average</Text>
         <Text style={{fontSize:16, marginBottom:30, fontWeight:'bold', textAlign:'center'}}>{this.props.Av}</Text>

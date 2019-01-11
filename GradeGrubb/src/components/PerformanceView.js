@@ -181,7 +181,7 @@ class PerformanceView extends Component {
 
 
          <View style={styles.listStyle}>
-            <Text style={{fontSize:13}}>
+            <Text style={{fontSize:13,fontWeight:'bold'}}>
                Average: {this.props.Vals.Average}
             </Text>
          </View> 
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     flex:1,
     flexDirection:'column',
     alignItems: 'center',
-    backgroundColor: '#F4F2F3',
+    backgroundColor: '#A1D6E2',
   },
   ImageStyle:{
     height:Platform.OS === 'ios' ? '50%' :'50%',
@@ -234,7 +234,7 @@ listStyle: {
     width:'100%',
     height:Platform.OS === 'ios' ? '17%' :'15%',
     borderBottomWidth:1,
-    borderColor:"#C0C0C0"
+    borderColor:"#1995ad"
 },
 
 listStyle2: {
@@ -244,7 +244,7 @@ listStyle2: {
     width:'100%',
     height:'11%',
     borderTopWidth:1,
-    borderColor:"#C0C0C0"
+    borderColor:"#1995ad"
 }
   
 });

@@ -97,12 +97,12 @@ export default class FooterTab extends React.Component{
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Profile")}>
+        <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Performance")}>
         <Icon name="user" size={30} color="#B0B0B0" style={{marginTop:'10%', marginLeft:'25%'}}/>
-          <Text style={{fontSize:15,marginLeft:'25%',color:"#B0B0B0" }}>Profiles</Text>
+          <Text style={{fontSize:15,marginLeft:'25%',color:"#B0B0B0" }}>Profile</Text>
         </TouchableOpacity> 
 
-        <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Performance")}>
+        <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Profile")}>
         <Icon name="home" size={30} color={this.isActive(0)} style={{marginTop:'10%', marginLeft:'25%'}}/>
           <Text style={this.textStyle(0)}>Home</Text>
         </TouchableOpacity>

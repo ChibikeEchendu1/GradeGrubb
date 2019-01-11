@@ -31,7 +31,7 @@ export default class  NewStudentListItem extends React.Component{
             borderWidth:1,
             height:55,
            // borderRadius:50,
-            backgroundColor:"#E8E8E8",
+            backgroundColor:"#fbfaf0",
             justifyContent:'space-between',
             width:'96%',
             //marginBottom:10,

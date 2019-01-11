@@ -128,14 +128,14 @@ class GradeView extends Component {
       <View  behavior = {(Platform.OS === 'ios') ? 'height' : 'height'} style ={styles.container}>
         <HomeHeader ti="Grade Students"  navigate={this.props.navigation.goBack}/>
         <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'height' : 'height'}  style={{height:'15%'}} >
-        <View onPress={Keyboard.dismiss} style={{flexDirection:"column", justifyContent:"space-between",marginTop:0, alignItems:'center',  backgroundColor: '#E8E8E8'}}>
+        <View  style={{flexDirection:"column", justifyContent:"space-between",marginTop:0, alignItems:'center',  backgroundColor: '#fbfaf0'}}>
         <View style={{}}>
         <Text numberOfLines={1} style={{fontSize:20, fontWeight:'bold',marginTop:5, textAlign:'center'}}>{this.state.usename}</Text>
         </View>
         
         <TouchableOpacity style={{alignItems:"flex-end",alignSelf:'flex-end'}} onPress={this.onButtonPress.bind(this)}>
         <View style={{alignItems:"flex-end", padding:5, marginRight:25}}>
-        <Text style={{fontSize:18, fontWeight:'bold',marginTop:10, color:"#63B8FF"}}>Grade</Text>
+        <Text style={{fontSize:18, fontWeight:'bold',marginTop:10, color:"#1995ad"}}>Grade</Text>
         </View>
         </TouchableOpacity>
        </View>
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#F4F2F3',
+        backgroundColor: '#A1D6E2',
         height:'100%'
       }
   });

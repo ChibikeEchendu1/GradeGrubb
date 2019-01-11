@@ -135,7 +135,7 @@ class AddStudentView2 extends Component {
    
         <View style ={styles.container}>
         <HomeHeader ti="Add Students" navigate={this.props.navigation.goBack}/>
-        <View style={{flexDirection:'column', height:'15%', backgroundColor: '#E8E8E8'}}>
+        <View style={{flexDirection:'column', height:'15%', backgroundColor: '#fbfaf0'}}>
         <View>
             <TouchableOpacity  onPress= {this.checkAll.bind(this)} >
         <Text style={{fontSize:20, fontWeight:'bold', textAlign:'center', marginTop:7, marginBottom:2}}>Select All/Select None</Text>
@@ -154,7 +154,7 @@ class AddStudentView2 extends Component {
          
          
        }}>
-          <Text style={{fontSize:20,marginRight:10, color:"#63B8FF"}}>Finish</Text>
+          <Text style={{fontSize:20,marginRight:10, color:"#1995ad"}}>Finish</Text>
           </TouchableOpacity>
           </View>
        
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#F4F2F3',
+        backgroundColor: '#A1D6E2',
       }
   });
 

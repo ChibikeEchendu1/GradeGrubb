@@ -130,7 +130,7 @@ class ThomeView extends Component {
     return (
      <SafeAreaView style={styles.container}>
     
-    <Header  ti='Home'/>
+    <Header  ti='Profile'/>
       
         <View style={{width:"85%", flexDirection:'column', height:"87%"}}>
         <View style={styles.ImageStyle}>
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   container: {
     flex:1,
     alignItems:'center',
-    backgroundColor: '#F4F2F3',
+    backgroundColor: '#A1D6E2',
     justifyContent:'space-between',
     flexDirection:'column',
   },
@@ -188,7 +188,7 @@ listStyle: {
     width:'100%',
     //height:'10%',
     borderBottomWidth:1,
-    borderColor:"#C0C0C0"
+    borderColor:"#1995ad"
 }
 
   

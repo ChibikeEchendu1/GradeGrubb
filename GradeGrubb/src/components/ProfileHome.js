@@ -150,7 +150,7 @@ class  ProfileHome extends React.Component{
             flexDirection:'row',
             justifyContent:'space-between',
             width:'100%',
-            backgroundColor: '#F4F2F3',
+            backgroundColor: '#A1D6E2',
             
             //marginBottom:10,
             borderBottomWidth:1,

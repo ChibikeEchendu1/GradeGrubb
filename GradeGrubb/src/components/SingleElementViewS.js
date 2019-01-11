@@ -108,7 +108,7 @@ class SingleElementViewS extends Component {
    
         <View style ={styles.container}>
         <HomeHeader navigate={this.props.navigation.goBack} ti={this.state.studentname}/>{/* //this.state.studentname}/> */}
-        <View style={{marginTop:0, alignItems:'center', justifyContent:'center',  height:'35%', backgroundColor: '#E8E8E8'}}>
+        <View style={{marginTop:0, alignItems:'center', justifyContent:'center',  height:'35%', backgroundColor: '#A1D6E2'}}>
         {this.renderImage()}
         <Text style={{fontSize:18, fontWeight:'bold',marginTop:5, textAlign:'center',fontWeight:'bold'}}>Average</Text>
         <Text style={{fontSize:16, marginBottom:30, fontWeight:'bold', textAlign:'center',fontWeight:'bold'}}>{this.props.Av}%</Text>

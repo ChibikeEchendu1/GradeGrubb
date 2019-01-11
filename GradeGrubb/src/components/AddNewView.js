@@ -55,7 +55,7 @@ class AddNewView extends Component{
         }
         else{
          return <TouchableOpacity onPress = {this.onFinButtonPress.bind(this)}>
-         <Text style={{fontSize:20, color:"#63B8FF"}}>Add</Text>
+         <Text style={{fontSize:20, color:"#1995ad"}}>Add</Text>
          </TouchableOpacity>
         }
       }
@@ -64,7 +64,7 @@ class AddNewView extends Component{
     render(){
     return(
      
-      <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'padding'} style ={styles.container}>
+      <View style ={styles.container}>
          <HomeHeader navigate={this.props.navigation.goBack} ti="New Element"/>
          <TouchableWithoutFeedback style={{height:'10%'}} onPress={Keyboard.dismiss}><View>
              <Text style={{width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:15}}>
@@ -77,6 +77,7 @@ class AddNewView extends Component{
               <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:20}}>Give the element a name</Text>
               </View>
              </TouchableWithoutFeedback>
+             <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'padding'}>
          <View>
          <TextInput
           style={{borderWidth:1, width:'96%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:2}}
@@ -100,10 +101,10 @@ class AddNewView extends Component{
         <View style={{marginRight:20,marginBottom:5,alignItems:"flex-end", marginLeft:20, alignSelf:'flex-end'}}>
        {this.renderButton()}
           </View>
-        
+          </KeyboardAvoidingView>
     {this.renderError()}
     {this.goBack()}
-         </KeyboardAvoidingView>  
+         </View>  
        
     );
 };
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
  
     container: {
         flex: 1,
-        backgroundColor: '#F4F2F3',
+        backgroundColor: '#A1D6E2',
       }
    
 });
