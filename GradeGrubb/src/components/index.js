@@ -1,5 +1,7 @@
 export * from './FormInput';
 export * from './Card';
+export * from './Cardstan';
+export * from './Card2stan';
 export * from './Card2';
 export * from './LogoHouse';
 export * from './LogoHouse2';

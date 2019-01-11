@@ -125,9 +125,9 @@ class GradeView extends Component {
     
     return (
     
-      <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'height' : 'height'} style ={styles.container}>
+      <View  behavior = {(Platform.OS === 'ios') ? 'height' : 'height'} style ={styles.container}>
         <HomeHeader ti="Grade Students"  navigate={this.props.navigation.goBack}/>
-        <TouchableWithoutFeedback style={{height:'10%'}} >
+        <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'height' : 'height'}  style={{height:'15%'}} >
         <View onPress={Keyboard.dismiss} style={{flexDirection:"column", justifyContent:"space-between",marginTop:0, alignItems:'center',  backgroundColor: '#E8E8E8'}}>
         <View style={{}}>
         <Text numberOfLines={1} style={{fontSize:20, fontWeight:'bold',marginTop:5, textAlign:'center'}}>{this.state.usename}</Text>
@@ -140,18 +140,18 @@ class GradeView extends Component {
         </TouchableOpacity>
        </View>
         
-        </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
         
         
        
         
-        <View style={{height:'75%'}}>
+        <View style={{height:'70%'}}>
         {this.renderButton()}
         </View> 
             
             {this.goBack()}
             
-            </KeyboardAvoidingView>
+            </View>
       );
     }
   } 

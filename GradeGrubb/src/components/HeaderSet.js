@@ -23,7 +23,7 @@ const HeaderSet = (props) =>{
         </TouchableOpacity> 
 
     <View style={{alignSelf:'center',alignItems:'center',margin:'auto'}}>
-        <Text numberOfLines={1} style={{fontSize:20,fontWeight:'bold', color:'#282828'}}>{props.ti}</Text>
+        <Text numberOfLines={1} style={{fontSize:20,fontWeight:'bold'}}>{props.ti}</Text>
         </View>
         <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto'}}  onPress={() =>
             props.nav.navigate("Notice", {per:props.per,pro:props.pro})}> 

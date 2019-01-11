@@ -41,7 +41,7 @@ class PerformanceView extends Component {
           
           return(
               <Image
-              style={{ marginTop:5, height: '80%', width:'90%'}}
+              style={{ marginTop:5, height: 120, width:120}}
               source={require('../.././images/p.png')}
               resizeMode = 'contain'
               />
@@ -52,7 +52,7 @@ class PerformanceView extends Component {
           
           return(
               <Image
-              style={{ marginTop:5, height: Platform.OS === 'ios' ? 120 : '80%', width: Platform.OS === 'ios' ? 120 : '60%',borderRadius: Platform.OS === 'ios' ? 60 : 50}}
+              style={{ marginTop:5, height: Platform.OS === 'ios' ? 120 : 130, width: Platform.OS === 'ios' ? 120 : 130,borderRadius: Platform.OS === 'ios' ? 60 : 50}}
               source={{uri: "data:image/jpeg;base64,"+this.props.navigation.state.params.item.Image}}
               resizeMode = 'contain'
               />
@@ -142,19 +142,19 @@ class PerformanceView extends Component {
        
        <Header ti='Performance' />
        
-      <View style={{width:"85%", flexDirection:'column',height:"87%"}}>
+      <View style={{width:"87%", flexDirection:'column',height:"87%"}}>
         
         <View style={styles.ImageStyle}>
-        <TouchableOpacity onPress={this.onButtonPress.bind(this)} style={{flexDirection:'row', alignItems:'center', justifyContent:'center', height: '70%',marginTop:'15%', marginBottom:'5%', width:'100%'}}>
+        <TouchableOpacity onPress={this.onButtonPress.bind(this)} style={{flexDirection:'row', alignItems:'center', marginTop:'10%', justifyContent:'center'}}>
         
         {this.renderImage()}
         
         </TouchableOpacity>
         <ImageButton2 press={this.onButtonPress.bind(this)}/>
-        <Text style={{fontSize:25, fontWeight:'bold',marginTop:5,textAlign:'center'}}> {this.state.item.name}</Text>
+        <Text style={{fontSize:25, fontWeight:'bold',textAlign:'center'}}> {this.state.item.name}</Text>
         <Text style={{fontSize:20, marginBottom:20, fontWeight:'bold',textAlign:'center'}}>({this.state.item.school})</Text>
         </View>
-        <View style={{ marginTop:'9%'}}>
+        <View style={{ marginTop:'3%' ,height:Platform.OS === 'ios' ? '75%' :'80%',}}>
 
        {/*  <List >
         <ListItem >
@@ -212,11 +212,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#F4F2F3',
   },
   ImageStyle:{
-    height: '40%',
+    height:Platform.OS === 'ios' ? '50%' :'50%',
     //borderWidth:1,
     width: '100%',
     justifyContent:'center',
     alignItems: 'center',
+    alignSelf:'center'
     //marginTop:'16%',
     
 },
@@ -231,7 +232,7 @@ listStyle: {
     opacity: 0.9,
     justifyContent: 'flex-start',
     width:'100%',
-    height:'20%',
+    height:Platform.OS === 'ios' ? '17%' :'15%',
     borderBottomWidth:1,
     borderColor:"#C0C0C0"
 },

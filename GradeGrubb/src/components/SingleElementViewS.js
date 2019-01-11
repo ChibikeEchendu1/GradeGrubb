@@ -92,7 +92,7 @@ class SingleElementViewS extends Component {
         
         return(
             <Image
-            style={{marginTop:20, height: 120, width:120,borderRadius:60}}
+            style={{marginTop:20, height: 100, width:100,borderRadius:50}}
             source={{uri: "data:image/jpeg;base64,"+this.props.navigation.state.params.Image}}
             resizeMode = 'contain'
             />
@@ -108,13 +108,13 @@ class SingleElementViewS extends Component {
    
         <View style ={styles.container}>
         <HomeHeader navigate={this.props.navigation.goBack} ti={this.state.studentname}/>{/* //this.state.studentname}/> */}
-        <View style={{marginTop:0, alignItems:'center', justifyContent:'center',  height:'30%', backgroundColor: '#E8E8E8'}}>
+        <View style={{marginTop:0, alignItems:'center', justifyContent:'center',  height:'35%', backgroundColor: '#E8E8E8'}}>
         {this.renderImage()}
         <Text style={{fontSize:18, fontWeight:'bold',marginTop:5, textAlign:'center',fontWeight:'bold'}}>Average</Text>
         <Text style={{fontSize:16, marginBottom:30, fontWeight:'bold', textAlign:'center',fontWeight:'bold'}}>{this.props.Av}%</Text>
         </View>
     
-        <View style={{justifyContent: 'flex-start', height: '57%', width:'100%'}}>
+        <View style={{justifyContent: 'flex-start', height: '52%', width:'100%'}}>
         {this.renderButton()}
         </View>
      

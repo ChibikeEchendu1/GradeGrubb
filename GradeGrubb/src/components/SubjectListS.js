@@ -9,9 +9,9 @@ export default class  SubjectListS extends React.Component{
        
          render(){
         return(
-            <TouchableOpacity   onPress={() =>
+            <TouchableOpacity    onPress={() =>
                 this.props.nav.navigate("Element", {item:this.props.item,Image:this.props.Image, School:this.props.School, Tid:this.props.Tid})}>
-                  <Card  style={{backgroundColor:'#bcbabe'}}>
+                  <Card>
             <CardItem header bordered style={{flexDirection:'column', width:'100%',justifyContent:'center'}}>
               <Text style={{ color:'#1995ad',textAlign:'center',alignSelf:'center',fontSize:18,fontWeight:'bold'}}>{this.props.item.Name}</Text>
             </CardItem>
@@ -64,7 +64,7 @@ export default class  SubjectListS extends React.Component{
             opacity: 0.9,
             justifyContent:'space-between',
             width:'100%',
-            backgroundColor:'#E8E8E8',
+            backgroundColor:'#A1D6E2',
             //marginBottom:10,
             borderBottomWidth:4,
             borderColor:"#C0C0C0"

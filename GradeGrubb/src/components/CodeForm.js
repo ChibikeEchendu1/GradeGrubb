@@ -74,22 +74,22 @@ renderButton(){
     return (
         
     <SafeAreaView style={styles.container}>
-    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'height'} style ={styles.container}>
+    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'padding'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
             <LogoHouse2/>
           <View style={{paddingBottom: 40,  alignItems: 'center', width:320}} >   
-            <Text style={{fontSize: 20, textAlign: 'center',}} > Forgot Password? </Text>
-            <Text style={{fontSize: 35,marginTop:20, textAlign: 'center'}}> A confirmation code has been sent to your email.</Text>
+            <Text style={{fontSize: 20,alignSelf:'center', textAlign: 'center',}} > Forgot Password? </Text>
+            <Text style={{fontSize: 35,marginTop:20,alignSelf:'center', textAlign: 'center'}}> A confirmation code has been sent to your email.</Text>
             </View>
 
-        <View style ={{height: '9%',marginBottom: 20,}} >
+        <View style ={{height: '15%',marginBottom: 20,}} >
         <FormInput val={this.props.Name} ct={this.onNameChanged.bind(this)}  bool = {false} ph = {"Code"}/>
         </View>
         
         
        
-        <View style ={{height: '9%',marginBottom: 20,}} >
+        <View style ={{height: '13%',marginBottom: 20,}} >
         {this.renderButton()}
         </View>
 

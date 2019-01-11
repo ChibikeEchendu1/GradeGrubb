@@ -67,30 +67,30 @@ class AddNewView extends Component{
       <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'padding'} style ={styles.container}>
          <HomeHeader navigate={this.props.navigation.goBack} ti="New Element"/>
          <TouchableWithoutFeedback style={{height:'10%'}} onPress={Keyboard.dismiss}><View>
-             <Text style={{width:'96%',alignSelf:"center", padding:12, marginTop:10,fontSize:15}}>
-             This is where you add content to your subject. {"\n"} First, name the subject element eg</Text>
-              <Text style={{fontWeight:"bold",width:'96%',alignSelf:"center", padding:12, paddingTop:2, fontSize:15}}> Classwork1, Homework1, Final Exam, Midterm</Text> 
+             <Text style={{width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:15}}>
+             This is where you add content to your subject First, name the subject element eg Classwork1 , Homework1</Text>
+              
               <Text style={{width:'96%',alignSelf:"center", padding:12, paddingTop:2, fontSize:15}}>then enter how much out of the total grade the element is worth. Total mark does not have to be out of 100
            DO NOT GIVE ELEMENTS THE SAME NAME</Text>
              
               
-              <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:10,fontSize:20}}>Give the element a name</Text>
+              <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:20}}>Give the element a name</Text>
               </View>
              </TouchableWithoutFeedback>
          <View>
          <TextInput
-          style={{borderWidth:1, width:'96%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:10}}
+          style={{borderWidth:1, width:'96%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:2}}
           placeholder="Subject Name"
           autoFocus={true}
           onChangeText={this.onNameChanged.bind(this)}
           value={this.props.Name}
         /></View>
 
-        <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:10,fontSize:20}}>Give the element a "Worth"</Text>
+        <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:20}}>Give the element a "Worth"</Text>
              
          <View style={{flexDirection: 'row', alignItems:'center'}}>
          <TextInput
-          style={{borderWidth:1, width:'20%', height: 40,borderColor:"#C0C0C0", padding:5,marginLeft:10 , marginTop:10}}
+          style={{borderWidth:1, width:'20%', height: 40,borderColor:"#C0C0C0", padding:5,marginLeft:10 , marginTop:2}}
           placeholder="Worth"
           keyboardType='numeric'
           onChangeText={this.onnumchanged.bind(this)}

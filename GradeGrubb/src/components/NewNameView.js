@@ -53,16 +53,16 @@ class NewNameView extends Component{
     render(){
     return(
      
-      <KeyboardAvoidingView  behavior = "padding" style ={styles.container}>
+      <View style ={styles.container}>
          <HomeHeader ti="New Name" navigate={this.props.navigation.goBack}/>
-         <View>
+         <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'padding' : 'height'}>
          <TextInput
-          style={{borderWidth:1, marginTop:40, width:'96%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:100}}
+          style={{borderWidth:1, marginTop:90, width:'96%',alignSelf:"center", height: 60,borderColor:"#C0C0C0", padding:5, marginTop:100}}
           placeholder="New Name"
           onChangeText={this.onNameChanged.bind(this)}
           value={this.props.Name}
         />
-        </View>
+        </KeyboardAvoidingView>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={{flexDirection:'row',justifyContent:"space-between", marginTop:10}}>
        
      <View>
@@ -81,7 +81,7 @@ class NewNameView extends Component{
         </View>
         </TouchableWithoutFeedback>
 
-         </KeyboardAvoidingView>  
+         </View>  
        
     );
 };

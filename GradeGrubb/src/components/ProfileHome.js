@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text,View, StyleSheet,Image,TouchableOpacity,Alert} from 'react-native'
+import {Text,View, StyleSheet,Image,TouchableOpacity,Platform,Alert} from 'react-native'
 import Swipeout from 'react-native-swipeout';
 import {delpro} from '../actions';
 import {connect} from 'react-redux';
@@ -23,7 +23,7 @@ class  ProfileHome extends React.Component{
                 
                 return(
                     <Image
-                    style={{height: 60, width:60, borderRadius:30}}
+                    style={{height: 60, width:60, borderRadius: Platform.OS === 'ios' ? 30 : 50}}
                     source={require('../.././images/p.png')}
                     resizeMode = 'contain'
                     />
@@ -34,7 +34,7 @@ class  ProfileHome extends React.Component{
                 
                 return(
                     <Image
-                    style={{height: 60, width:60,borderRadius:30}}
+                    style={{height: 60, width:60,borderRadius: Platform.OS === 'ios' ? 30 : 50}}
                     source={{uri: "data:image/jpeg;base64,"+this.props.item.Image}}
                     resizeMode = 'contain'
                     />
@@ -123,7 +123,7 @@ class  ProfileHome extends React.Component{
             
                  {this.renderImage()}
                 <View  style={{width:"60%"}}>
-                <Text numberOfLines={1} style={{fontWeight:'bold', fontSize:20 , color:'#282828'}}>
+                <Text numberOfLines={1} style={{fontWeight:'bold', fontSize:20}}>
                     {this.props.item.Name}
                 </Text>
                 <Text numberOfLines={1} style={{fontSize:17}}>

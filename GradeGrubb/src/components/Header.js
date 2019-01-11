@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     
     viewStyle: {
         backgroundColor:'white',
-       // position:'absolute',
+      position:Platform.OS === 'ios' ? 'relative' :'relative',
        top: Platform.OS === 'ios' ? 0 :0, 
       
        // marginBottom:10,

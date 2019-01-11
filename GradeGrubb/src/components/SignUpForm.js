@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import {FormInput,Card2,LogoHouse2,FormButton,Link,Spinner} from './index';
+import {FormInput,Card2,Card2stan,LogoHouse2,FormButton,Link,Spinner} from './index';
 import {connect} from 'react-redux';
 import {emailChanged,passwordChanged,passwordChanged2,NameChanged,signupUser} from '../actions';
 import {
@@ -82,28 +82,28 @@ renderButton(){
     return (
     
     <SafeAreaView style={styles.container}>
-    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'height'} style ={styles.container}>
+    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'position'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
             <LogoHouse2/>
-          <View style={{paddingBottom: 40,  alignItems: 'center', width:320}} >   
+          <View style={{paddingBottom: 20,  alignItems: 'center', width:'90%'}} >   
             <Text style={{fontSize: 40, textAlign: 'center',}} > Sign Up </Text>
             </View>
-        <Card2>
+        <Card2stan>
         <FormInput val={this.props.Name} ct={this.onNameChanged.bind(this)}  bool = {false} ph = {"Name"}/>
-        </Card2>
-        <Card2>
+        </Card2stan>
+        <Card2stan>
         <FormInput val={this.props.email} ct={this.onEmailChanged.bind(this)}  bool = {false} ph = {"Email"}/>
-        </Card2>
-        <Card2>
+        </Card2stan>
+        <Card2stan>
         <FormInput val={this.props.password} ct={this.onPasswordChanged.bind(this)}  bool = {true} ph = {"Password"}/>
-        </Card2>
-        <Card2>
+        </Card2stan>
+        <Card2stan>
         <FormInput val={this.props.password2} ct={this.onPasswordChanged2.bind(this)}  bool = {true} ph = {"Confirm Password"}/>
-        </Card2>
-        <Card2>
+        </Card2stan>
+        <Card2stan>
         {this.renderButton()}
-        </Card2>
+        </Card2stan>
 
         
        </View>

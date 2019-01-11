@@ -102,7 +102,7 @@ renderButton(){
     return (
     
     <SafeAreaView style={styles.container}>
-    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'height'} style ={styles.container}>
+    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'padding'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
           <View style={{paddingBottom: 40,  alignItems: 'center', width:330}} >   
@@ -111,11 +111,11 @@ renderButton(){
 
         
        
-        <View style={{height:'12%', marginBottom:30}}>
+        <View style={{height:'20%', marginBottom:30}}>
         <FormInput val={this.props.password} ct={this.onPasswordChanged.bind(this)}  bool = {true} ph = {"Enter code from school"}/>
         </View>
         
-        <View style={{height:'15%'}}>
+        <View style={{height:'20%'}}>
         {this.renderButton()}
         </View>
 

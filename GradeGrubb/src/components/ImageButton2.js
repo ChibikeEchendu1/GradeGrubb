@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
         width: 30,
         //borderRadius: 15,
         height: 30,
-        marginTop:'10%',
-        marginBottom: '20%'
+        marginTop:10,
+        marginBottom: 10
        
     },
 

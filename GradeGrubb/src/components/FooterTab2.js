@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image,StyleSheet, TouchableOpacity} from 'react-native'
+import {View, Text, Platform,Image,StyleSheet, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class FooterTab2 extends React.Component{
@@ -21,7 +21,7 @@ export default class FooterTab2 extends React.Component{
       textStyle = function(buttonIndex) {
         if (this.getNavigationProps().navigationState.index === buttonIndex){
         return {
-          fontSize: 11,
+          fontSize: 15,
           marginLeft: "25%",
           color:"#0099cc"
         }
@@ -29,7 +29,7 @@ export default class FooterTab2 extends React.Component{
 
       else{
         return {
-          fontSize: 11,
+          fontSize: 15,
           marginLeft: "25%",
           color:"#B0B0B0"
         }
@@ -39,14 +39,14 @@ export default class FooterTab2 extends React.Component{
       textStyle2 = function(buttonIndex) {
         if (this.getNavigationProps().navigationState.index === buttonIndex){
         return {
-          fontSize: 11,
+          fontSize: 15,
           color:"#0099cc"
         }
       }
 
       else{
         return {
-          fontSize: 11,
+          fontSize: 15,
           color:"#B0B0B0"
         }
       }
@@ -57,28 +57,28 @@ export default class FooterTab2 extends React.Component{
 
         <TouchableOpacity style = {styles.tab}
         onPress={()=>this.navigate("Tsubject")}> 
-        <Icon name="leanpub" size={27} color={this.isActive(1)} style={{marginTop:'16%'}}/>
+        <Icon name="leanpub" size={27} color={this.isActive(1)} style={{marginTop:'12%'}}/>
             <View>
             <Text style={this.textStyle2(1)}>Subjects</Text>
           </View>
         </TouchableOpacity>
 
          <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Profile")}>
-         <Icon name="user" size={30} color="#B0B0B0" style={{marginTop:'14%', marginLeft:'25%'}}/>
-          <Text style={{fontSize:11,marginLeft:'25%',color:"#B0B0B0" }}>Profiles</Text>
+         <Icon name="user" size={30} color="#B0B0B0" style={{marginTop:'10%', marginLeft:'25%'}}/>
+          <Text style={{fontSize:15,marginLeft:'25%',color:"#B0B0B0" }}>Profiles</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style = {styles.tab} 
          
         onPress={()=>this.navigate("Thome")}>
-         <Icon name="home" size={30} color={this.isActive(0)} style={{marginTop:'14%', marginLeft:'25%'}}/>
+         <Icon name="home" size={30} color={this.isActive(0)} style={{marginTop:'10%', marginLeft:'25%'}}/>
           <Text style={this.textStyle(0)}>Home</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style = {styles.tab} 
         
         onPress={()=>this.navigate("NewSubject")}>
-       <Icon name="plus-circle" size={30} color={this.isActive(2)}style={{marginTop:'14%'}}/>
+       <Icon name="plus-circle" size={30} color={this.isActive(2)}style={{marginTop:'10%'}}/>
           <Text style={this.textStyle2(2)}>Create</Text>
         </TouchableOpacity>
 
@@ -91,7 +91,7 @@ export default class FooterTab2 extends React.Component{
 const styles = StyleSheet.create({  
     viewStyle: {
         backgroundColor:'white',
-       // position:'absolute',
+        //position:'absolute',
         //marginTop:'30%',
         bottom:0,
         //top:0,
@@ -100,9 +100,9 @@ const styles = StyleSheet.create({
         //borderWidth:1,
         flexDirection: 'row',
         width: '100%',
-        height: '10%',
+        height:Platform.OS === 'ios' ? '10%' :'12%',
         borderWidth: 0.8, borderColor: '#d6d7da',
-        paddingLeft:15,
+       // paddingLeft:15,
       
     },
     tab:{

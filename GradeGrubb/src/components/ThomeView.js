@@ -89,7 +89,7 @@ class ThomeView extends Component {
             if(this.props.Vals.Image == '../.././images/p.png'){
               return(
                     <Image
-                    style={{marginTop:'18%', height: '90%', marginBottom:'8%', width:'70%'}}
+                    style={{ height: '90%', width:'70%'}}
                     source={require('../.././images/p.png')}
                     resizeMode = 'contain'
                     />
@@ -99,7 +99,7 @@ class ThomeView extends Component {
             else{
               return(
                     <Image
-                    style={{marginTop:'10%', height: Platform.OS === 'ios' ? 120 : '80%', width: Platform.OS === 'ios' ? 120 : '60%',borderRadius: Platform.OS === 'ios' ? 60 : 50}}
+                    style={{height: Platform.OS === 'ios' ? 120 : 100,  width: Platform.OS === 'ios' ? 120 : 100,borderRadius: Platform.OS === 'ios' ? 60 : 50}}
                     source={{uri: "data:image/jpeg;base64,"+this.props.Vals.Image}}
                     resizeMode = 'contain'
                     />
@@ -132,9 +132,9 @@ class ThomeView extends Component {
     
     <Header  ti='Home'/>
       
-        <View style={{width:"85%", flexDirection:'column', alignItems:'flex-end', height:"87%"}}>
+        <View style={{width:"85%", flexDirection:'column', height:"87%"}}>
         <View style={styles.ImageStyle}>
-        <TouchableOpacity  onPress={this.onButtonPress.bind(this)} style={{flexDirection:'row',  alignItems:'center', justifyContent:'center',alignItems:'center', justifyContent:'center', marginTop:'15%', height: '80%', width:'70%'}}>
+        <TouchableOpacity  onPress={this.onButtonPress.bind(this)} style={{flexDirection:'row',  alignItems:'center', justifyContent:'center',alignItems:'center', justifyContent:'center', height: '60%', width:'70%'}}>
         {this.renderImage()}
        
         </TouchableOpacity>
@@ -144,7 +144,7 @@ class ThomeView extends Component {
         <Text style={{fontSize:20,alignSelf:"center", fontWeight:'bold'}}>({this.props.navigation.state.params.school})</Text>
         </View>
     
-        <View style={{ height: '70%',justifyContent:'flex-end',marginBottom:'20%', alignItems:'flex-end', width:'95%',marginTop:'9%'}}>
+        <View style={{ height: '50%',justifyContent:'flex-end', width:'95%'}}>
         <View style={styles.listStyle} >
         {this.rendercount()}
         </View>  
@@ -175,9 +175,9 @@ const styles = StyleSheet.create({
   ImageStyle:{
     //borderWidth: 1,
     flexDirection:'column',
-    height: '30%',
+    height: '50%',
     width: '100%',
-    justifyContent:'flex-start',
+    justifyContent:'flex-end',
     alignItems: 'center',  
     
 },

@@ -112,7 +112,7 @@ class TeacherListView extends Component {
           
           return(
               <Image
-              style={{marginLeft:40, marginTop:20, height: '100%', width:'70%'}}
+              style={{ marginTop:20, height: '100%', alignSelf:'center', width:'70%'}}
               source={require('../.././images/p.png')}
               resizeMode = 'contain'
               />
@@ -123,7 +123,7 @@ class TeacherListView extends Component {
           
           return(
               <Image
-              style={{marginLeft:100, marginTop:20, height: 120, width:120,borderRadius:60}}
+              style={{marginTop:20, height: 120,alignSelf:'center', width:120,borderRadius:60}}
               source={{uri: "data:image/jpeg;base64,"+this.props.navigation.state.params.item.Image}}
               resizeMode = 'contain'
               />
@@ -151,7 +151,7 @@ class TeacherListView extends Component {
       <HomeHeader ti="Teacher List" navigate={this.props.navigation.goBack}/>
      <View style={{borderBottomWidth:1, height:'35%', backgroundColor: '#E8E8E8'}}>
             
-            <TouchableOpacity onPress={this.onButtonPress.bind(this)} style={{flexDirection:'row', marginTop:'5%',alignItems:'center',margin:'auto', justifyContent:'center',  height: '50%', width:'70%'}}>
+            <TouchableOpacity onPress={this.onButtonPress.bind(this)} style={{flexDirection:'row', alignSelf:'center', marginTop:'5%',alignItems:'center',margin:'auto', justifyContent:'center',  height: '50%', width:'70%'}}>
         
         {/* <Image
           style={{marginLeft:40, height: '100%', width:'70%'}}
@@ -164,7 +164,7 @@ class TeacherListView extends Component {
 
         </TouchableOpacity>
         <ImageButton press={this.onButtonPress.bind(this)}/>
-        <Text style={{fontSize:25,marginTop:8, fontWeight:'bold', textAlign:'center'}}>{this.props.navigation.state.params.item.Name}</Text>
+        <Text style={{fontSize:25,marginTop:3, fontWeight:'bold', textAlign:'center'}}>{this.props.navigation.state.params.item.Name}</Text>
         </View>
         
         <View style={{alignItems:'center', marginTop:10}}>

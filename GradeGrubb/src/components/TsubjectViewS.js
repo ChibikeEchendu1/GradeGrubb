@@ -9,7 +9,7 @@ import {Header,Spinner} from './index';
 import SubjectListS from './SubjectListS';
 import {SubFetchS} from '../actions';
 import {connect} from 'react-redux';
-import { AsyncStorage } from "react-native"
+import { AsyncStorage ,Platform} from "react-native"
 import {
   StyleSheet,
   View,
@@ -106,7 +106,7 @@ class TsubjectViewS extends Component {
    
     <View style={styles.container}>
         <Header ti='Subjects' />
-        <View style={{justifyContent: 'flex-start', height: '87%', width:'100%'}}>
+        <View style={{justifyContent: 'flex-start', height:Platform.OS === 'ios' ? '87%' :'87%', width:'100%'}}>
         {this.renderButton()}
         </View>
     

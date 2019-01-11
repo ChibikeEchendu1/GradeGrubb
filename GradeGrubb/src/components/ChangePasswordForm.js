@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import {FormInput,Card,LogoHouse2,FormButton,Link,Spinner} from './index';
+import {FormInput,Cardstan,LogoHouse2,FormButton,Link,Spinner} from './index';
 import {connect} from 'react-redux';
 import {passwordChanged,passwordChanged2,passwordChanged3,ChangePass} from '../actions';
 import {
@@ -93,27 +93,27 @@ renderButton(){
     return (
     
     <SafeAreaView style={styles.container}>
-    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'height'} style ={styles.container}>
+    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'position'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
             <LogoHouse2/>
-          <View style={{paddingBottom: 40,  alignItems: 'center', width:320}} >   
-            <Text style={{fontSize: 40, textAlign: 'center',}} > Change Password </Text>
+          <View style={{paddingBottom: 20,alignSelf:'center',  alignItems: 'center', width:320}} >   
+            <Text style={{fontSize: 25, alignSelf:'center', textAlign: 'center',}} > Change Password </Text>
             </View>
 
-        <Card>
+        <Cardstan>
         <FormInput val={this.props.Oldpass} ct={this.onPasswordChanged3.bind(this)}  bool = {true} ph = {"Old Password"}/>
-        </Card>
+        </Cardstan>
        
-        <Card>
+        <Cardstan>
         <FormInput val={this.props.password} ct={this.onPasswordChanged.bind(this)}  bool = {true} ph = {"New Password"}/>
-        </Card>
-        <Card>
+        </Cardstan>
+        <Cardstan>
         <FormInput val={this.props.password2} ct={this.onPasswordChanged2.bind(this)}  bool = {true} ph = {"Confirm New Password"}/>
-        </Card>
-        <Card>
+        </Cardstan>
+        <Cardstan>
         {this.renderButton()}
-        </Card>
+        </Cardstan>
 
         {this.renderError()}
        </View>

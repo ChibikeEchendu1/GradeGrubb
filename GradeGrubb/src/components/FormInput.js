@@ -15,12 +15,19 @@ const styles = StyleSheet.create({
     inputStyle: {
         borderWidth: 1,
         alignSelf: 'center',
+        
         width: '100%',
         height: '100%',
     },
     viewStyle: {
+        
+        alignSelf: 'center',
+        alignItems:'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        width: '90%',
         height: '100%',
-        width: '100%',
+       
     },
 
    

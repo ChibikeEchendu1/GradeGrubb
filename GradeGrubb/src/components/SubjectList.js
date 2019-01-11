@@ -17,7 +17,7 @@ export default class  SubjectList extends React.Component{
 
 
 
-                   <Card transparent style={{backgroundColor:'#bcbabe'}}>
+                   <Card>
             <CardItem header bordered style={{flexDirection:'column', width:'100%',justifyContent:'center'}}>
               <Text style={{ color:'#1995ad',textAlign:'center',alignSelf:'center',fontSize:18,fontWeight:'bold'}}>{this.props.item.Name}</Text>
             </CardItem>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image,StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, Image,Platform,StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class FooterTab extends React.Component{
@@ -91,24 +91,24 @@ export default class FooterTab extends React.Component{
              <TouchableOpacity style = {styles.tab} 
      active={this.isActive(1)}
         onPress={()=>this.navigate("TsubjectS")}> 
-         <Icon name="leanpub" size={27} color={this.isActive(1)} style={{marginTop:'16%'}}/>
+         <Icon name="leanpub" size={27} color={this.isActive(1)} style={{marginTop:'12%'}}/>
             <View>
           <Text style={this.textStyle2(1)}>Subjects</Text>
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Profile")}>
-        <Icon name="user" size={30} color="#B0B0B0" style={{marginTop:'14%', marginLeft:'25%'}}/>
+        <Icon name="user" size={30} color="#B0B0B0" style={{marginTop:'10%', marginLeft:'25%'}}/>
           <Text style={{fontSize:15,marginLeft:'25%',color:"#B0B0B0" }}>Profiles</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Performance")}>
-        <Icon name="home" size={30} color={this.isActive(0)} style={{marginTop:'14%', marginLeft:'25%'}}/>
+        <Icon name="home" size={30} color={this.isActive(0)} style={{marginTop:'10%', marginLeft:'25%'}}/>
           <Text style={this.textStyle(0)}>Home</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Annoucment")}>
-        <Icon name="comments" size={30} color={this.isActive(2)}style={{marginTop:'14%'}}/>
+        <Icon name="comments" size={30} color={this.isActive(2)}style={{marginTop:'10%'}}/>
           <Text style={this.textStyle2(2)}>Notice</Text>
         </TouchableOpacity>
 
@@ -130,9 +130,9 @@ const styles = StyleSheet.create({
       //borderWidth:1,
       flexDirection: 'row',
       width: '100%',
-      height: '10%',
-      borderWidth: 0.8, borderColor: '#d6d7da',
-      paddingLeft:15,
+      height:Platform.OS === 'ios' ? '10%' :'12%',
+     borderWidth: 0.8, borderColor: '#d6d7da',
+     // paddingLeft:15,
       
     },
     tab:{

@@ -59,10 +59,10 @@ next(){
 
 renderButton(){
     if(this.props.loading){
-      return <Spinner size="large"/>;
+      return <Spinner  style ={styles.container} size="large"/>;
     }
     else{
-     return <FormButton press={this.onButtonPress.bind(this)} val = {"Confirm"}/>;
+     return <FormButton  style ={styles.container} press={this.onButtonPress.bind(this)} val = {"Confirm"}/>;
     }
   }
 
@@ -72,27 +72,27 @@ renderButton(){
     return (
     
     <SafeAreaView style={styles.container}>
-    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'height'} style ={styles.container}>
+    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'padding' : 'padding'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
             <LogoHouse2/>
-          <View style={{paddingBottom: 40,  alignItems: 'center', width:320}} >   
+          <View style={{paddingBottom: 40,  alignItems: 'center'}} >   
             <Text style={{fontSize: 40, textAlign: 'center',}} > Forgot Password? </Text>
             </View>
 
-        <View style ={{height: '12%',marginBottom: 20,}} >
+        <View style ={{height: '16%',marginBottom: 20,alignItems:'center' }} >
         <FormInput val={this.props.email} ct={this.onEmailChanged.bind(this)}  bool = {false} ph = {"Email"}/>
         </View>
         
         
        
-        <View style ={{height: '12%',marginBottom: 20,}} >
+        <View style ={{height: '12%',marginBottom: 20}} >
         {this.renderButton()}
         </View>
 
         {this.renderError()}
         {this.next()}
-       </View>
+        </View>
       </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
       

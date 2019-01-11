@@ -4,9 +4,9 @@ import {Text,StyleSheet,TouchableOpacity,Image} from 'react-native';
 const ImageButton3 = (props) =>{
 
     return(
-        <TouchableOpacity onPress={props.press} style={{marginTop:'5%',}} >
+        <TouchableOpacity onPress={props.press} >
         
-        <Text style={{textAlign:'center', fontSize:14,color:"#1995ad",marginTop:23}}>Change Picture</Text>
+        <Text style={{textAlign:'center', fontSize:14,color:"#1995ad"}}>Change Picture</Text>
         </TouchableOpacity>
     );
 };
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         //borderRadius: 15,
         height: 30,
        
-        marginBottom: '20%'
+        //ginBottom: '20%'
        
     },
 

@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import {FormInput,Card,LogoHouse,FormButton,Link,Spinner} from './index';
+import {FormInput,Card,Cardstan,LogoHouse,FormButton,Link,Spinner} from './index';
 import {connect} from 'react-redux';
 import {emailChanged,passwordChanged,loginUser} from '../actions';
 import { AsyncStorage } from "react-native"
@@ -80,16 +80,18 @@ class LoginForm extends Component {
     const {vall} = this.props;
     return (
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'height'} style ={styles.container}>
+      <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'position'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
         <LogoHouse/>
-        <Card>
+        <Cardstan>
         <FormInput val={this.props.email} ct={this.onEmailChanged.bind(this)}  bool = {false} ph = {"Email"}/>
-        </Card>
-        <Card>
+        </Cardstan>
+        <Cardstan>
         <FormInput val={this.props.password} ct={this.onPasswordChanged.bind(this)}  bool = {true} ph = {"Password"}/>
-        </Card>
+        </Cardstan>
+        
+        
         <Card>
         {this.renderButton()}
         </Card>
@@ -98,9 +100,9 @@ class LoginForm extends Component {
        </Card>
        {this.renderError()}
        {this.goToProfile()}
-        </View>
-       </TouchableWithoutFeedback>
-      </KeyboardAvoidingView>
+       </View>
+        </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
       <View style ={{flex: 1}}>
       <View style={{position: 'absolute', bottom: 20, alignSelf: 'center', height: 60, width: "100%"}}>
        <Link val = {"Create Account"} screen = {"SignUp"} navigate={this.props.navigation.navigate}/>

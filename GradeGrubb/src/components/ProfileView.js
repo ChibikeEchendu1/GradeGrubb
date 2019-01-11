@@ -130,7 +130,7 @@ constructor(props){
     return (
     
     <SafeAreaView style={styles.container}>
-        <HeaderSet ti='Profiles' per = {this.state.vall} active ={(this.props.redup == 1) ? 'red' : ''} pro={this.props.profiles}   nav={this.props.navigation}/>
+        <HeaderSet ti='Profiles' per = {this.state.vall} active ={(this.props.redup == 1) ? 'red' : 'black'} pro={this.props.profiles}   nav={this.props.navigation}/>
         <View style={{justifyContent: 'flex-start', height: '74%', width:'100%'}}>
         {this.renderButton()}
         </View>

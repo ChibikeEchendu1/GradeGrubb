@@ -82,20 +82,20 @@ class NewSubjectView extends Component{
 
            {/*  {this.state.item.name}, {this.state.item.type}, {this.state.item.school}, {this.state.item.id}  */}
               </Text>
-              <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:40,fontSize:20}}>Start by giving the subject a name</Text>
+              <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:10,fontSize:20}}>Start by giving the subject a name</Text>
              </View>
          <View>
          <TextInput
-          style={{borderWidth:1, width:'96%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:50}}
+          style={{borderWidth:1, width:'96%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:10}}
           placeholder="Subject Name"
           onChangeText={this.onNameChanged.bind(this)}
           value={this.props.Name}
         /></View>
         <View style={{flexDirection:'row',justifyContent:"space-between", marginTop:10}}>
         </View>
-        <View style={{marginLeft:180}}>
+        <View>
        <TouchableOpacity  onPress={this.goforword.bind(this)}>
-          <Text style={{fontSize:20, color:"#63B8FF"}}>Next</Text>
+          <Text style={{fontSize:20, alignSelf:'flex-end', marginRight:20, color:"#63B8FF"}}>Next</Text>
           </TouchableOpacity>
           </View>
           </View>

@@ -150,10 +150,10 @@ componentDidMount(){
    
         <View style ={styles.container}>
         <HomeHeader ti="Add Students" navigate={this.props.navigation.goBack}/>
-        <View style={{flexDirection:'column', marginTop:0, height:'11%', backgroundColor: '#E8E8E8'}}>
+        <View style={{flexDirection:'column', marginTop:0, height:'15%', backgroundColor: '#E8E8E8'}}>
         <View>
             <TouchableOpacity  onPress= {this.checkAll.bind(this)} >
-        <Text style={{fontSize:25, fontWeight:'bold', textAlign:'center', marginTop:7, marginBottom:2}}>Select All/Select None</Text>
+        <Text style={{fontSize:20, fontWeight:'bold', textAlign:'center', marginTop:7, marginBottom:2}}>Select All/Select None</Text>
         </TouchableOpacity>
         
         </View>
@@ -181,7 +181,7 @@ componentDidMount(){
     </View>
         </View>
 
-        <View style={{justifyContent: 'flex-start', height: '75%', width:'100%'}}>
+        <View style={{justifyContent: 'flex-start', height: '71%', width:'100%'}}>
         {this.renderButton()}
         
        
