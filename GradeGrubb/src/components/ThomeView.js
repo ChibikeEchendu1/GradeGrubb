@@ -4,7 +4,7 @@ import {ImageButton3,Spinner2} from './index';
 import {connect} from 'react-redux';
 import {chanegepic,SubTinfo,SaveInfo} from '../actions';
 import { AsyncStorage } from "react-native"
-
+import Myimage from '../.././images/p.png';
 
 import {
   TouchableOpacity,
@@ -90,7 +90,7 @@ class ThomeView extends Component {
               return(
                     <Image
                     style={{ height: '90%', width:'70%'}}
-                    source={require('../.././images/p.png')}
+                    source={Myimage}
                     resizeMode = 'contain'
                     />
                 );

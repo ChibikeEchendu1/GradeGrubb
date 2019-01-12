@@ -5,6 +5,7 @@ import {delpro} from '../actions';
 import {connect} from 'react-redux';
 import { AsyncStorage } from "react-native"
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Myimage from '../.././images/p.png';
 
 class  ProfileHome extends React.Component{
 
@@ -24,7 +25,7 @@ class  ProfileHome extends React.Component{
                 return(
                     <Image
                     style={{height: 60, width:60, borderRadius: Platform.OS === 'ios' ? 30 : 50}}
-                    source={require('../.././images/p.png')}
+                    source={Myimage}
                     resizeMode = 'contain'
                     />
                 );

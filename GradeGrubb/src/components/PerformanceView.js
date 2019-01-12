@@ -4,7 +4,7 @@ import {ImageButton2,Spinner2} from './index';
 import {chanegepic,fetchinfo,SaveInfo,SubTinfos} from '../actions';
 import { Container, Content, List, ListItem } from 'native-base';
 import {connect} from 'react-redux';
-
+import Myimage from '../.././images/p.png';
 
 import {
  StyleSheet,
@@ -42,7 +42,7 @@ class PerformanceView extends Component {
           return(
               <Image
               style={{ marginTop:5, height: 120, width:120}}
-              source={require('../.././images/p.png')}
+              source={Myimage}
               resizeMode = 'contain'
               />
           );
