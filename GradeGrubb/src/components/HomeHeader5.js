@@ -12,14 +12,14 @@ const HomeHeader5 = (props) =>{
 
          <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto',marginLeft:20}} onPress={() =>
             props.navigate(props.screen)}> 
-          <Icon name="angle-left" size={40}   color={'#1995ad'} />
+          <Icon name="angle-left" size={40}   color={'white'} />
             <View>
-          <Text style={{fontSize:15, color:"#1995ad"}}>back</Text>
+          <Text style={{fontSize:15, color:"white"}}>back</Text>
           </View>
         </TouchableOpacity> 
 
     <View numberOfLines={1} style={{alignSelf:'center',alignItems:'center',margin:'auto'}}>
-        <Text style={{fontSize:20,fontWeight:'bold', color:'#282828'}}>{props.ti}</Text>
+        <Text style={{fontSize:25,fontWeight:'bold', color:'white'}}>{props.ti}</Text>
         </View>
         <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto', marginRight:20}} onPress={()=>{
 
@@ -43,7 +43,7 @@ const HomeHeader5 = (props) =>{
                             );
                             }
                           }} > 
-         <Text style={{color:'red', fontSize:20}}>Clear</Text>
+         <Text style={{color:'black', fontSize:20}}>Clear</Text>
             <View>
          
           </View>
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '100%',
         height: '13%',
-        backgroundColor: 'white',
+        backgroundColor:'#1995ad',
     
     
     },

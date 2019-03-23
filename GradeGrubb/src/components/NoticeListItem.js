@@ -9,7 +9,7 @@ export default class NoticeListItem extends Component{
     render(){
     return(
         
-        <TouchableOpacity onPress={()=> this.props.item.SubName == "Announcement" ? this.props.nav.navigate("Annoucmentnotice",{item:this.props.item}) : this.props.nav.navigate("SElementnotice",{item:this.props.item, profile:this.props.profiles})} style={styles.listStyle}>
+        <TouchableOpacity onPress={()=> this.props.item.SubName == "Announcement" ? this.props.nav.navigate("ToolsEventnot",{item:this.props.item}) : this.props.nav.navigate("SElementnotice",{item:this.props.item, profile:this.props.profiles})} style={styles.listStyle}>
  
             <View >
             <Text  numberOfLines={1} style={{fontSize:21, fontWeight:'bold', color:'#282828', alignSelf:'center',}}>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         width:'100%',
         //height:'10%',
         borderBottomWidth:1,
-        borderColor:"#C0C0C0"
+        borderColor:"#1995ad"
     }
 
    

@@ -14,7 +14,7 @@ const Header = (props) =>{
         </TouchableOpacity> */}
     
     
-        <Text style={{fontSize: 22,fontWeight:'bold',}}>{props.ti}</Text>
+        <Text style={{fontSize: 26,color:'white',fontWeight:'bold',marginLeft:20}}>{props.ti}</Text>
     </View>
     );
 }
@@ -23,17 +23,18 @@ const Header = (props) =>{
 const styles = StyleSheet.create({
     
     viewStyle: {
-        backgroundColor:'white',
+        backgroundColor:'#1995ad',
       position:Platform.OS === 'ios' ? 'relative' :'relative',
        top: Platform.OS === 'ios' ? 0 :0, 
-      
+       opacity: 0.7,
        // marginBottom:10,
         //paddingTop: 20,
-        flexDirection: 'row',
+        flexDirection: 'column',
         width: '100%',
-        alignItems:'center',
+        alignItems:'flex-start',
         justifyContent:'center',
         height: '13%',
+        
         
         
     },

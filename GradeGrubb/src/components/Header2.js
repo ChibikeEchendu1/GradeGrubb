@@ -23,7 +23,7 @@ const Header2 = (props) =>{
 const styles = StyleSheet.create({
     
     viewStyle: {
-        backgroundColor:'white',
+        backgroundColor:'#1995ad',
         //osition:'absolute',
         top: Platform.OS === 'ios' ? 0 :0, 
         flexDirection: 'row',

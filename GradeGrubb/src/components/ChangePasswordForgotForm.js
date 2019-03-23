@@ -89,7 +89,7 @@ renderButton(){
         <View>
             <LogoHouse2/>
           <View style={{paddingBottom: 40,alignSelf:'center',  alignItems: 'center', width:320}} >   
-            <Text style={{fontSize: 40, alignSelf:'center', textAlign: 'center',}} > Change Password </Text>
+            <Text style={{fontSize: 30, alignSelf:'center', textAlign: 'center',}} > Change Password </Text>
             </View>
 
         
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     flex: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F4F2F3',
+    backgroundColor: 'white',
   },
  
   

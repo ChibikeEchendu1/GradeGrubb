@@ -15,9 +15,10 @@ const styles = StyleSheet.create({
     
     viewStyle: {
         
-        marginBottom: 20,
+        marginBottom: 15,
+        marginTop: 10,
         width: window.width,
-        height: '9%',
+        height: 50,
     },
 
    

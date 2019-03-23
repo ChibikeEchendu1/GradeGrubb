@@ -1,8 +1,8 @@
 //const IP = '192.168.2.48'
-const IP = 'https://www.gradegrubb.com'
+//const IP = 'https://www.gradegrubb.com'
 //const IP = '10.192.79.207' 172.20.10.9
 //const IP = 'http://192.168.0.11/gg/gg' 
-//const IP = 'http://127.0.0.1/gg/gg'
+const IP = 'http://127.0.0.1/gg/gg'
 
 
 import ImagePicker from 'react-native-image-crop-picker'
@@ -490,6 +490,25 @@ name: nname
     });
    }
 };
+
+export const EventFetch = ({valll,nname}) => {
+        return (dispatch) => {
+        dispatch({type: 'Login_user2'});
+        fetch(IP+'/Ap/EventfetchS.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            Id: valll,
+    name: nname
+        }),
+        }).then((response) => response.json()).then(users => {
+           dispatch({type: 'EventFetchDone', payload: users});
+        });
+       }
+    };
 
 
 

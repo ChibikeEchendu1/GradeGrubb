@@ -21,7 +21,7 @@ import {
 class ThomeView extends Component {
     state ={
         teacher:{
-           students: '20need change',
+           students: '20 need change',
            subjects:'13 need change',
            school:'Gold Springs High School',
            
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   container: {
     flex:1,
     alignItems:'center',
-    backgroundColor: '#A1D6E2',
+    backgroundColor: '#FFFFFF',
     justifyContent:'space-between',
     flexDirection:'column',
   },

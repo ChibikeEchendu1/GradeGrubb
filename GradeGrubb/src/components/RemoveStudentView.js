@@ -11,7 +11,7 @@ import {remstuclass2,removstud} from '../actions';
 import {connect} from 'react-redux';
 import {
   StyleSheet,
-  Text,
+  Text,SafeAreaView,
   View,
   ListView,
   
@@ -123,9 +123,9 @@ this.checkAll = this.checkAll.bind(this);
   render() {
     return (
    
-        <View style ={styles.container}>
+        <SafeAreaView style ={styles.container}>
         <HomeHeader ti="Remove Students" navigate={this.props.navigation.goBack}/>
-        <View style={{flexDirection:'column', marginTop:0, height:'15%', backgroundColor: '#fbfaf0'}}>
+        <View style={{flexDirection:'column', marginTop:0, height:'15%', backgroundColor: 'white'}}>
         <View>
             <TouchableOpacity onPress= {this.checkAll.bind(this)}  >
         <Text style={{fontSize:20, fontWeight:'bold', textAlign:'center', marginTop:7, marginBottom:2}}>Select All/Select None</Text>
@@ -160,7 +160,7 @@ this.checkAll = this.checkAll.bind(this);
             </View>
          
           {this.goback()} 
-      </View>
+      </SafeAreaView>
       );
     }
   } 
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#A1D6E2',
+        backgroundColor: 'white',
       }
   });
 

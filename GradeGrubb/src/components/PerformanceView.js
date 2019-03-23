@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     flex:1,
     flexDirection:'column',
     alignItems: 'center',
-    backgroundColor: '#A1D6E2',
+    backgroundColor: 'white',
   },
   ImageStyle:{
     height:Platform.OS === 'ios' ? '50%' :'50%',

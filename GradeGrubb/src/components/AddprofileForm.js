@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import {FormInput,FormButton,Link,Spinner} from './index';
+import {FormInput,FormButton,Link,Spinner,LogoHouse2} from './index';
 import {connect} from 'react-redux';
 import {codeChanged,Addprofilecode} from '../actions';
 import { AsyncStorage } from "react-native"
@@ -104,9 +104,10 @@ renderButton(){
     <SafeAreaView style={styles.container}>
     <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'padding'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
-        <View>
-          <View style={{paddingBottom: 40,  alignItems: 'center', width:330}} >   
-            <Text style={{fontSize: 40, textAlign: 'center',}} > Add Profile  </Text>
+        <View >
+        <LogoHouse2/>
+          <View style={{paddingBottom: 20,paddingTop: 30,  alignItems: 'center', width:330}} >   
+            <Text style={{fontSize: 25, textAlign: 'center',}} > Add Profile  </Text>
             </View>
 
         
@@ -115,7 +116,7 @@ renderButton(){
         <FormInput val={this.props.password} ct={this.onPasswordChanged.bind(this)}  bool = {true} ph = {"Enter code from school"}/>
         </View>
         
-        <View style={{height:'20%'}}>
+        <View style={{height:50}}>
         {this.renderButton()}
         </View>
 
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
     flex: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F4F2F3',
+    backgroundColor: 'white',
   },
  
   

@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 import {
   StyleSheet,
   Text,
-  View,
+  View,SafeAreaView,
   ListView,
   Image,
   
@@ -110,9 +110,9 @@ class SingleElementView extends Component {
   render() {
     return (
    
-        <View style ={styles.container}>
+        <SafeAreaView style ={styles.container}>
         <HomeHeader navigate={this.props.navigation.goBack} ti={this.state.studentname}/>{/* //this.state.studentname}/> */}
-        <View style={{marginTop:0, alignItems:'center',justifyContent:"center",  height:'35%', backgroundColor: '#A1D6E2'}}>
+        <View style={{marginTop:0, alignItems:'center',justifyContent:"center",  height:'35%', backgroundColor: 'white'}}>
         {this.renderImage()}
         <Text style={{fontSize:22, fontWeight:'bold', textAlign:'center'}}>Average</Text>
         <Text style={{fontSize:20, marginBottom:30, fontWeight:'bold', textAlign:'center'}}>{this.props.Av}</Text>
@@ -122,7 +122,7 @@ class SingleElementView extends Component {
         {this.renderButton()}
         </View>
      
-      </View>
+      </SafeAreaView>
       );
     }
   } 
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#F4F2F3',
+        backgroundColor: 'white',
       }
   });
 

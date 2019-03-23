@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {HomeHeader,Spinner2} from './index';
-import {Text, TextInput, StyleSheet,View,TouchableOpacity,TouchableWithoutFeedback,KeyboardAvoidingView,Platform, Keyboard} from 'react-native';
+import {Text, TextInput, StyleSheet,View,SafeAreaView,TouchableOpacity,TouchableWithoutFeedback,KeyboardAvoidingView,Platform, Keyboard} from 'react-native';
 import {NameChangedSub22,numchanged,cn22} from '../actions';
 import {connect} from 'react-redux';
 
@@ -64,7 +64,7 @@ class AddNewView extends Component{
     render(){
     return(
      
-      <View style ={styles.container}>
+      <SafeAreaView style ={styles.container}>
          <HomeHeader navigate={this.props.navigation.goBack} ti="New Element"/>
          <TouchableWithoutFeedback style={{height:'10%'}} onPress={Keyboard.dismiss}><View>
              <Text style={{width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:15}}>
@@ -104,7 +104,7 @@ class AddNewView extends Component{
           </KeyboardAvoidingView>
     {this.renderError()}
     {this.goBack()}
-         </View>  
+         </SafeAreaView>  
        
     );
 };
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
  
     container: {
         flex: 1,
-        backgroundColor: '#A1D6E2',
+        backgroundColor: 'white',
       }
    
 });

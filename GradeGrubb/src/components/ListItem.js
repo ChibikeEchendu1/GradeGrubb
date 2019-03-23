@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         //height:'10%',
         borderBottomWidth:1,
         //backgroundColor:'#fbfaf0',
-        borderColor:"black"
+        borderColor:"#1995ad"
     }
 
    

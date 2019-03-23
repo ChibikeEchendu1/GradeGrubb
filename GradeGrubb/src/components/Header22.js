@@ -23,7 +23,7 @@ const Header22 = (props) =>{
 const styles = StyleSheet.create({
     
     viewStyle: {
-        backgroundColor:'white',
+        backgroundColor:'#1995ad',
         //position:'absolute',
         top: Platform.OS === 'ios' ? 0 :0, 
         //paddingTop: 20,

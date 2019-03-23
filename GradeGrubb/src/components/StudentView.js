@@ -16,6 +16,7 @@ import {
   View,
   ListView,
   Image,
+ 
   TouchableOpacity,
   KeyboardAvoidingView,
   SafeAreaView,
@@ -117,19 +118,19 @@ constructor(props){
     item=this.props.navigation.state.params.Name
     return (
    
-        <View style ={styles.container}>
+        <SafeAreaView style ={styles.container}>
    
                 
-                  <Button style={{ height:'10%', width:'100%', justifyContent:'center', backgroundColor:'#a1d6e2'}} transparent onPress={()=>{this.props.navigation.navigate('EditOptions',{Tid: this.state.Tid,id:this.state.id,Name: this.state.Name, Subname: this.state.name,Room:this.state.room, Sname:this.state.Sname})}}>
+                  <Button style={{ height:'10%', width:'100%', justifyContent:'center', borderBottomWidth:0.5, borderColor:'#DDDDDD',backgroundColor:'white'}} transparent onPress={()=>{this.props.navigation.navigate('EditOptions',{Tid: this.state.Tid,id:this.state.id,Name: this.state.Name, Subname: this.state.name,Room:this.state.room, Sname:this.state.Sname})}}>
                 
-                  <Text style={{fontSize:25, color:'white'}}>Edit</Text>
+                  <Text style={{fontSize:25, color:'#1995ad'}}>Edit</Text>
                
                   </Button>
              
         <View style={{height:"89%"}}> 
         {this.renderButton()}
           </View>
-      </View>
+      </SafeAreaView>
       );
     }
   } 
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#fbfaf0',
+        backgroundColor: 'white',
       }
   })
 

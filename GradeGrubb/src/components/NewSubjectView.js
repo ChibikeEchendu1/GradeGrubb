@@ -72,17 +72,14 @@ class NewSubjectView extends Component{
     return(
      
       <SafeAreaView style={styles.container}>
+      <Header ti="New Subject"/>
       <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'position'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View>
-         <Header ti="New Subject"/>
+         
          <View>
-             <Text style={{width:'96%',alignSelf:"center", padding:12, marginTop:10,fontSize:20}}>
-             Follow the simple steps to create a subject for the school. The steps range from naming the subject to adding the involved students 
-
-           {/*  {this.state.item.name}, {this.state.item.type}, {this.state.item.school}, {this.state.item.id}  */}
-              </Text>
-              <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:10,fontSize:20}}>Start by giving the subject a name</Text>
+             
+              <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:'35%',fontSize:20}}>Start by giving the subject a name</Text>
              </View>
          <View>
          <TextInput
@@ -116,7 +113,7 @@ const styles = StyleSheet.create({
  
     container: {
         flex: 1,
-        backgroundColor: '#A1D6E2',
+        backgroundColor: 'white',
       }
    
 });

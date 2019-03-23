@@ -76,11 +76,11 @@ renderButton(){
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
             <LogoHouse2/>
-          <View style={{paddingBottom: 40,  alignItems: 'center'}} >   
-            <Text style={{fontSize: 40, textAlign: 'center',}} > Forgot Password? </Text>
+          <View style={{paddingBottom: 20,  alignItems: 'center'}} >   
+            <Text style={{fontSize: 27,marginTop: 20, textAlign: 'center',}} > Forgot Password? </Text>
             </View>
 
-        <View style ={{height: '16%',marginBottom: 20,alignItems:'center' }} >
+        <View style ={{height: 50,marginBottom: 20,alignItems:'center' }} >
         <FormInput val={this.props.email} ct={this.onEmailChanged.bind(this)}  bool = {false} ph = {"Email"}/>
         </View>
         

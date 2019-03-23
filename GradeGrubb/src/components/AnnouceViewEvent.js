@@ -5,7 +5,7 @@
  */
 import _ from 'lodash';
 import React, { Component } from 'react';
-import {HomeHeader,Spinner} from './index';
+import {Header,Spinner} from './index';
 import Annouc from './Annouc';
 import {AnnoucFetch} from '../actions';
 import {connect} from 'react-redux';
@@ -21,16 +21,13 @@ import {
 
 
 
-class AnnouceViewnotice extends Component {
+class AnnouceViewEvent extends Component {
   constructor(props){
  
     super(props);
 
   this.state = {
     item:'',
-    name:  this.props.navigation.state.params.item.School,
-      
-      sid:  this.props.navigation.state.params.item.StudentId,
     //valll: 18,
     //nname: 'Trinity'
     }
@@ -49,9 +46,9 @@ class AnnouceViewnotice extends Component {
    componentDidMount(){
     AsyncStorage.getItem("pro").then((value) => {
       this.setState({"item":JSON.parse(value)});
-      let valll = this.state.sid;
-      let nname = this.state.name;
-      console.log(valll,nname);
+      let valll = this.state.item.id;
+      let nname = this.state.item.school;
+      //console.log(valll,nname);
       
       this.props.AnnoucFetch({valll,nname});
      
@@ -88,7 +85,7 @@ class AnnouceViewnotice extends Component {
     return (
    
     <SafeAreaView style={styles.container}>
-        <HomeHeader ti='Announcements' navigate={this.props.navigation.goBack} boo=""/>
+        
         <View style={{justifyContent: 'flex-start', height: '86%', width:'100%'}}>
         {this.renderButton()}
         </View>
@@ -124,7 +121,7 @@ const mapStateToProps = state =>{
 return {subjects,loading:state.pro.loading1};
 };
 
-export default connect(mapStateToProps,{AnnoucFetch})(AnnouceViewnotice);
+export default connect(mapStateToProps,{AnnoucFetch})(AnnouceViewEvent);
 
 
 

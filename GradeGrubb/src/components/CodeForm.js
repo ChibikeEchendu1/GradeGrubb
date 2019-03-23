@@ -78,12 +78,12 @@ renderButton(){
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
             <LogoHouse2/>
-          <View style={{paddingBottom: 40,  alignItems: 'center', width:320}} >   
-            <Text style={{fontSize: 20,alignSelf:'center', textAlign: 'center',}} > Forgot Password? </Text>
-            <Text style={{fontSize: 35,marginTop:20,alignSelf:'center', textAlign: 'center'}}> A confirmation code has been sent to your email.</Text>
+          <View style={{paddingBottom: 25,  alignItems: 'center', width:320}} >   
+           
+            <Text style={{fontSize: 35,marginTop:20,alignSelf:'center', textAlign: 'center'}}> We sent you a code.</Text>
             </View>
 
-        <View style ={{height: '15%',marginBottom: 20,}} >
+        <View style ={{height: 50,marginBottom: 20,}} >
         <FormInput val={this.props.Name} ct={this.onNameChanged.bind(this)}  bool = {false} ph = {"Code"}/>
         </View>
         
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     flex: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F4F2F3',
+    backgroundColor: 'white',
   },
  
   

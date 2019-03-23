@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 import {
   StyleSheet,
   Text,
-  View,
+  View,SafeAreaView,
   ListView,
   TouchableOpacity,
   AsyncStorage,
@@ -148,9 +148,9 @@ componentDidMount(){
   render() {
     return (
    
-        <View style ={styles.container}>
+        <SafeAreaView style ={styles.container}>
         <HomeHeader ti="Add Students" navigate={this.props.navigation.goBack}/>
-        <View style={{flexDirection:'column', marginTop:0, height:'15%', backgroundColor: '#fbfaf0'}}>
+        <View style={{flexDirection:'column', marginTop:0, height:'15%', backgroundColor: 'white'}}>
         <View>
             <TouchableOpacity  onPress= {this.checkAll.bind(this)} >
         <Text style={{fontSize:20, fontWeight:'bold', textAlign:'center', marginTop:7, marginBottom:2}}>Select All/Select None</Text>
@@ -190,7 +190,7 @@ componentDidMount(){
             </View>
            
             {this.goback()}    
-      </View>
+      </SafeAreaView>
       );
     }
   } 
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#A1D6E2',
+        backgroundColor: 'white',
       }
   });
 

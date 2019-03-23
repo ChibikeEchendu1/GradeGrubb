@@ -9,14 +9,14 @@ const HomeHeader = (props) =>{
     
   <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto',marginLeft:20}} onPress={() =>
             props.navigate(props.boo)}> 
-          <Icon name="angle-left" size={40}   color={'#1995ad'} />
+          <Icon name="angle-left" size={40}   color={"white"} />
             <View>
-          <Text style={{fontSize:15, color:"#1995ad"}}>back</Text>
+          <Text style={{fontSize:15, color:"white"}}>back</Text>
           </View>
         </TouchableOpacity> 
 
     <View numberOfLines={1} style={{alignSelf:'center',alignItems:'center',position:'absolute',left: 0, right: 0,marginTop:'8%', marginLeft:'10%' , marginRight:'10%',top: 0,}}>
-        <Text style={{fontSize:20,fontWeight:'bold', color:'#282828', alignSelf:'center'}}>{props.ti}</Text>
+        <Text style={{fontSize:25,fontWeight:'bold', color:"white", alignSelf:'center'}}>{props.ti}</Text>
         </View>
        
         
@@ -29,14 +29,14 @@ const styles = StyleSheet.create({
     
     viewStyle: {
         opacity: 0.7,
-        top: Platform.OS === 'ios' ? 5 :0, 
+        top: Platform.OS === 'ios' ? 0 :0, 
         alignSelf: 'center',
         alignItems:'center',
        justifyContent:'space-between',
         flexDirection: 'row',
         width: '100%',
         height: '13%',
-        backgroundColor: 'white',
+        backgroundColor: '#1995ad',
     
     
     },

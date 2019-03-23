@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { StackNavigator, TabNavigator, addNavigationHelpers, } from 'react-navigation';
 import Login from './src/pages/Login';
 import Tools from './src/pages/Tools';
+import ToolsEvent from './src/pages/ToolsEvent';
 import SignUp from './src/pages/SignUp';
 import Splash from './src/pages/Splash';
 import Profile from './src/pages/profile';
@@ -11,6 +12,7 @@ import FooterTab from './src/components/FooterTab';
 import FooterTab2 from './src/components/FooterTab2';
 import Performance from './src/pages/Performance';
 import Elements from './src/pages/Elements';
+import ToolsEventnot from  './src/pages/ToolsEventnot';
 import Students from './src/pages/Students';
 import Thome from './src/pages/Thome';
 import SettingsOption from './src/pages/SettingsOption';
@@ -78,6 +80,7 @@ import TeacherList from './src/pages/TeacherList'
   headerLeft:null
 },},
 Annoucmentnotice:{ screen: Annoucmentnotice},
+ToolsEventnot:{screen:ToolsEventnot},
 SElementnotice:{screen:SElementnotice},
   ChangePassword:{screen: ChangePassword }, 
   Addprofile:{screen:Addprofile},
@@ -160,7 +163,11 @@ SElementnotice:{screen:SElementnotice},
       Annoucment:{ screen: Annoucment, navigationOptions: {
         gesturesEnabled: false,
         headerLeft:null
-    },}
+    },},
+    ToolsEvent:{ screen: ToolsEvent, navigationOptions: {
+      gesturesEnabled: false,
+      headerLeft:null
+  },}
     },
     {headerMode: 'none'})}
   

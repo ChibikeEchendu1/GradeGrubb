@@ -14,22 +14,27 @@ const HeaderSet = (props) =>{
     return(
     <View style={styles.viewStyle}>
 
-         <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto'}}  onPress={() =>
+
+<View style={{alignSelf:'center',alignItems:'center',marginLeft:20}}>
+        <Text numberOfLines={1} style={{fontSize:26,color:'white', fontWeight:'bold'}}>{props.ti}</Text>
+        </View>
+
+        <View style={{flexDirection:'row'}}>
+         <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',marginRight:20}}  onPress={() =>
             props.nav.navigate("SettingsOption", {per:props.per})}> 
-         <Icon name="cogs" size={25}  style={{ marginLeft:20}}
-            color={'#1995ad'}
+         <Icon name="cogs" size={25} color={'white'} style={{ marginLeft:20}}
+            
         />
           
         </TouchableOpacity> 
 
-    <View style={{alignSelf:'center',alignItems:'center',margin:'auto'}}>
-        <Text numberOfLines={1} style={{fontSize:20,fontWeight:'bold'}}>{props.ti}</Text>
-        </View>
-        <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto'}}  onPress={() =>
+    
+        <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',marginLeft:'auto'}}  onPress={() =>
             props.nav.navigate("Notice", {per:props.per,pro:props.pro})}> 
-          <Icon name="bell" size={25} color={props.active} style={{ marginRight:20}}/>
+          <Icon name="bell" size={25} color={props.active} style={{ marginRight:30}}/>
            
         </TouchableOpacity>  
+        </View>
         {/*  <Button style={{ alignSelf:'center',alignItems:'center',margin:'auto'}} onPress={() =>
             props.nav("Notice", {per:props.per,pro:props.pro})}>
              
@@ -54,7 +59,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '100%',
         height: '13%',
-        backgroundColor: 'white',
+        backgroundColor:'#1995ad',
     
     
     },

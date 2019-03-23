@@ -123,16 +123,14 @@ class  ProfileHome extends React.Component{
             
             
                  {this.renderImage()}
-                <View  style={{width:"60%"}}>
-                <Text numberOfLines={1} style={{fontWeight:'bold', fontSize:20}}>
-                    {this.props.item.Name}
-                </Text>
+                <View  style={{alignSelf:"flex-end", width:"60%"}}>
+                
                 <Text numberOfLines={1} style={{fontSize:17}}>
                     {this.props.item.Type} 
                 </Text>
                 
-                <Text numberOfLines={1} style={{fontSize:17}}>
-                    {this.props.item.School}
+                <Text numberOfLines={1} style={{fontWeight:'bold', fontSize:20}}>
+                    {this.props.item.Name}
                 </Text>
               
             </View>
@@ -151,10 +149,12 @@ class  ProfileHome extends React.Component{
             flexDirection:'row',
             justifyContent:'space-between',
             width:'100%',
-            backgroundColor: '#A1D6E2',
+            //alignItems:"center",
+            alignSelf:"center",
+            backgroundColor: 'white',// '#A1D6E2',
             
             //marginBottom:10,
-            borderBottomWidth:1,
+            borderBottomWidth:0.8,
             borderColor:"#D3D3D3"
 
         }

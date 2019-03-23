@@ -86,9 +86,9 @@ class NewStudentView extends Component {
   }
 
   getProfiles(){
-    //console.log(this.props.profiles);
-    
-    return  this.props.profiles;
+    //console.log();
+    return this.props.profiles
+    //return  this.state.elements;
   }
 
 
@@ -111,7 +111,7 @@ class NewStudentView extends Component {
        
        
        
-        <View style={{justifyContent: 'flex-start', height: '85%',marginTop:'3%', width:'100%'}}>
+        <View style={{justifyContent: 'flex-start', height: '82%',marginTop:'6%', width:'100%'}}>
         {this.renderButton()}
         </View>
         
@@ -126,7 +126,7 @@ class NewStudentView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#A1D6E2',
+    backgroundColor: 'white',
   },
 
  

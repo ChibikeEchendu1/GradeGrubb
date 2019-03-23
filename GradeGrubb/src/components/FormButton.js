@@ -5,7 +5,7 @@ const FormButton = (props) =>{
 
     return(
         <TouchableOpacity onPress={props.press} style = {styles.viewStyle}>
-        <Text style = {{color: '#ffffff',fontSize: 27}}>{props.val}</Text>
+        <Text style = {{color: '#ffffff',fontSize: 25}}>{props.val}</Text>
         </TouchableOpacity>
     );
 };
@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
         opacity: 0.9,
         alignSelf: 'center',
         alignItems:'center',
+        
         justifyContent: 'center',
         flexDirection: 'row',
         width: '50%',

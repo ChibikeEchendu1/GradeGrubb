@@ -23,3 +23,4 @@ export * from './Spinner2';
 export * from './ImageButton';
 export * from './ImageButton2';
 export * from './ImageButton3';
+export * from './Header22'

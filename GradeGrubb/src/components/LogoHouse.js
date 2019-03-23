@@ -21,10 +21,10 @@ const styles = StyleSheet.create({
     
     viewStyle: {
         opacity: 0.9,
-        marginBottom: 50,
+        marginBottom: '5%',
         flexDirection: 'row',
         width: '80%',
-        height: '25%',
+        height: '30%',
         alignSelf: 'center',
     },
 

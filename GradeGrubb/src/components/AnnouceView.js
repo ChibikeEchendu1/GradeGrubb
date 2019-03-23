@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 import { AsyncStorage } from "react-native"
 import {
   StyleSheet,
- 
+  SafeAreaView,
   View,
   ListView,
   
@@ -84,14 +84,14 @@ class AnnouceView extends Component {
   
     return (
    
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
         <Header ti='Announcements' />
         <View style={{justifyContent: 'flex-start', height: '86%', width:'100%'}}>
         {this.renderButton()}
         </View>
     
       
-      </View>
+      </SafeAreaView>
      
        
       

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {FormInput,Card,LogoHouse,FormButton,Link,Spinner} from './index';
-import {Text,StyleSheet,View,TouchableOpacity} from 'react-native';
+import {Text,StyleSheet,View,TouchableOpacity,SafeAreaView} from 'react-native';
 import {HomeHeader} from './index';
 
 export default class EditView extends Component{
@@ -20,7 +20,7 @@ export default class EditView extends Component{
   }
     render(){
     return(
-        <View style ={styles.container}>
+        <SafeAreaView style ={styles.container}>
         <HomeHeader ti="Edit Options" navigate={this.props.navigation.goBack}/>
         <View style={{marginTop:28}}>
         <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
@@ -51,14 +51,14 @@ export default class EditView extends Component{
             </TouchableOpacity>
             </View>
         </View>
-         </View>
+         </SafeAreaView>
     );
 };
 }
 const styles = StyleSheet.create({  
     container: {
         flex: 1,
-        backgroundColor: '#A1D6E2',
+        backgroundColor: 'white',
       }
    
 });

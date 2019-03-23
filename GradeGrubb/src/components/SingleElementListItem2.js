@@ -107,8 +107,8 @@ const styles = StyleSheet.create({
         width:'100%',
         //height:'10%',
         borderTopWidth:0.5,
-        backgroundColor: '#fbfaf0',
-        borderColor:"black"
+        backgroundColor: 'white',
+        borderColor:"#1995ad"
     }
 
    

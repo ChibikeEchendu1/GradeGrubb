@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { HomeHeader, Spinner2} from './index';
-import {Text, TextInput, StyleSheet,View,TouchableOpacity,TouchableWithoutFeedback,KeyboardAvoidingView, Keyboard, Platform} from 'react-native';
+import {Text, TextInput,SafeAreaView, StyleSheet,View,TouchableOpacity,TouchableWithoutFeedback,KeyboardAvoidingView, Keyboard, Platform} from 'react-native';
 import {NameChangedSub,cn} from '../actions';
 import {connect} from 'react-redux';
 class NewNameView extends Component{
@@ -53,7 +53,7 @@ class NewNameView extends Component{
     render(){
     return(
      
-      <View style ={styles.container}>
+      <SafeAreaView style ={styles.container}>
          <HomeHeader ti="New Name" navigate={this.props.navigation.goBack}/>
          <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'padding' : 'height'}>
          <TextInput
@@ -81,7 +81,7 @@ class NewNameView extends Component{
         </View>
         </TouchableWithoutFeedback>
 
-         </View>  
+         </SafeAreaView>  
        
     );
 };
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
  
     container: {
         flex: 1,
-        backgroundColor: '#A1D6E2',
+        backgroundColor: 'white',
       }
    
 });

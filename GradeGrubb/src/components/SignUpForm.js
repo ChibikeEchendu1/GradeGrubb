@@ -86,9 +86,7 @@ renderButton(){
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
             <LogoHouse2/>
-          <View style={{paddingBottom: 20,  alignItems: 'center', width:'90%'}} >   
-            <Text style={{fontSize: 40, textAlign: 'center',}} > Sign Up </Text>
-            </View>
+          
         <Card2stan>
         <FormInput val={this.props.Name} ct={this.onNameChanged.bind(this)}  bool = {false} ph = {"Name"}/>
         </Card2stan>
@@ -129,7 +127,7 @@ const styles = StyleSheet.create({
     flex: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F4F2F3',
+    backgroundColor: 'white',
   },
  
   

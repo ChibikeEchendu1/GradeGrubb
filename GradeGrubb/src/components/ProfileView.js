@@ -130,8 +130,8 @@ constructor(props){
     return (
     
     <SafeAreaView style={styles.container}>
-        <HeaderSet ti='Home' per = {this.state.vall} active ={(this.props.redup == 1) ? 'red' : 'black'} pro={this.props.profiles}   nav={this.props.navigation}/>
-        <View style={{justifyContent: 'flex-start', height: '74%', width:'100%'}}>
+        <HeaderSet ti='Home' per = {this.state.vall} active ={(this.props.redup == 1) ? 'red' : 'white'} pro={this.props.profiles}   nav={this.props.navigation}/>
+        <View style={{justifyContent: 'flex-start', height: '69%',marginTop:'5%', width:'100%'}}>
         {this.renderButton()}
         </View>
           
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   
-    backgroundColor: '#F4F2F3',
+    backgroundColor: '#FFFFFF',
   },
 
  

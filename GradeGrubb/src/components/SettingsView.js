@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import RNRestart from 'react-native-restart';
-import {Text,StyleSheet,View,TouchableOpacity,Alert,AsyncStorage} from 'react-native';
+import {Text,StyleSheet,View,SafeAreaView,TouchableOpacity,Alert,AsyncStorage} from 'react-native';
 import {HomeHeader,Spinner2} from './index';
 import {connect} from 'react-redux';
 import {delacoun,delacoun2} from '../actions';
@@ -43,7 +43,7 @@ class SettingsView extends Component{
   }
     render(){
     return(
-        <View style ={styles.container}>
+        <SafeAreaView style ={styles.container}>
         <HomeHeader ti="Settings" navigate={this.props.navigation.goBack}/>
         <View style={{marginTop:100}}>
        
@@ -79,14 +79,14 @@ class SettingsView extends Component{
             </View>
         </View>
       
-         </View>
+         </SafeAreaView>
     );
 };
 }
 const styles = StyleSheet.create({  
     container: {
         flex: 1,
-        backgroundColor: '#F4F2F3',
+        backgroundColor: 'white',
       }
    
 });

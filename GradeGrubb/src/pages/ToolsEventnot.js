@@ -1,24 +1,18 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import ProfileView from '.././components/ProfileView';
+import ToolsViewEventnotic from '.././components/ToolsViewEventnotic';
 import {Provider} from 'react-redux';
 import{createStore, applyMiddleware} from 'redux';
 import ReduxThunk from 'redux-thunk'
 import reducers from '../reducers'
 
 import {
-  StyleSheet,BackHandler
+  StyleSheet,View,BackHandler
 } from 'react-native';
 
 
 
 
-export default class Profile extends Component {
+export default class ToolsEventnot extends Component {
 
   componentWillMount(){ 
     BackHandler.addEventListener('hardwareBackPress',function(){
@@ -27,11 +21,13 @@ export default class Profile extends Component {
   }
   
   render() {
-  const {navigation} = this.props;
+    const {navigation} = this.props
     return (
-      <Provider style={styles.container} store={createStore(reducers, {},applyMiddleware(ReduxThunk))}>
-        <ProfileView  navigation={navigation}/>
+
+      <Provider store={createStore(reducers,{},applyMiddleware(ReduxThunk))}>
+        <ToolsViewEventnotic navigation={navigation}/>
         </Provider>
+ 
      
     );
   }
@@ -42,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F4F2F3',
   },
  
   

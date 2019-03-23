@@ -9,7 +9,7 @@ import {Header,Spinner,HomeHeader5} from './index';
 import NoticeListItem from './NoticeListItem';
 import {fetchNotice,RemoveNotif} from '../actions';//notifFetch
 import {connect} from 'react-redux';
-import { AsyncStorage,Text } from "react-native"
+import { AsyncStorage,SafeAreaView,Text } from "react-native"
 import {
   StyleSheet,
  
@@ -136,13 +136,13 @@ class NoticeView extends Component {
   
     return (
    
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
     
         <HomeHeader5 press={this.onPasswordChanged.bind(this)}  ti='Notifications' navigate={this.props.navigation.navigate}  screen={"Profile"} ntf={this.state.ntf}/>
         {this.renderButton()}
         
         {this.goback()}
-        </View>
+        </SafeAreaView>
     
     );
   }
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F4F2F3',
+    backgroundColor: 'white',
     width:'100%'
   },
 

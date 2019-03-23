@@ -4,6 +4,7 @@ import { StackNavigator, TabNavigator, addNavigationHelpers, } from 'react-navig
 import Login from './src/pages/Login';
 import SignUp from './src/pages/SignUp';
 import Tools from './src/pages/Tools';
+import ToolsEvent from './src/pages/ToolsEvent';
 import Splash from './src/pages/Splash';
 import Profile from './src/pages/profile';
 import FooterTab from './src/components/FooterTab';
@@ -34,6 +35,7 @@ import Annoucment from './src/pages/Annoucment';
 import Annoucmentnotice from './src/pages/Annoucmentnotice'
 import TsubjectS from './src/pages/TsubjectS';
 import AddNew from './src/pages/AddNew'
+import ToolsEventnot from  './src/pages/ToolsEventnot'
 import ChangePassword from './src/pages/ChangePassword';
 import ChangePasswordForgot from './src/pages/ChangePasswordForgot'
 import ForgotPassword from './src/pages/ForgotPassword'
@@ -59,6 +61,7 @@ import SElementnotice from './src/pages/SElementnotice'
     headerLeft:null
 },},
   Annoucmentnotice:{ screen: Annoucmentnotice},
+  ToolsEventnot:{screen:ToolsEventnot},
   SElementnotice:{screen:SElementnotice},
   ChangePassword:{screen: ChangePassword }, 
   Addprofile:{screen:Addprofile},
@@ -149,7 +152,11 @@ import SElementnotice from './src/pages/SElementnotice'
       Annoucment:{ screen: Annoucment, navigationOptions: {
         gesturesEnabled: false,
         headerLeft:null
-    },}
+    },},
+    ToolsEvent:{ screen: ToolsEvent, navigationOptions: {
+      gesturesEnabled: false,
+      headerLeft:null
+  },}
     },
     {headerMode: 'none'})}
   

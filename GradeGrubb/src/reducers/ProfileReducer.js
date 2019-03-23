@@ -110,7 +110,10 @@ export default (state = INITIAL_STATE , action) => {
         
     case 'AnnoFetchDone':
         return {...state, Anno: action.payload, scores: action.payload.Grades, loading1: false};
-        
+    
+    case 'EventFetchDone':
+        return {...state, eve: action.payload, scores: action.payload.Grades, loading1: false};
+          
         
         
     case 'markFetchDonexx':

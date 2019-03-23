@@ -28,15 +28,15 @@ export default class  NewStudentListItem extends React.Component{
             alignSelf:"center",
             alignItems:"center",
             marginBottom:8,
-            borderWidth:1,
+            //borderWidth:1,
             height:55,
            // borderRadius:50,
-            backgroundColor:"#fbfaf0",
+            backgroundColor:"white",
             justifyContent:'space-between',
             width:'96%',
             //marginBottom:10,
-            //borderBottomWidth:1,
-            borderColor:"#D3D3D3",
+            borderBottomWidth:1,
+            borderColor:"#1995ad",
             
 
         }

@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 import { AsyncStorage,Platform } from "react-native"
 import {
   StyleSheet,
- 
+  SafeAreaView,
   View,
   ListView,
  
@@ -113,22 +113,22 @@ class TsubjectView extends Component {
      return this.props.navigate;
    }
  
-   renderRow(item){
-    return <SubjectList School={this.state.item.school} Tid = {this.state.item.id} item={item} nav={this.state.nav} />
+   renderRow(item,sectionID, rowID){
+    return <SubjectList num ={rowID} School={this.state.item.school} Tid = {this.state.item.id} item={item} nav={this.state.nav} />
    }
 
   render() {
    // const{item}=this.props.navigation.state.params
     return (
    
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
         <Header ti="Subjects" />
         <View style={{justifyContent: 'flex-start',  height:Platform.OS === 'ios' ? '87%' :'87%', width:'100%'}}>
         {
           this.renderButton()
         }
         </View>
-      </View>
+      </SafeAreaView>
      
        
       
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F4F2F3',
+    backgroundColor: 'white',
   },
 
  

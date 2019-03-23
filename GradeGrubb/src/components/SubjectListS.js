@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet,TouchableOpacity} from 'react-native'
+import {Text, StyleSheet,TouchableOpacity,View} from 'react-native'
 import { Card, CardItem,  Body } from "native-base";
 
 export default class  SubjectListS extends React.Component{
@@ -9,17 +9,19 @@ export default class  SubjectListS extends React.Component{
        
          render(){
         return(
-            <TouchableOpacity    onPress={() =>
-                this.props.nav.navigate("Element", {item:this.props.item,Image:this.props.Image, School:this.props.School, Tid:this.props.Tid})}>
+            <TouchableOpacity    onPress={() => this.props.nav.navigate("Element", {item:this.props.item,Image:this.props.Image, School:this.props.School, Tid:this.props.Tid})}>
                   <Card>
-            <CardItem header bordered style={{flexDirection:'column', width:'100%',justifyContent:'center'}}>
-              <Text style={{ color:'#1995ad',textAlign:'center',alignSelf:'center',fontSize:18,fontWeight:'bold'}}>{this.props.item.Name}</Text>
+            <CardItem header bordered style={{flexDirection:'row', width:'100%',justifyContent:'flex-start'}}>
+            <View style={{borderWidth:0.3,borderColor:'#1995ad', borderRadius:50,width:30,height:30,alignItems:'center', justifyContent:'center', backgroundColor:'#1995ad'}}>
+            <Text style={{ color:'white',textAlign:'center',alignSelf:'center',fontSize:18,fontWeight:'bold'}}>{this.props.num + 1}</Text>
+            </View>
+              <Text style={{ color:'#1995ad',textAlign:'center',alignSelf:'center',fontSize:18,marginLeft:20,fontWeight:'bold'}}>{this.props.item.Name}</Text>
             </CardItem>
             <CardItem bordered >
               <Body>
               <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
                     Class Size: {this.props.item.Size}
-                </Text>
+              </Text>
                 <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
                     My Average: {this.props.item.Average}% 
                 </Text>

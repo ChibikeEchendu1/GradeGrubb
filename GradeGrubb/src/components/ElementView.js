@@ -14,6 +14,7 @@ import {
   StyleSheet,
   Text,
   View,
+  SafeAreaView,
   ListView,
   Image,
   TouchableOpacity,
@@ -113,12 +114,12 @@ class ElementView extends Component {
   render() {
     return (
    
-        <View style ={styles.container}>
+        <SafeAreaView style ={styles.container}>
           
                 
-                  <Button style={{ height:'10%', width:'100%', justifyContent:'center', backgroundColor:'#a1d6e2'}} onPress={()=>{this.props.navigation.navigate("AddNew",{Tid: this.state.Tid,id: this.state.id,Subname: this.state.name, Sname:this.state.Sname,Name:this.state.Name ,Room:this.state.Room})}}>
+                  <Button style={{ height:'10%', width:'100%', justifyContent:'center',borderBottomWidth:0.5,borderColor:'#DDDDDD', backgroundColor:'white'}} onPress={()=>{this.props.navigation.navigate("AddNew",{Tid: this.state.Tid,id: this.state.id,Subname: this.state.name, Sname:this.state.Sname,Name:this.state.Name ,Room:this.state.Room})}}>
                  
-                  <Text style={{fontSize:25, color:'white'}}>Add New</Text>
+                  <Text style={{fontSize:25, color:'#1995ad'}}>Add New</Text>
                 
                   </Button>
               
@@ -127,7 +128,7 @@ class ElementView extends Component {
                 {this.renderButton()}
           </View>
             
-      </View>
+      </SafeAreaView>
       );
     }
   } 
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#fbfaf0',
+        backgroundColor: 'white',
       }
   });
 

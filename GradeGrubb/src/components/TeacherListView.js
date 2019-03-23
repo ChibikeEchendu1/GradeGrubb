@@ -13,7 +13,7 @@ import { AsyncStorage } from "react-native"
 import {
   StyleSheet,
   Text,
-  View,
+  View,SafeAreaView,
   Image,
   ListView,TouchableOpacity
   
@@ -146,10 +146,10 @@ class TeacherListView extends Component {
   render() {
       //const {goBack} = this.props.navigation;
     return (
-    <View style ={styles.container}>
+    <SafeAreaView style ={styles.container}>
    
       <HomeHeader ti="Teacher List" navigate={this.props.navigation.goBack}/>
-     <View style={{borderBottomWidth:1, height:'35%', backgroundColor: '#A1D6E2'}}>
+     <View style={{borderBottomWidth:1, height:'35%', backgroundColor: 'white' ,borderColor:'#AAAAAA'}}>
             
             <TouchableOpacity onPress={this.onButtonPress.bind(this)} style={{flexDirection:'row', alignSelf:'center', marginTop:'5%',alignItems:'center',margin:'auto', justifyContent:'center',  height: '50%', width:'70%'}}>
         
@@ -167,7 +167,7 @@ class TeacherListView extends Component {
         <Text style={{fontSize:25,marginTop:3, fontWeight:'bold', textAlign:'center'}}>{this.props.navigation.state.params.item.Name}</Text>
         </View>
         
-        <View style={{alignItems:'center', backgroundColor:'#fbfaf0',borderBottomWidth:1,}}>
+        <View style={{alignItems:'center', backgroundColor:'#DDDDDD',borderBottomWidth:1, borderColor:'#AAAAAA'}}>
             <Text style={{fontSize:20, fontWeight:'bold'}}>
                 Teachers
             </Text>
@@ -176,7 +176,7 @@ class TeacherListView extends Component {
        {this.renderButton()}
        {this.goBackk()}
        
-    </View>
+    </SafeAreaView>
 
     );
   }
@@ -185,7 +185,7 @@ class TeacherListView extends Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#F4F2F3',
+      backgroundColor: 'white',
     }
 });
 

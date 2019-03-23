@@ -47,7 +47,7 @@ constructor(props){
     item=this.props.navigation.state.params.Name
     return (
    
-        <View style ={styles.container}>
+        <SafeAreaView style ={styles.container}>
         <HomeHeader ti={item} boo={"Tsubject"} navigate={this.props.navigation.navigate}/>
    
           <Tabs>
@@ -59,7 +59,7 @@ constructor(props){
           </Tab>
           </Tabs>
         
-      </View>
+      </SafeAreaView>
       );
     }
   } 
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#F4F2F3',
+        backgroundColor: 'white',
       }
   })
 

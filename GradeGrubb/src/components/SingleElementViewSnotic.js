@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 import {
   StyleSheet,
   Text,
-  View,
+  View,SafeAreaView,
   ListView,
   Image,
   
@@ -118,9 +118,9 @@ this.setState({"Image":data});
   render() {
     return (
    
-        <View style ={styles.container}>
+        <SafeAreaView style ={styles.container}>
         <HomeHeader navigate={this.props.navigation.goBack} ti={this.state.studentname} boo=""/>{/* //this.state.studentname}/> */}
-        <View style={{marginTop:0, alignItems:'center', justifyContent:'center',  height:'30%', backgroundColor: '#A1D6E2'}}>
+        <View style={{marginTop:0, alignItems:'center', justifyContent:'center',  height:'30%', backgroundColor: 'white'}}>
         {this.renderImage()}
         <Text style={{fontSize:18, fontWeight:'bold',marginTop:5, textAlign:'center'}}>Average</Text>
         <Text style={{fontSize:16, marginBottom:30, fontWeight:'bold', textAlign:'center'}}>{this.props.Av}</Text>
@@ -130,7 +130,7 @@ this.setState({"Image":data});
         {this.renderButton()}
         </View>
      
-      </View>
+      </SafeAreaView>
       );
     }
   } 
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#F4F2F3',
+        backgroundColor: 'white',
       }
   });
 

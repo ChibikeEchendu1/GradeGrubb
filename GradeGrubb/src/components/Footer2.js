@@ -1,16 +1,14 @@
 import React from 'react';
 import {View, Text, Image,StyleSheet, TouchableOpacity} from 'react-native'
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 const Footer2 = () =>{
 
     return(
     <View style={styles.viewStyle}>
        <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Performance")}> 
-         <Image style={{height: '50%',marginTop:7}}
-            source={require('../.././images/plus.png')}
-            resizeMode = 'contain'/>
+       <Icon name="plus-circle" size={30} style={{alignSelf: 'center'}}/>
             <View>
-          <Text style={{fontSize:20}}>Add Profile</Text>
+          <Text style={{fontSize:15,color:'#282828'}}>Add Profile</Text>
           </View>
         </TouchableOpacity>
 
