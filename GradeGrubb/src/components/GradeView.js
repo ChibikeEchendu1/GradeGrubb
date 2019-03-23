@@ -135,7 +135,7 @@ class GradeView extends Component {
         
         <TouchableOpacity style={{alignItems:"flex-end",alignSelf:'flex-end'}} onPress={this.onButtonPress.bind(this)}>
         <View style={{alignItems:"flex-end", padding:5, marginRight:25}}>
-        <Text style={{fontSize:18, fontWeight:'bold',marginTop:10, color:"#1995ad"}}>Grade</Text>
+        <Text style={{fontSize:18, fontWeight:'bold',marginTop:10, color:"#1995ad"}}>Submit</Text>
         </View>
         </TouchableOpacity>
        </View>

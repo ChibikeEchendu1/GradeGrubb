@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {Text, TextInput, StyleSheet,View} from 'react-native';
+import {Text, TextInput,Platform, StyleSheet,View} from 'react-native';
 import {markChanged} from '../actions';
 import {connect} from 'react-redux';
 import _ from 'lodash';
@@ -29,7 +29,7 @@ class GradeViewListItem extends Component{
         
          <TextInput
          value={this.props.item.Grade}
-          style={{height: 16, width:50,fontWeight:'bold',  fontSize:15}}
+          style={{height: Platform.OS === 'ios' ? 16 :40 , width:50,fontWeight:'bold',  fontSize:15}}
           placeholder=""
           keyboardType= "numeric"
           onChangeText={this.onvalChanged.bind(this,this.props.item.num)}

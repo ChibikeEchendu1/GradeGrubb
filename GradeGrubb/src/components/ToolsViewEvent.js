@@ -17,7 +17,7 @@ import {connect} from 'react-redux';
 import {
   StyleSheet,
   Text,
-  View,
+  View,Platform,
   ListView,
   Image,
   TouchableOpacity,
@@ -46,10 +46,10 @@ constructor(props){
         <Header ti={"Announcement/Event"}/>
    
           <Tabs>
-          <Tab heading={ <TabHeading><Text style={{fontSize:25}}>Announcements</Text></TabHeading>}>
+          <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "" :'black'}}>Announcements</Text></TabHeading>}>
           <AnnouceViewEvent/>
           </Tab>
-          <Tab heading={ <TabHeading><Text style={{fontSize:25}}>Event</Text></TabHeading>}>
+          <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "" :'black'}}>Event</Text></TabHeading>}>
           <AnnouceViewEvent2/>
           </Tab>
           </Tabs>

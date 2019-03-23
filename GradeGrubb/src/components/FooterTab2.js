@@ -93,7 +93,8 @@ export default class FooterTab2 extends React.Component{
 const styles = StyleSheet.create({  
     viewStyle: {
         backgroundColor:'white',
-        //position:'absolute',
+        //position:Platform.OS === 'ios' ? '' :'absolute',
+       // position:'absolute',
         //marginTop:'30%',
         bottom:0,
         //top:0,
