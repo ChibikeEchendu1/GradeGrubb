@@ -125,9 +125,7 @@ const mapStateToProps = state =>{
        num: state.pro.num,
        loading: state.auth.loading,
        set: state.auth.set,
-      
-       
-    }
+     }
   };
   
   export default connect(mapStateToProps,{NameChangedSub22,numchanged,cn22})(AddNewView) ;

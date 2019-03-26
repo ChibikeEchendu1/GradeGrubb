@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Platform,Image,StyleSheet, TouchableOpacity} from 'react-native'
+import {View, Text, Platform,Image,StyleSheet,SafeAreaView, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class FooterTab2 extends React.Component{
@@ -23,7 +23,8 @@ export default class FooterTab2 extends React.Component{
         return {
           fontSize: 15,
           marginLeft: "25%",
-          color:"#0099cc"
+          color:"#0099cc",
+          
         }
       }
 
@@ -40,7 +41,8 @@ export default class FooterTab2 extends React.Component{
         if (this.getNavigationProps().navigationState.index === buttonIndex){
         return {
           fontSize: 15,
-          color:"#0099cc"
+          color:"#0099cc",
+         
         }
       }
 
@@ -53,7 +55,7 @@ export default class FooterTab2 extends React.Component{
       }
     render(){
     return(
-        <View style = {styles.viewStyle}>
+        <SafeAreaView style = {styles.viewStyle}>
 
         <TouchableOpacity style = {styles.tab}
         onPress={()=>this.navigate("Tsubject")}> 
@@ -84,7 +86,7 @@ export default class FooterTab2 extends React.Component{
           <Text style={this.textStyle2(2)}>Create</Text>
         </TouchableOpacity>
 
-        </View>
+        </SafeAreaView>
     );
 
 }
@@ -96,14 +98,14 @@ const styles = StyleSheet.create({
         //position:Platform.OS === 'ios' ? '' :'absolute',
        // position:'absolute',
         //marginTop:'30%',
-        bottom:0,
+        //position: 'absolute', left: 0, right: 0, bottom: 0,
         //top:0,
         justifyContent: 'space-between',
         alignItems:'flex-end',
         //borderWidth:1,
         flexDirection: 'row',
         width: '100%',
-        height:Platform.OS === 'ios' ? '10%' :'12%',
+        height:Platform.OS === 'ios' ? '10%' :'10%',
         borderWidth: 0.8, borderColor: '#d6d7da',
        // paddingLeft:15,
       
@@ -112,7 +114,10 @@ const styles = StyleSheet.create({
         height:'100%',
         width:'25%',
         flexDirection:'column',
-        alignItems:'center'
+        alignItems:'center',
+        //justifyContent:'flex-end'
+        
+        justifyContent:Platform.OS === 'ios'?"flex-start":'flex-end'
     }
 
    

@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 import { AsyncStorage } from "react-native"
 import {
   StyleSheet,
-  Text,
+  Text,Platform,
   View,SafeAreaView,
   Image,
   ListView,TouchableOpacity
@@ -112,7 +112,7 @@ class TeacherListView extends Component {
           
           return(
               <Image
-              style={{ marginTop:20, height: '100%', alignSelf:'center', width:'70%'}}
+              style={{ marginTop:20, height:Platform.OS === 'ios' ? '100%' :'75%', alignSelf:'center', width:'70%'}}
               source={require('../.././images/p.png')}
               resizeMode = 'contain'
               />
@@ -123,7 +123,7 @@ class TeacherListView extends Component {
           
           return(
               <Image
-              style={{marginTop:20, height: 120,alignSelf:'center', width:120,borderRadius:60}}
+              style={{marginTop:20, height:Platform.OS === 'ios' ? 120 :100,alignSelf:'center', width:120,borderRadius:Platform.OS === 'ios' ? 60:50}}
               source={{uri: "data:image/jpeg;base64,"+this.props.navigation.state.params.item.Image}}
               resizeMode = 'contain'
               />

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image,Platform,StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, Image,Platform,StyleSheet,SafeAreaView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class FooterTab extends React.Component{
@@ -23,7 +23,8 @@ export default class FooterTab extends React.Component{
         return {
           fontSize: 15,
           marginLeft: "25%",
-          color:"#0099cc"
+          color:"#0099cc",
+          
         }
       }
 
@@ -40,7 +41,8 @@ export default class FooterTab extends React.Component{
         if (this.getNavigationProps().navigationState.index === buttonIndex){
         return {
           fontSize: 15,
-          color:"#0099cc"
+          color:"#0099cc",
+          
         }
       }
 
@@ -75,7 +77,7 @@ export default class FooterTab extends React.Component{
     //   </FooterTab>
     // </Footer>
     // </Container>
-  <View style = {styles.viewStyle}>
+  <SafeAreaView style = {styles.viewStyle}>
        
 
 
@@ -114,7 +116,7 @@ export default class FooterTab extends React.Component{
           <Text style={this.textStyle2(2)}>Notice</Text>
         </TouchableOpacity>
 
-        </View> 
+        </SafeAreaView> 
     ); 
 
 }
@@ -132,7 +134,7 @@ const styles = StyleSheet.create({
       //borderWidth:1,
       flexDirection: 'row',
       width: '100%',
-      height:Platform.OS === 'ios' ? '10%' :'12%',
+      height:Platform.OS === 'ios' ? '10%' :'10%',
      borderWidth: 0.8, borderColor: '#d6d7da',
      // paddingLeft:15,
       
@@ -141,7 +143,10 @@ const styles = StyleSheet.create({
         height:'100%',
         width:'25%',
         flexDirection:'column',
-        alignItems:'center'
+        alignItems:'center',
+        //justifyContent:'flex-end'
+       
+        justifyContent:Platform.OS === 'ios'?"flex-start":'flex-end'
     }
   
 

@@ -86,6 +86,9 @@ class ThomeView extends Component {
         }
 
         renderImage(){
+          if(typeof this.props.navigation.state.params.item.Image  == 'undefined'){
+            //console.log(this.props.navigation.state.params.item.Image);
+            console.log(this.props.Vals.Image);
             if(this.props.Vals.Image == '../.././images/p.png'){
               return(
                     <Image
@@ -105,7 +108,38 @@ class ThomeView extends Component {
                     />
                    );
                   }
+
+          
+            
           }
+          else{
+            
+
+            if(this.props.navigation.state.params.item.Image == '../.././images/p.png'){
+              return(
+                    <Image
+                    style={{ height: '90%', width:'70%'}}
+                    source={Myimage}
+                    resizeMode = 'contain'
+                    />
+                );
+      
+            }
+            else{
+              return(
+                    <Image
+                    style={{height: Platform.OS === 'ios' ? 120 : 100,  width: Platform.OS === 'ios' ? 120 : 100,borderRadius: Platform.OS === 'ios' ? 60 : 50}}
+                    source={{uri: "data:image/jpeg;base64,"+this.props.navigation.state.params.item.Image}}
+                    resizeMode = 'contain'
+                    />
+                   );
+                  }
+
+
+           
+
+          }
+        }
 
           rendercount(){
             

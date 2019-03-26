@@ -22,7 +22,7 @@ const Footer1 = (props) =>{
 const styles = StyleSheet.create({
     
     viewStyle: {
-        opacity: 0.7,
+        opacity: 0.4,
         position:'absolute',
         bottom:0,
         alignSelf: 'center',

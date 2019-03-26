@@ -43,7 +43,7 @@ constructor(props){
     return (
    
         <SafeAreaView style ={styles.container}>
-        <Header ti={"Announcement/Event"}/>
+        <Header ti={"Notice"}/>
    
           <Tabs>
           <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "" :'black'}}>Announcements</Text></TabHeading>}>

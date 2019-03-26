@@ -54,7 +54,7 @@ constructor(props){
           <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "" :'black'}}>Students</Text></TabHeading>}>
           <StudentView navigation={this.props.navigation} Name={this.state.Name} name={this.state.name} id={this.state.id} Sname={this.state.Sname} Tid={this.state.Tid} room={this.state.room} />
           </Tab>
-          <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "" :'black'}}>Elements</Text></TabHeading>}>
+          <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "" :'black'}}>Assessment</Text></TabHeading>}>
           <ElementView navigation={this.props.navigation} Name={this.state.Name} Subname={this.state.name} Tid={this.state.Tid} Room={this.state.room} id={this.state.id} Sname={this.state.Sname} />
           </Tab>
           </Tabs>
