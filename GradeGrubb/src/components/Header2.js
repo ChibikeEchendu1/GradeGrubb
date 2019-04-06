@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems:'center',
         justifyContent:'center',
-        height: '13%',
+        height: '7%',
         
     },
     tab:{

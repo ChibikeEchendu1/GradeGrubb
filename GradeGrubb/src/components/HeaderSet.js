@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
         flexDirection: 'row',
         width: '100%',
-        height: '13%',
+        height: '7%',
         backgroundColor:'#1995ad',
     
     

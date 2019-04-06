@@ -9,6 +9,7 @@ import Splash from './src/pages/Splash';
 import Profile from './src/pages/profile';
 import FooterTab from './src/components/FooterTab';
 import FooterTab2 from './src/components/FooterTab2';
+import FooterTab3 from './src/components/FooterTab3';
 import Performance from './src/pages/Performance';
 import Elements from './src/pages/Elements';
 import Students from './src/pages/Students';
@@ -116,18 +117,33 @@ import SElementnotice from './src/pages/SElementnotice'
     tabBarPosition: "bottom",
 
     tabBarComponent: props => {
-
+      const x = 1;
+      //console.log(this.state.item.id);
+      
       const backgroundColor = props.position.interpolate({
         inputRange: [0,1,2,3],
         outputRange: ['#e74c3c','#9b59b6','#3498db', '#3498db'],
       })
-      return (
-        <FooterTab2 navigator={props}
-        {...props}
-        style={{backgroundColor}}
-        >
-          </FooterTab2>
-      );
+      if (x== 1) {
+        return (
+          <FooterTab2 navigator={props}
+          {...props}
+          style={{backgroundColor}}
+          >
+            </FooterTab2>
+        );
+      }
+      else{
+        return (
+          <FooterTab3 navigator={props}
+          {...props}
+          style={{backgroundColor}}
+          >
+            </FooterTab3>
+        );
+
+      }
+      
     }
   })},
 

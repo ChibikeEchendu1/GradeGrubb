@@ -124,8 +124,8 @@ class GradeView extends Component {
   render() {
     
     return (
-    
-      <SafeAreaView  behavior = {(Platform.OS === 'ios') ? 'height' : 'height'} style ={styles.container}>
+    <SafeAreaView style ={styles.container}>
+      <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'height' : 'height'} >
         <HomeHeader ti="Grade Students"  navigate={this.props.navigation.goBack}/>
         <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'height' : 'height'}  style={{height:'15%'}} >
         <View  style={{flexDirection:"column", justifyContent:"space-between",marginTop:0, alignItems:'center',  backgroundColor: 'white'}}>
@@ -151,6 +151,7 @@ class GradeView extends Component {
             
             {this.goBack()}
             
+            </KeyboardAvoidingView>
             </SafeAreaView>
       );
     }

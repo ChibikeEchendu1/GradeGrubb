@@ -21,7 +21,7 @@ export default class FooterTab extends React.Component{
       textStyle = function(buttonIndex) {
         if (this.getNavigationProps().navigationState.index === buttonIndex){
         return {
-          fontSize: 15,
+          fontSize: 12,
           marginLeft: "25%",
           color:"#0099cc",
           
@@ -30,7 +30,7 @@ export default class FooterTab extends React.Component{
 
       else{
         return {
-          fontSize: 15,
+          fontSize: 12,
           marginLeft: "25%",
           color:"#B0B0B0"
         }
@@ -40,7 +40,7 @@ export default class FooterTab extends React.Component{
       textStyle2 = function(buttonIndex) {
         if (this.getNavigationProps().navigationState.index === buttonIndex){
         return {
-          fontSize: 15,
+          fontSize: 12,
           color:"#0099cc",
           
         }
@@ -48,7 +48,7 @@ export default class FooterTab extends React.Component{
 
       else{
         return {
-          fontSize: 15,
+          fontSize: 12,
           color:"#B0B0B0"
         }
       }
@@ -93,7 +93,7 @@ export default class FooterTab extends React.Component{
              <TouchableOpacity style = {styles.tab} 
      active={this.isActive(1)}
         onPress={()=>this.navigate("TsubjectS")}> 
-         <Icon name="leanpub" size={27} color={this.isActive(1)} style={{marginTop:'12%'}}/>
+         <Icon name="leanpub" size={23} color={this.isActive(1)} style={{marginTop:'12%'}}/>
             <View>
           <Text style={this.textStyle2(1)}>Subjects</Text>
           </View>
@@ -103,16 +103,16 @@ export default class FooterTab extends React.Component{
 
         <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Profile")}>
         <Icon name="home" size={30} color="#B0B0B0"   style={{marginTop:'10%', marginLeft:'25%'}}/>
-          <Text style={{fontSize:15,marginLeft:'25%',color:"#B0B0B0" }}>Home</Text>
+          <Text style={{fontSize:12,marginLeft:'25%',color:"#B0B0B0" }}>Home</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("Performance")}>
-        <Icon name="user" size={30} color={this.isActive(0)} style={{marginTop:'10%', marginLeft:'25%'}}/>
+        <Icon name="user" size={26} color={this.isActive(0)} style={{marginTop:'10%', marginLeft:'25%'}}/>
           <Text style={this.textStyle(0)} >Profile</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style = {styles.tab} onPress={()=>this.navigate("ToolsEvent")}>
-        <Icon name="comments" size={30} color={this.isActive(2)}style={{marginTop:'10%'}}/>
+        <Icon name="comments" size={26} color={this.isActive(2)}style={{marginTop:'10%'}}/>
           <Text style={this.textStyle2(2)}>Notice</Text>
         </TouchableOpacity>
 
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
         flexDirection:'column',
         alignItems:'center',
         //justifyContent:'flex-end'
-       
+      // marginBottom:'4%',
         justifyContent:Platform.OS === 'ios'?"flex-start":'flex-end'
     }
   
