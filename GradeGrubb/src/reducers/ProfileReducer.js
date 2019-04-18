@@ -18,6 +18,7 @@ const INITIAL_STATE = {
       Students4:{},
       class:{},
       profile:'',
+      room:'',
       loading1: false,
       gotp:false,
       set2:false,
@@ -102,7 +103,9 @@ export default (state = INITIAL_STATE , action) => {
    
     case 'stuclassFetchDone22':
         return {...state, Students4: action.payload.Students, loading1: false,};
-    
+
+    case 'attendFetchDone22':
+        return {...state, Students4: action.payload.Students, loading1: false, room:action.payload.room,};
     case 'stuclassFetchDone2':
         return {...state, Students2: action.payload.Students, loading1: false,};
     case 'remclassFetchDone2':
@@ -121,6 +124,11 @@ export default (state = INITIAL_STATE , action) => {
         
     case 'markFetchDone':
         return {...state, mark: action.payload.rest, av:action.payload.Av, loading1: false}; 
+
+
+        
+    case 'markfetchnotice':
+        return {...state, mark: action.payload.rest, av:action.payload.Av, im:action.payload.im, loading1: false}; 
 
     case 'infosaved':
         return {...state, info: action.payload};     

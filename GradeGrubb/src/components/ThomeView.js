@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {chanegepic,SubTinfo,SaveInfo} from '../actions';
 import { AsyncStorage } from "react-native"
 import Myimage from '../.././images/p.png';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   TouchableOpacity,
   StyleSheet,
@@ -27,7 +27,8 @@ class ThomeView extends Component {
            
         },
         Id: 18,
-      
+     
+        item:' '
         }
 
         componentWillMount(){AsyncStorage.getItem("pro").then((value) => {
@@ -71,6 +72,10 @@ class ThomeView extends Component {
             const Id = this.state.item.id
             this.props.chanegepic({Id});
          }
+
+         onButtonPress2(){
+          this.props.navigation.navigate("Profile")//AttendStudent
+       }
 
          rendertotal(){
 
@@ -141,6 +146,30 @@ class ThomeView extends Component {
           }
         }
 
+        renderAttendace(){
+          if(this.props.Vals.FormTeacher == 1){
+             // console.log("heloo");
+              
+              
+              return(
+                [
+                <Icon key="1" name="sign-in" size={22} />,
+                <Text key="2" style={{fontSize:13}}> Attendace</Text>
+                ]
+                 );
+    
+          }
+          else{
+              
+            return(
+              null
+          );
+    
+          }
+    
+    
+      } 
+
           rendercount(){
             
             if(this.props.loading){
@@ -166,12 +195,16 @@ class ThomeView extends Component {
     
     <Header  ti='Profile'/>
       
-        <View style={{width:"85%", flexDirection:'column', height:"87%"}}>
+        <View style={{width:"90%", flexDirection:'column', height:"87%"}}>
         <View style={styles.ImageStyle}>
-        <TouchableOpacity  onPress={this.onButtonPress.bind(this)} style={{flexDirection:'row',  alignItems:'center', justifyContent:'center',alignItems:'center', justifyContent:'center', height: '60%', width:'70%'}}>
+        <View style={{ height: '60%', width:'100%',flexDirection:'row',alignItems: 'center',justifyContent:'space-between'}}>
+        <TouchableOpacity  onPress={this.onButtonPress.bind(this)} style={{marginLeft:'20%', alignItems:'center',  justifyContent:'center', height: '100%', width:'60%'}}>
         {this.renderImage()}
-       
-        </TouchableOpacity>
+       </TouchableOpacity>
+       <TouchableOpacity  onPress={this.onButtonPress2.bind(this)} style={{justifyContent: 'flex-end',alignItems:'center',flexDirection:'column',width:'20%',marginTop:'25%'}}>
+        {this.renderAttendace()}
+       </TouchableOpacity>
+       </View>
         <ImageButton3 press={this.onButtonPress.bind(this)}/>
        
         <Text style={{fontSize:25, fontWeight:'bold', marginTop:10}}> {item.Name}</Text>

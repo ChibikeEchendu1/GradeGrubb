@@ -41,6 +41,8 @@ import ChangePasswordForgot from './src/pages/ChangePasswordForgot'
 import ForgotPassword from './src/pages/ForgotPassword'
 import Code from './src/pages/Code'
 import TeacherList from './src/pages/TeacherList'
+import AttendStudent from './src/pages/AttendStudent'
+
 //import Notice from './src/pages/Notice'
 //import PushNotificationController from './services/PushNotificationController'
 
@@ -91,6 +93,7 @@ SElementnotice:{screen:SElementnotice},
       gesturesEnabled: false,
       headerLeft:null
   },},
+  AttendStudent:{screen:AttendStudent},
 
 
     second:{screen: StackNavigator({

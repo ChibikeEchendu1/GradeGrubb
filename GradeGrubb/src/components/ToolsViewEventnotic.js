@@ -46,10 +46,10 @@ constructor(props){
         <HomeHeader ti={"Notice"} boo="" navigate={this.props.navigation.goBack}/>
    
           <Tabs>
-          <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "" :'black'}}>Announcements</Text></TabHeading>}>
+          <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "#F8F8F8" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "#000000" :'black'}}>Announcements</Text></TabHeading>}>
           <AnnouceViewEvent/>
           </Tab>
-          <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "" :'black'}}>Event</Text></TabHeading>}>
+          <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "#F8F8F8" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "#000000" :'black'}}>Event</Text></TabHeading>}>
           <AnnouceViewEvent2/>
           </Tab>
           </Tabs>

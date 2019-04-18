@@ -616,6 +616,28 @@ room:classRoom,
 
 
 
+
+export const fetchlass = ({Tid,school}) => {
+                return (dispatch) => {
+    dispatch({type: 'Login_user2'});
+    fetch(IP+'/Ap/TA.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+    name: school,
+    Tid:Tid,
+    //classRoom: classRoom,                  
+        }),
+        }).then((response) => response.json()).then(users => {
+       dispatch({type: 'attendFetchDone22', payload: users});
+        });
+       }
+    };
+
+
 export const remstuclass2 = ({School,classRoom,Subname}) => {
             return (dispatch) => {
 dispatch({type: 'Login_user2'});
@@ -698,6 +720,28 @@ sid: sid,
     });
    }
   };
+
+
+export const markFetchNotice = ({name,Sname,sid}) => {
+    
+        return (dispatch) => {
+    dispatch({type: 'Login_user2'});
+    fetch(IP+'/Ap/markfetchnotice.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+    name: name,
+    Sname: Sname,
+    sid: sid,                    
+        }),
+        }).then((response) => response.json()).then(users => {
+       dispatch({type: 'markfetchnotice', payload: users});
+        });
+       }
+      };
 
 
 
@@ -818,6 +862,35 @@ dispatch({type: 'LoginUserFail', payload: users});
     });
    }
 };
+
+export const subattend = ({Students,School,Tid,room}) => {
+
+    return (dispatch) => {
+    dispatch({type: 'Login_user2'});
+    fetch(IP+'/Ap/SA.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+    name: School,
+    Students: Students,
+    Tid:Tid,
+    room:room
+    
+        }),
+        }).then((response) => response.json()).then(users => {
+       if( typeof users.Id != 'undefined'){
+    dispatch({type: 'StopLoader',payload: users});
+        }
+    else{
+    dispatch({type: 'LoginUserFail', payload: users}); 
+    
+    }
+        });
+       }
+    };
 
 
 export const adstu = ({Students,Subname,School,Tid}) => {

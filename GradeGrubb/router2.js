@@ -44,7 +44,7 @@ import Code from './src/pages/Code'
 import TeacherList from './src/pages/TeacherList'
 import PushNotificationController from './services/PushNotificationController'
 import SElementnotice from './src/pages/SElementnotice'
- 
+ import AttendStudent from './src/pages/AttendStudent'
   export const Router0 = StackNavigator({
   
   Profile: {screen: Profile, navigationOptions: {
@@ -68,10 +68,17 @@ import SElementnotice from './src/pages/SElementnotice'
   Addprofile:{screen:Addprofile},
 
   Router2: {screen:TabNavigator({
+   
     Thome:{screen: Thome, navigationOptions: {
       gesturesEnabled: false,
       headerLeft:null
   },},
+  
+  
+  
+
+
+
 
 
     second:{screen: StackNavigator({
@@ -108,7 +115,9 @@ import SElementnotice from './src/pages/SElementnotice'
       AddStudent: { screen: AddStudent },
     
     },
-    {headerMode: 'none'})}
+    {headerMode: 'none'})},
+
+   
 
 }
 

@@ -7,7 +7,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import {Spinner,HomeHeader} from './index';
 import SingleElementListItem2 from './SingleElementListItem2';
-import {markFetch} from '../actions';
+import {markFetchNotice} from '../actions';
 import {connect} from 'react-redux';
 import {
   StyleSheet,
@@ -44,14 +44,14 @@ class SingleElementViewSnotic extends Component {
    componentWillMount(){
 
     const {name,Sname,sid} = this.state;
-    this.props.markFetch({name,Sname,sid});
+    this.props.markFetchNotice({name,Sname,sid});
 
    
 
-    data = this.props.navigation.state.params.profile.filter((item) => item.Id == this.props.navigation.state.params.item.StudentId).map(({Image}) => ({Image}));
+    //data = this.props.navigation.state.params.profile.filter((item) => item.Id == this.props.navigation.state.params.item.StudentId).map(({Image}) => ({Image}));
 //console.log(data);
 //console.log(data[0]["Image"]);
-this.setState({"Image":data});
+//this.setState({"Image":data});
     
     
     
@@ -60,7 +60,7 @@ this.setState({"Image":data});
      componentDidMount(){
 
       const {name,Sname,sid} = this.state;
-      this.props.markFetch({name,Sname,sid});
+      this.props.markFetchNotice({name,Sname,sid});
        }
 
 
@@ -88,7 +88,7 @@ this.setState({"Image":data});
    renderImage(){
       // console.log(this.state.Image[0]["Image"]);
        
-    if(this.state.Image[0]["Image"] == '../.././images/p.png'){
+    if(this.props.im == '../.././images/p.png'){
         console.log("heloo");
         
         return(
@@ -105,7 +105,7 @@ this.setState({"Image":data});
         return(
             <Image
             style={{marginTop:20, height: 120, width:120,borderRadius:60}}
-            source={{uri: "data:image/jpeg;base64,"+this.state.Image[0]["Image"]}}
+            source={{uri: "data:image/jpeg;base64,"+this.props.im}}
             resizeMode = 'contain'
             />
            );
@@ -151,8 +151,8 @@ const styles = StyleSheet.create({
 
    
     
-  return {elements, Av: state.pro.av,loading:state.pro.loading1};
+  return {elements, Av: state.pro.av,im: state.pro.im,loading:state.pro.loading1};
   };
   
-  export default connect(mapStateToProps,{markFetch})(SingleElementViewSnotic);
+  export default connect(mapStateToProps,{markFetchNotice})(SingleElementViewSnotic);
 
