@@ -4,6 +4,7 @@ import { StackNavigator, TabNavigator, addNavigationHelpers, } from 'react-navig
 import Login from './src/pages/Login';
 import Tools from './src/pages/Tools';
 import ToolsEvent from './src/pages/ToolsEvent';
+import Offer from './src/pages/Offer';
 import SignUp from './src/pages/SignUp';
 import Splash from './src/pages/Splash';
 import Profile from './src/pages/profile';
@@ -70,6 +71,11 @@ import AttendStudent from './src/pages/AttendStudent'
   Profile: {screen: Profile, navigationOptions: {
     gesturesEnabled: false,
     headerLeft:null
+},},
+
+Offer: {screen: Offer, navigationOptions: {
+  gesturesEnabled: false,
+  headerLeft:null
 },},
   Code3: { screen: Code3 , navigationOptions: {
     gesturesEnabled: false,

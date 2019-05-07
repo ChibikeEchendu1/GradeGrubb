@@ -4,6 +4,7 @@ import { StackNavigator, TabNavigator, addNavigationHelpers, } from 'react-navig
 import Login from './src/pages/Login';
 import SignUp from './src/pages/SignUp';
 import Tools from './src/pages/Tools';
+import Offer from './src/pages/Offer';
 import ToolsEvent from './src/pages/ToolsEvent';
 import Splash from './src/pages/Splash';
 import Profile from './src/pages/profile';
@@ -42,7 +43,7 @@ import ChangePasswordForgot from './src/pages/ChangePasswordForgot'
 import ForgotPassword from './src/pages/ForgotPassword'
 import Code from './src/pages/Code'
 import TeacherList from './src/pages/TeacherList'
-import PushNotificationController from './services/PushNotificationController'
+
 import SElementnotice from './src/pages/SElementnotice'
  import AttendStudent from './src/pages/AttendStudent'
   export const Router0 = StackNavigator({
@@ -51,12 +52,16 @@ import SElementnotice from './src/pages/SElementnotice'
     gesturesEnabled: false,
     headerLeft:null
 },},
+Offer: {screen: Offer, navigationOptions: {
+  gesturesEnabled: false,
+  headerLeft:null
+},},
   Code3: { screen: Code3, navigationOptions: {
     gesturesEnabled: false,
     headerLeft:null
 }, },
   SettingsOption:{screen: SettingsOption},
-  PushNotificationController:{screen:PushNotificationController},
+ 
   Notice:{screen: Notice , navigationOptions: {
     gesturesEnabled: false,
     headerLeft:null

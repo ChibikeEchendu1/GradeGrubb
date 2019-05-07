@@ -1,6 +1,5 @@
 import React from 'react';
 import {View,Text,Platform, StyleSheet} from 'react-native'
-import PushNotificationController from "../../services/PushNotificationController";
 const Header22 = (props) =>{
     return(
     <View style={styles.viewStyle}>

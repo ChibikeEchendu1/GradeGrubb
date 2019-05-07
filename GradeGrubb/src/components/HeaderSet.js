@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity,Platform,Image} from 'react-native'
-import PushNotificationController from "../../services/PushNotificationController";
 import { Container, Header, Content, Footer, FooterTab, Button, Text, Badge } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 

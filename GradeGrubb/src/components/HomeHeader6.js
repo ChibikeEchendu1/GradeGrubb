@@ -1,6 +1,5 @@
 import React from 'react';
 import {View,Text, StyleSheet,Platform, Alert, TouchableOpacity,Image} from 'react-native'
-import PushNotificationController from "../../services/PushNotificationController";
 import {RemoveNotif} from '../actions';
 import {connect} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
