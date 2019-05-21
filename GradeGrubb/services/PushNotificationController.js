@@ -35,11 +35,13 @@ class PushNotificationController extends Component {
       
     });
 
+    
+
     FCM.getInitialNotification().then(notif => {
       console.log("INITIAL NOTIFICATION", notif)
     });
 
-    if (Platform.OS === "ios") {
+    if (Platform.OS === "ios"){
       FCM.getAPNSToken().then(token => {
         console.log("APNS TOKEN (getFCMToken)", token);
         this.setState({"apnstoken":token});

@@ -16,7 +16,6 @@ import AddStudent2 from './src/pages/AddStudent2';
 import RemoveStudent from './src/pages/RemoveStudent';
 import AddStudent from './src/pages/AddStudent';
 //AppRegistry.registerComponent('GradeGrubb', () => RemoveElement);// Profile);
-
+import bgMessaging from './bgMessaging';
 AppRegistry.registerComponent('GradeGrubb', () => App );// Profile);
-
-
+AppRegistry.registerHeadlessTask('RNFirebaseBackgroundMessage', () => bgMessaging); // <-- Add this line
