@@ -36,6 +36,7 @@ import Annoucment from './src/pages/Annoucment';
 import Annoucmentnotice from './src/pages/Annoucmentnotice'
 import TsubjectS from './src/pages/TsubjectS';
 import AddNew from './src/pages/AddNew'
+import Offer from './src/pages/Offer'
 import ToolsEventnot from  './src/pages/ToolsEventnot'
 import ChangePassword from './src/pages/ChangePassword';
 import ChangePasswordForgot from './src/pages/ChangePasswordForgot'
@@ -66,6 +67,7 @@ import SElementnotice from './src/pages/SElementnotice'
   SElementnotice:{screen:SElementnotice},
   ChangePassword:{screen: ChangePassword }, 
   Addprofile:{screen:Addprofile},
+  Offer:{screen:Offer},
 
   Router2: {screen:TabNavigator({
    

@@ -35,7 +35,8 @@ import SElement from './src/pages/SElement'
 import Annoucment from './src/pages/Annoucment';
 import AddStudent2 from './src/pages/AddStudent2';
 import TsubjectS from './src/pages/TsubjectS';
-import AddNew from './src/pages/AddNew'
+import AddNew from './src/pages/AddNew';
+import Offer from './src/pages/Offer'
 import ChangePassword from './src/pages/ChangePassword';
 import ChangePasswordForgot from './src/pages/ChangePasswordForgot'
 import ForgotPassword from './src/pages/ForgotPassword'
@@ -86,7 +87,7 @@ ToolsEventnot:{screen:ToolsEventnot},
 SElementnotice:{screen:SElementnotice},
   ChangePassword:{screen: ChangePassword }, 
   Addprofile:{screen:Addprofile},
-
+  Offer:{screen:Offer},
   // teacher tab navigator
   Router2: {screen:TabNavigator({
     Thome:{screen: Thome, navigationOptions: {
