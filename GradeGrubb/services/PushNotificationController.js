@@ -116,6 +116,8 @@ class PushNotificationController extends Component {
                   break;
               }
             }
+
+          
      
     });
 

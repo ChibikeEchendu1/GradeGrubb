@@ -65,7 +65,7 @@ export default class ElementListItem extends Component{
          <View style={{alignSelf:'center', flexDirection:'row'}}>
          <View style={{padding:5}}>
             <Text style={{fontSize:20,fontWeight:'bold'}}>
-            Out of:  {this.props.item.worth} ||
+            Out of:  {this.props.item.worth} |
             </Text> 
          </View> 
          <View style={{flexDirection:'row', padding:5}}>

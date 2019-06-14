@@ -7,7 +7,7 @@ const HomeHeader = (props) =>{
     return(
     <View style={styles.viewStyle}>
     
-  <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto',marginLeft:20}} onPress={() =>
+  <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto',marginLeft:10}} onPress={() =>
             props.navigate(props.boo)}> 
           <Icon name="angle-left" size={40}   color={"white"} />
             <View>

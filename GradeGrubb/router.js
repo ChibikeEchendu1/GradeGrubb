@@ -90,11 +90,11 @@ SElementnotice:{screen:SElementnotice},
   Offer:{screen:Offer},
   // teacher tab navigator
   Router2: {screen:TabNavigator({
+    one:{screen: StackNavigator({
     Thome:{screen: Thome, navigationOptions: {
       gesturesEnabled: false,
       headerLeft:null
-  },},
-  AttendStudent:{screen:AttendStudent},
+    }, }, AttendStudent:{screen:AttendStudent},},{headerMode: 'none'})},
 
 
     second:{screen: StackNavigator({

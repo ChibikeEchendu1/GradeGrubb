@@ -15,7 +15,7 @@ const HeaderSet = (props) =>{
     <View style={styles.viewStyle}>
 
 
-<View style={{alignSelf:'center',alignItems:'center',marginLeft:20}}>
+<View style={{alignSelf:'center',alignItems:'center',marginLeft:10}}>
         <Text numberOfLines={1} style={{fontSize:26,color:'white', fontWeight:'bold'}}>{props.ti}</Text>
         </View>
 

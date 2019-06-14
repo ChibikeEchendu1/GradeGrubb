@@ -8,6 +8,7 @@ import React, { Component} from 'react';
 import {Spinner,Footer1,HeaderSet} from './index';
 import ProfileHome from './ProfileHome';
 import {fetchPro} from '../actions';
+//import PushNotificationController2 from "../../services/PushNotificationController2";
 import PushNotificationController from "../../services/PushNotificationController";
 import {connect} from 'react-redux';
 import { AsyncStorage } from "react-native"
@@ -136,7 +137,7 @@ constructor(props){
         </View>
           
        <Footer1 navigation={this.props.navigation} Id = {this.state.vall} Active = {this.state.blocked}/>
-       <PushNotificationController navigate={this.state.nav} per = {this.state.vall}/> 
+       <PushNotificationController navigate={this.state.nav} per = {this.state.vall} />
       </SafeAreaView>
      
        

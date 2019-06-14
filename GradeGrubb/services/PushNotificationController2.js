@@ -28,7 +28,7 @@ class PushNotificationController2 extends Component {
 
 
   async componentDidMount() {
-    this.checkPermission();
+   // this.checkPermission();
     this.createNotificationListeners(); //add this line
   }
 
@@ -112,6 +112,8 @@ class PushNotificationController2 extends Component {
 
   //3
   async getToken() {
+    console.log('getetet');
+    
     let fcmToken = await AsyncStorage.getItem('fcmToken');
     if (!fcmToken) {
       fcmToken = await firebase.messaging().getToken();
@@ -127,7 +129,8 @@ class PushNotificationController2 extends Component {
           
             let Id =  parseInt(value);
             const {fcmtoken,apnstoken} = this.state;
-            console.log(value,fcmtoken,apnstoken);
+            console.log(value,fcmtoken,apnstoken,"hereerererer");
+        
             
             this.props.setdevice({fcmToken,apnstoken,Id});
            }).done();
@@ -155,3 +158,6 @@ class PushNotificationController2 extends Component {
 }
 
 export default connect(null,{setdevice})(PushNotificationController2);
+
+
+///etJy2V3TPK4:APA91bEvWVGOWd5Wn8GjDgUWW-EsZoHqaMLER_0KPDiJACjH4F59ZM3puStf94uoX0sSpxvblrWzjZ7ElQVAr9qty7qVMC1wHhq_pSbQuBdbevdZWW2-ZYIFO5ViXmHm7-PzbWCICJRY

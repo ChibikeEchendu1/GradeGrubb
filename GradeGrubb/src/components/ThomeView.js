@@ -27,6 +27,7 @@ class ThomeView extends Component {
            
         },
         Id: 18,
+        nav:this.props.navigation,
      
         item:' '
         }
@@ -74,7 +75,8 @@ class ThomeView extends Component {
          }
 
          onButtonPress2(){
-          this.props.navigation.navigate("Profile")//AttendStudent
+           console.log('hwewe');
+           this.props.navigation.navigate("AttendStudent")
        }
 
          rendertotal(){
@@ -91,7 +93,7 @@ class ThomeView extends Component {
         }
 
         renderImage(){
-          if(typeof this.props.navigation.state.params.item.Image  == 'undefined'){
+          if(typeof this.state.item.Image  == 'undefined'){
             //console.log(this.props.navigation.state.params.item.Image);
             console.log(this.props.Vals.Image);
             if(this.props.Vals.Image == '../.././images/p.png'){
@@ -120,7 +122,7 @@ class ThomeView extends Component {
           else{
             
 
-            if(this.props.navigation.state.params.item.Image == '../.././images/p.png'){
+            if(this.state.item.Image == '../.././images/p.png'){
               return(
                     <Image
                     style={{ height: '90%', width:'70%'}}
@@ -134,7 +136,7 @@ class ThomeView extends Component {
               return(
                     <Image
                     style={{height: Platform.OS === 'ios' ? 120 : 100,  width: Platform.OS === 'ios' ? 120 : 100,borderRadius: Platform.OS === 'ios' ? 60 : 50}}
-                    source={{uri: "data:image/jpeg;base64,"+this.props.navigation.state.params.item.Image}}
+                    source={{uri: "data:image/jpeg;base64,"+this.state.item.Image}}
                     resizeMode = 'contain'
                     />
                    );
@@ -187,7 +189,7 @@ class ThomeView extends Component {
          
   render() {
     
-    const{item}=this.props.navigation.state.params
+    const{item}=this.state
     
     this.props.SaveInfo(item)
     return (
@@ -208,7 +210,7 @@ class ThomeView extends Component {
         <ImageButton3 press={this.onButtonPress.bind(this)}/>
        
         <Text style={{fontSize:25, fontWeight:'bold', marginTop:10}}> {item.Name}</Text>
-        <Text style={{fontSize:20,alignSelf:"center", fontWeight:'bold'}}>({this.props.navigation.state.params.school})</Text>
+        <Text style={{fontSize:20,alignSelf:"center", fontWeight:'bold'}}>({this.state.item.school})</Text>
         </View>
     
         <View style={{ height: '50%',justifyContent:'flex-end', width:'95%'}}>

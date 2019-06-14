@@ -43,8 +43,7 @@ class LoginForm extends Component {
      onButtonPress(){
        const {email,password} = this.props;
       this.props.loginUser({email,password});
-      
-   }
+     }
 
    renderError(){
      if(this.props.error){
