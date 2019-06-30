@@ -155,8 +155,8 @@ class ThomeView extends Component {
               
               return(
                 [
-                <Icon key="1" name="sign-in" size={22} />,
-                <Text key="2" style={{fontSize:13}}> Attendace</Text>
+                <Icon key="1" color={'#1995ad'} name="sign-in" size={22} />,
+                <Text key="2" style={{fontSize:13,color:'#1995ad'}}> Attendace</Text>
                 ]
                  );
     

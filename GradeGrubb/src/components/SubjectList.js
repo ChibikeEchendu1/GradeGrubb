@@ -12,7 +12,7 @@ export default class  SubjectList extends React.Component{
         return(
      
             <TouchableOpacity  onPress={() =>
-           this.props.nav.navigate("Tools", {item:this.props.item, Name:this.props.item.Name, Id:this.props.item.Id, Room:this.props.item.Room, dbName:this.props.item.dbName, School:this.props.School, Tid:this.props.Tid})} >
+           this.props.nav.navigate("Tools", {Tname:this.props.Tname, Name:this.props.item.Name, Id:this.props.item.Id, Room:this.props.item.Room, dbName:this.props.item.dbName, School:this.props.School, Tid:this.props.Tid})} >
             
 
 

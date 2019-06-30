@@ -36,7 +36,7 @@ componentWillReceiveProps(){
 
 
   renderCheckBox(data, checked) {
-    var leftText = data.SudentNames;
+    var leftText = data.SudentNames+' '+data.SudentAttendaces+'/'+data.max;
     return (
         
         <CheckBox

@@ -34,6 +34,7 @@ constructor(props){
 
     nav: this.props.navigation,
     Name: this.props.Name,
+    Tname:this.props.Tname,
     name: this.props.name,
     id: this.props.id,
     Sname: this.props.Sname,
@@ -95,7 +96,7 @@ constructor(props){
 
    renderRow(item){
      
-    return <StudentListItem navigate={this.state.nav} School={this.state.Sname} Subname= {this.state.name} item={item}/>
+    return <StudentListItem Tname={this.state.Tname} navigate={this.state.nav} School={this.state.Sname} Subname= {this.state.name} item={item}/>
    }
 
    renderButton(){

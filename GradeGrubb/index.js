@@ -9,7 +9,7 @@ import Element from './src/pages/Element';
 import NewName from './src/pages/NewName';
 //newly added pages
 import profile from './src/pages/profile';
-import Students from './src/pages/Students';
+import SendMessage from './src/pages/SendMessage';
 ///need work
 import RemoveElement from './src/pages/RemoveElement'
 import AddStudent2 from './src/pages/AddStudent2';

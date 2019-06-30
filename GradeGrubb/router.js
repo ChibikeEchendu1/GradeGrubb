@@ -37,6 +37,7 @@ import AddStudent2 from './src/pages/AddStudent2';
 import TsubjectS from './src/pages/TsubjectS';
 import AddNew from './src/pages/AddNew';
 import Offer from './src/pages/Offer'
+import SendMessage from './src/pages/SendMessage'
 import ChangePassword from './src/pages/ChangePassword';
 import ChangePasswordForgot from './src/pages/ChangePasswordForgot'
 import ForgotPassword from './src/pages/ForgotPassword'
@@ -103,6 +104,7 @@ SElementnotice:{screen:SElementnotice},
         headerLeft:null
     },},
       SElement:{screen:SElement},
+      SendMessage:{screen:SendMessage},
       Tools:{screen:Tools},
       Students: { screen: Students, navigationOptions: {
         gesturesEnabled: false,

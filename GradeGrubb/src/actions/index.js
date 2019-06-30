@@ -17,6 +17,12 @@ export const emailChanged = (text) => {
 
 
 
+export const messageChnage = (text) => {
+        return{
+            type: 'message_changed',
+            payload: text
+        };
+    };
 
 export const passwordChanged = (text) => {
     return{
@@ -426,6 +432,8 @@ name: nname
    }
 };
 
+
+
 export const SubTinfos = ({valll,nname}) => {
     
     return (dispatch) => {
@@ -769,6 +777,34 @@ RealSubNAme:RealSubNAme
     });
    }
   };
+
+
+export const sendmessage = ({name,Sname,ele,Ids,scores,room,worth,RealSubNAme}) => {
+        return (dispatch) => {
+    dispatch({type: 'Login_user'});
+    fetch(IP+'/Ap/grademarks.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+    name: name,
+    Sname: Sname,
+    ele: ele,
+    Ids: Ids,
+    scores: scores,
+    room:room,
+    worth:worth,
+    RealSubNAme:RealSubNAme
+    }),
+        }).then((response) => response.json()).then(users => {
+       dispatch({type: 'StopLoader'});
+        });
+       }
+      };
+
+
 
 
 

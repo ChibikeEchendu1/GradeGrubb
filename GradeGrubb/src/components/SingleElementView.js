@@ -9,12 +9,15 @@ import {Spinner,HomeHeader} from './index';
 import SingleElementListItem from './SingleElementListItem';
 import {markFetch2} from '../actions';
 import {connect} from 'react-redux';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import {
   StyleSheet,
   Text,
   View,SafeAreaView,
   ListView,
   Image,
+  TouchableOpacity
   
 } from 'react-native';
 
@@ -30,6 +33,7 @@ class SingleElementView extends Component {
       name:  this.props.navigation.state.params.School,
       sid:   this.props.navigation.state.params.item.Id,
       studentname: this.props.navigation.state.params.item.Name,
+      Tname: this.props.navigation.state.params.Tname,
       //Average: this.props.navigation.state.params.item.ave,
         
   }
@@ -84,7 +88,27 @@ class SingleElementView extends Component {
 
 
 } 
+renderAttendace(){
 
+     // console.log("heloo");
+      
+      
+      return(
+        [
+        <Icon key="1" color={'#1995ad'} name="envelope-open" size={22} />,
+        <Text key="2" style={{fontSize:13,color:'#1995ad'}}> Message</Text>
+        ]
+         );
+
+
+
+
+} 
+
+onButtonPress2(){
+  console.log('hwewe');
+  this.props.navigation.navigate("SendMessage",{Tname:this.state.Tname,sid:this.state.sid})
+}
 
 
    renderButton(){
@@ -113,10 +137,19 @@ class SingleElementView extends Component {
         <SafeAreaView style ={styles.container}>
         <HomeHeader navigate={this.props.navigation.goBack} ti={this.state.studentname}/>{/* //this.state.studentname}/> */}
         <View style={{marginTop:0, alignItems:'center',justifyContent:"center",  height:'35%', backgroundColor: 'white'}}>
+        <View style={{ height: '60%', width:'100%',flexDirection:'row',alignItems: 'center',justifyContent:'space-between'}}>
+        <View style={{marginLeft:'20%', alignItems:'center',  justifyContent:'center', height: '100%', width:'60%'}}>
+
         {this.renderImage()}
+        </View>
+        <TouchableOpacity  onPress={this.onButtonPress2.bind(this)} style={{justifyContent: 'flex-end',alignItems:'center',flexDirection:'column',width:'20%',marginTop:'25%'}}>
+        {this.renderAttendace()}
+       </TouchableOpacity>
+        </View>
         <Text style={{fontSize:22, fontWeight:'bold', textAlign:'center'}}>Average</Text>
         <Text style={{fontSize:20, marginBottom:30, fontWeight:'bold', textAlign:'center'}}>{this.props.Av}</Text>
         </View>
+        
     
         <View style={{justifyContent: 'flex-start', height: '52%', width:'100%'}}>
         {this.renderButton()}

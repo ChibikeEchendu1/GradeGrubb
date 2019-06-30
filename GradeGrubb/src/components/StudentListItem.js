@@ -55,7 +55,7 @@ export default class StudentListItem extends Component{
     
     render(){
     return(
-         <TouchableOpacity onPress={()=> this.props.navigate.navigate("SElement",{item:this.props.item, School:this.props.School, Subname: this.props.Subname})}>
+         <TouchableOpacity onPress={()=> this.props.navigate.navigate("SElement",{item:this.props.item, School:this.props.School,Tname:this.props.Tname, Subname: this.props.Subname})}>
         <View style={styles.listStyle}>
  
             <View>

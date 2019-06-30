@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Header} from './Header';
 import {ImageButton2,Spinner2} from './index';
 import {chanegepic,fetchinfo,SaveInfo,SubTinfos} from '../actions';
-import { Container, Content, List, ListItem } from 'native-base';
 import {connect} from 'react-redux';
 import Myimage from '../.././images/p.png';
 

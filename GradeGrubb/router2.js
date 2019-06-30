@@ -7,6 +7,7 @@ import Tools from './src/pages/Tools';
 import ToolsEvent from './src/pages/ToolsEvent';
 import Splash from './src/pages/Splash';
 import Profile from './src/pages/profile';
+import SendMessage from './src/pages/SendMessage'
 import FooterTab from './src/components/FooterTab';
 import FooterTab2 from './src/components/FooterTab2';
 import FooterTab3 from './src/components/FooterTab3';
@@ -92,6 +93,7 @@ import AttendStudent from './src/pages/AttendStudent'
         headerLeft:null
     },},
       SElement:{screen:SElement},
+      SendMessage:{screen:SendMessage},
       Tools:{screen:Tools},
       Students: { screen: Students , navigationOptions: {
         gesturesEnabled: false,
