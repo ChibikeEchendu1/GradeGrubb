@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import {Spinner,HomeHeader} from './index';
+import {Spinner2,HomeHeader} from './index';
 import {sendmessage,messageChnage} from '../actions';
 import {connect} from 'react-redux';
 import {
@@ -27,9 +27,15 @@ class SendMessageView extends Component {
     this.props.messageChnage(text);
 }
 
+goback(){
+  if (this.props.sun) {
+    this.props.navigation.goBack()
+}
+}
+
 renderButton(){
   if(this.props.loading){
-    return <Spinner size="large"/>;
+    return <Spinner2 size="small"/>;
   }
   else{
    
@@ -38,15 +44,17 @@ renderButton(){
    <TouchableOpacity onPress={()=>{
       const message = this.props.message
         const Tname = this.state.Tname.name
+        const School = this.state.Tname.school
         const sid = this.state.sid
-        console.log(message,Tname,sid);
-    //  this.props.sendmessage({Students,School,Tid,room})
+        console.log(message,Tname,sid,School);
+      this.props.sendmessage({message,School,Tname,sid})
       
      
    }}>
    
       <Text style={{fontSize:20,marginRight:10,marginTop:20, color:"#1995ad"}}>Send</Text>
       </TouchableOpacity>
+      <Text style={{alignSelf:'center', color:'red', marginTop:20}}>{this.props.error}</Text>
       </View>
 }
 }
@@ -55,8 +63,8 @@ renderButton(){
   render() {
     return (
       <SafeAreaView style={{flex:1,
-        borderBottomColor: '#000000',backgroundColor:'white',
-        borderBottomWidth: 1 }}
+        backgroundColor:'white',
+      }}
       >
       <HomeHeader navigate={this.props.navigation.goBack} ti='Send Message'/>
       <TextInput
@@ -72,6 +80,7 @@ renderButton(){
 
 
    {this.renderButton()}
+   {this.goback()}
 
       </SafeAreaView>
     );
@@ -82,6 +91,8 @@ const mapStateToProps = state =>{
   return{
     message: state.auth.message,
     loading: state.auth.loading,
+    error: state.auth.error,
+    sun:state.auth.sun
   }
 };
 

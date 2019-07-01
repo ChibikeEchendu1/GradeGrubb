@@ -58,6 +58,8 @@ export default (state = INITIAL_STATE , action) => {
         return {...state,password:'', password2:'',codeone:"",Adstu:true,codetwo:"", ID2:'', error: action.payload, loading: false}; 
     case 'LoginUserFaill':
         return {...state,password:'', password2:'',Name2:'', ID2:'',loading: false, kkk: action.payload, set:true, forset3:true,haha:true,hen:true, sun:true }; 
+    case 'messagedone' :
+        return {...state,password:'', password2:'',Name2:'', ID2:'',loading: false, kkk: action.payload, set:true, forset3:true,haha:true,hen:true, sun:true };
         
     case 'Login_user':
         return {...state, loading: true, error:''}; 

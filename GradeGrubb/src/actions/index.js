@@ -779,28 +779,31 @@ RealSubNAme:RealSubNAme
   };
 
 
-export const sendmessage = ({name,Sname,ele,Ids,scores,room,worth,RealSubNAme}) => {
+export const sendmessage = ({message,School,Tname,sid}) => {
         return (dispatch) => {
     dispatch({type: 'Login_user'});
-    fetch(IP+'/Ap/grademarks.php', {
+
+    if(message == '' || typeof message == 'undefined' ){
+                dispatch({type: 'LoginUserFail', payload: "Empty Field"});
+            }
+        else{
+    fetch(IP+'/Ap/message.php', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-    name: name,
-    Sname: Sname,
-    ele: ele,
-    Ids: Ids,
-    scores: scores,
-    room:room,
-    worth:worth,
-    RealSubNAme:RealSubNAme
+        message: message,
+        School: School,
+        Tname:Tname,
+        sid:sid
+    
     }),
         }).then((response) => response.json()).then(users => {
-       dispatch({type: 'StopLoader'});
+       dispatch({type: 'messagedone'});
         });
+}
        }
       };
 
