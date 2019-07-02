@@ -21,7 +21,7 @@ import {
 
 
 
-class AnnouceViewEvent2 extends Component {
+class AnnouceViewEvent2Student extends Component {
   constructor(props){
  
     super(props);
@@ -52,8 +52,8 @@ class AnnouceViewEvent2 extends Component {
    componentDidMount(){
     AsyncStorage.getItem("pro").then((value) => {
       this.setState({"item":JSON.parse(value)});
-      let valll = this.state.id;
-      let nname = this.state.School;
+      let valll = this.state.item.id;
+      let nname = this.state.item.school;
       console.log(valll,nname,"fnkgfgd");
       
       this.props.EventFetch({valll,nname});
@@ -127,7 +127,7 @@ const mapStateToProps = state =>{
 return {subjects,loading:state.pro.loading1};
 };
 
-export default connect(mapStateToProps,{EventFetch})(AnnouceViewEvent2);
+export default connect(mapStateToProps,{EventFetch})(AnnouceViewEvent2Student);
 
 
 

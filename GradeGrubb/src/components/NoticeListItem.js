@@ -4,12 +4,22 @@ import {Text,StyleSheet,View,TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class NoticeListItem extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+           // item:this.props.navigation.state.params.item
+            
+          }
+      
+      console.log(this.props.item.StudentId,"wjat yo paddfd");
+      
+        }
  
     
     render(){
     return(
         
-        <TouchableOpacity onPress={()=> this.props.item.SubName == "Announcement" ? this.props.nav.navigate("ToolsEventnot",{item:this.props.item}) : this.props.nav.navigate("SElementnotice",{item:this.props.item, profile:this.props.profiles})} style={styles.listStyle}>
+        <TouchableOpacity onPress={()=> this.props.item.SubName == "Announcement" ? this.props.nav.navigate("ToolsEventnot",{item:this.props.item,Name:this.props.item.Name,School:this.props.item.School,id:this.props.item.StudentId}) : this.props.nav.navigate("SElementnotice",{item:this.props.item, profile:this.props.profiles})} style={styles.listStyle}>
  
             <View >
             <Text  numberOfLines={1} style={{fontSize:21, fontWeight:'bold', color:'#282828', alignSelf:'center',}}>

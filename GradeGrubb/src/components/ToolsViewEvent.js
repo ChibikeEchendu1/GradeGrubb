@@ -6,8 +6,8 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import {HomeHeader,Spinner,Header} from './index';
-import AnnouceViewEvent from './AnnouceViewEvent';
-import AnnouceViewEvent2 from './AnnouceViewEvent2'
+import AnnouceViewEvent from './AnnouceViewEventStudent';
+import AnnouceViewEvent2 from './AnnouceViewEvent2Student'
 import {eleFetch} from '../actions';
 import StudentView from './StudentView';
 import StudentListItem from './StudentListItem';

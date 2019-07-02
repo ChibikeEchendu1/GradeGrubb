@@ -61,7 +61,7 @@ class NoticeView extends Component {
    } */
    componentDidMount(){ //componentDidMount
     const {valll} = this.state
-    //console.log(valll);
+    console.log(valll,"yugbhgvvhgbhgfhytnjbmkb");
     
       this.props.fetchNotice({valll});
     

@@ -7,7 +7,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import {Header,Spinner} from './index';
 import Annouc from './Annouc';
-import {EventFetch} from '../actions';
+import {AnnoucFetch} from '../actions';
 import {connect} from 'react-redux';
 import { AsyncStorage } from "react-native"
 import {
@@ -21,22 +21,18 @@ import {
 
 
 
-class AnnouceViewEvent2 extends Component {
+class AnnouceViewEventStudent extends Component {
   constructor(props){
  
     super(props);
 
   this.state = {
-    item:'',
     School:this.props.School,
     
     id:this.props.id,
     //valll: 18,
     //nname: 'Trinity'
     }
-
-    console.log(this.state.School,this.state.id,'jkdfngkjdfg');
-    
   }
   getSubjects(){
     return  this.props.subjects.reverse();
@@ -52,11 +48,12 @@ class AnnouceViewEvent2 extends Component {
    componentDidMount(){
     AsyncStorage.getItem("pro").then((value) => {
       this.setState({"item":JSON.parse(value)});
-      let valll = this.state.id;
-      let nname = this.state.School;
-      console.log(valll,nname,"fnkgfgd");
+      let valll = this.state.item.id;
+      let nname = this.state.item.school;
+      console.log(valll,nname,"jhbkgvbhgkjbjhnjknknkjnk");
+      console.log(this.props.item,"itfhyghjkjkl");
       
-      this.props.EventFetch({valll,nname});
+      this.props.AnnoucFetch({valll,nname});
      
   }).done();
   }
@@ -119,7 +116,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state =>{
  
-  const subjects = _.map(state.pro.eve,(Val,uid) =>{
+  const subjects = _.map(state.pro.Anno,(Val,uid) =>{
     return {...Val};
   });
 
@@ -127,7 +124,7 @@ const mapStateToProps = state =>{
 return {subjects,loading:state.pro.loading1};
 };
 
-export default connect(mapStateToProps,{EventFetch})(AnnouceViewEvent2);
+export default connect(mapStateToProps,{AnnoucFetch})(AnnouceViewEventStudent);
 
 
 

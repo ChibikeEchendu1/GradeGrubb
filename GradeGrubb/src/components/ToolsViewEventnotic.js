@@ -33,8 +33,13 @@ class ToolsViewEvent extends Component {
 constructor(props){
   super(props);
   this.state = {
-    
+      item:this.props.navigation.state.params.item,
+      Name:this.props.navigation.state.params.Name,
+      School:this.props.navigation.state.params.School,
+      id:this.props.navigation.state.params.id
+      
     }
+
 
   }
 
@@ -47,10 +52,10 @@ constructor(props){
    
           <Tabs>
           <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "#F8F8F8" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "#000000" :'black'}}>Announcements</Text></TabHeading>}>
-          <AnnouceViewEvent/>
+          <AnnouceViewEvent item={this.state.item} Name={this.state.Name} School={this.state.School} id={this.state.id}/>
           </Tab>
           <Tab heading={ <TabHeading style={{backgroundColor: Platform.OS === 'ios' ? "#F8F8F8" :'#D0F5FE' }}><Text style={{fontSize:20,color: Platform.OS === 'ios' ? "#000000" :'black'}}>Event</Text></TabHeading>}>
-          <AnnouceViewEvent2/>
+          <AnnouceViewEvent2 item={this.state.item} Name={this.state.Name} School={this.state.School} id={this.state.id}/>
           </Tab>
           </Tabs>
         

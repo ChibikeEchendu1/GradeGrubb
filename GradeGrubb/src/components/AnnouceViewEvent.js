@@ -27,7 +27,9 @@ class AnnouceViewEvent extends Component {
     super(props);
 
   this.state = {
-    item:'',
+    School:this.props.School,
+    
+    id:this.props.id,
     //valll: 18,
     //nname: 'Trinity'
     }
@@ -46,9 +48,10 @@ class AnnouceViewEvent extends Component {
    componentDidMount(){
     AsyncStorage.getItem("pro").then((value) => {
       this.setState({"item":JSON.parse(value)});
-      let valll = this.state.item.id;
-      let nname = this.state.item.school;
-      //console.log(valll,nname);
+      let valll = this.state.id;
+      let nname = this.state.School;
+      console.log(valll,nname,"jhbkgvbhgkjbjhnjknknkjnk");
+      console.log(this.props.item,"itfhyghjkjkl");
       
       this.props.AnnoucFetch({valll,nname});
      

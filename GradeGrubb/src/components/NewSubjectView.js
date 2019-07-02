@@ -79,11 +79,11 @@ class NewSubjectView extends Component{
          
          <View>
              
-              <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:'35%',fontSize:20}}>Start by giving the subject a name</Text>
+              <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:'15%',fontSize:20}}>Start by giving the subject a name</Text>
              </View>
          <View>
          <TextInput
-          style={{borderWidth:1, width:'96%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:10}}
+          style={{borderBottomWidth:1, width:'90%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:'30%'}}
           placeholder="Subject Name"
           onChangeText={this.onNameChanged.bind(this)}
           value={this.props.Name}
