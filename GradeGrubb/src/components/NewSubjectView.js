@@ -92,7 +92,7 @@ class NewSubjectView extends Component{
         </View>
         <View>
        <TouchableOpacity  onPress={this.goforword.bind(this)}>
-          <Text style={{fontSize:20, alignSelf:'flex-end', marginRight:20, color:"#63B8FF"}}>Next</Text>
+          <Text style={{fontSize:20, alignSelf:'flex-end', marginRight:20, marginTop:20, color:"#63B8FF"}}>Next</Text>
           </TouchableOpacity>
           </View>
           </View>
