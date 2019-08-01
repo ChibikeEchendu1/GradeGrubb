@@ -21,31 +21,21 @@ const Header = (props) =>{
 
 
 const styles = StyleSheet.create({
-    
     viewStyle: {
         backgroundColor:'#1995ad',
       position:Platform.OS === 'ios' ? 'relative' :'relative',
        top: Platform.OS === 'ios' ? 0 :0, 
        opacity: 0.7,
-       // marginBottom:10,
-        //paddingTop: 20,
         flexDirection: 'column',
         width: '100%',
         alignItems:'flex-start',
         justifyContent:'center',
-        height: '7%',
-        
-        
-        
-    },
+        height: '7%',},
     tab:{
         height:'100%',
         flexDirection:'column',
         alignItems:'center'
     }
-
-
-   
 });
 
 export {Header};

@@ -57,7 +57,7 @@ class NewNameView extends Component{
          <HomeHeader ti="New Name" navigate={this.props.navigation.goBack}/>
          <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'padding' : 'height'}>
          <TextInput
-          style={{borderWidth:1, marginTop:90, width:'96%',alignSelf:"center", height: 60,borderColor:"#C0C0C0", padding:5, marginTop:100}}
+          style={{borderBottomWidth:1, marginTop:90, width:'96%',alignSelf:"center", height: 60,borderColor:"#C0C0C0", padding:5, marginTop:100}}
           placeholder="New Name"
           onChangeText={this.onNameChanged.bind(this)}
           value={this.props.Name}

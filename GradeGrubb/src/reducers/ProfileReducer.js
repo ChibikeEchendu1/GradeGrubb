@@ -38,9 +38,11 @@ export default (state = INITIAL_STATE , action) => {
         
     case 'Login_user2':
         return {...state, loading1: true};
+    case 'Login_usertoken':
+        return {...state, lodingtocken:true};
 
     case 'justdone':
-        return {...state, loading1: false, error:''};
+        return {...state,lodingtocken:false, error:''};
 
     case 'mark_changed':
             return {...state, gra: action.payload.grade, scores:action.payload.score }
@@ -62,6 +64,9 @@ export default (state = INITIAL_STATE , action) => {
     
     case 'num_changed': 
         return {...state, num: action.payload};
+
+    case 'num_changed2': 
+        return {...state, num2: action.payload};
 
     case 'pic_changed': 
         return {...state,loading1: false, hope:true, num: action.payload};

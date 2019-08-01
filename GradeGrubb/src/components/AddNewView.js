@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {HomeHeader,Spinner2} from './index';
 import {Text, TextInput, StyleSheet,View,SafeAreaView,TouchableOpacity,TouchableWithoutFeedback,KeyboardAvoidingView,Platform, Keyboard} from 'react-native';
-import {NameChangedSub22,numchanged,cn22} from '../actions';
+import {NameChangedSub22,numchanged,cn22,numchanged2} from '../actions';
 import {connect} from 'react-redux';
 
 class AddNewView extends Component{
@@ -20,12 +20,16 @@ class AddNewView extends Component{
         this.props.numchanged(text);
       }
 
+      onnumchanged2(text){
+        this.props.numchanged2(text);
+      }
+
       onFinButtonPress(){
         const {nname,sub} = this.state;
-        const {Name,num} = this.props;
+        const {Name,num,num2} = this.props;
        // console.log("gvhgvhg");
 
-    this.props.cn22({nname,sub,Name,num});
+    this.props.cn22({nname,sub,Name,num,num2});
      }
 
       renderError(){
@@ -70,8 +74,7 @@ class AddNewView extends Component{
              <Text style={{width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:15}}>
              This is where you add content to your subject First, name the subject element eg Classwork1 , Homework1</Text>
               
-              <Text style={{width:'96%',alignSelf:"center", padding:12, paddingTop:2, fontSize:15}}>then enter how much out of the total grade the element is worth. Total mark does not have to be out of 100
-           DO NOT GIVE ELEMENTS THE SAME NAME</Text>
+             
              
               
               <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:20}}>Give the element a name</Text>
@@ -80,18 +83,30 @@ class AddNewView extends Component{
              <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'padding'}>
          <View>
          <TextInput
-          style={{borderWidth:1, width:'96%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:2}}
+          style={{borderBottomWidth:1,  width:'96%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:2}}
           placeholder="Subject Name"
           autoFocus={true}
           onChangeText={this.onNameChanged.bind(this)}
           value={this.props.Name}
         /></View>
 
-        <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:20}}>Give the element a "Worth"</Text>
+<Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:20}}>What is the Element Marked Out of</Text>
+             
+             <View style={{flexDirection: 'row', alignItems:'center'}}>
+             <TextInput
+              style={{borderBottomWidth:1, width:'60%', height: 40,borderColor:"#C0C0C0", padding:5,marginLeft:10 , marginTop:2}}
+              placeholder="Marking Out Of"
+              keyboardType='numeric'
+              onChangeText={this.onnumchanged2.bind(this)}
+              value={this.props.num2}
+            />
+             </View>
+
+        <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:20}}>What is the Element Weight</Text>
              
          <View style={{flexDirection: 'row', alignItems:'center'}}>
          <TextInput
-          style={{borderWidth:1, width:'20%', height: 40,borderColor:"#C0C0C0", padding:5,marginLeft:10 , marginTop:2}}
+          style={{borderBottomWidth:1, width:'20%', height: 40,borderColor:"#C0C0C0", padding:5,marginLeft:10 , marginTop:2}}
           placeholder="Worth"
           keyboardType='numeric'
           onChangeText={this.onnumchanged.bind(this)}
@@ -110,23 +125,22 @@ class AddNewView extends Component{
 };
 }
 const styles = StyleSheet.create({  
- 
-    container: {
+ container: {
         flex: 1,
         backgroundColor: 'white',
       }
-   
-});
+    });
 
 const mapStateToProps = state =>{
     return{
        error:state.auth.error,
        Name: state.pro.elesub2,
        num: state.pro.num,
+       num2: state.pro.num2,
        loading: state.auth.loading,
        set: state.auth.set,
      }
   };
   
-  export default connect(mapStateToProps,{NameChangedSub22,numchanged,cn22})(AddNewView) ;
+  export default connect(mapStateToProps,{NameChangedSub22,numchanged,cn22,numchanged2})(AddNewView) ;
 

@@ -44,7 +44,7 @@ constructor(props){
   }
   
   
-  componentDidMount(){ //componentDidMount
+  componentWillMount(){ //componentDidMount
       AsyncStorage.getItem("logged").then((value) => {
        
         this.setState({"vall":JSON.parse(value)});
@@ -104,7 +104,7 @@ constructor(props){
    } */
 
    renderButton(){
-    if(this.props.loading){
+    if(this.props.loading || this.props.lodingtocken){
       return <Spinner size="large"/>;
     }
     else{
@@ -167,7 +167,8 @@ const mapStateToProps = state =>{
 
   return {profiles,
     loading: state.pro.loading1,
-    redup:state.pro.redup
+    redup:state.pro.redup,
+    lodingtocken:state.pro.lodingtocken
     };
 };
 

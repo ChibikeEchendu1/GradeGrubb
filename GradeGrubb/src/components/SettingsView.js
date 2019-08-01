@@ -10,36 +10,22 @@ class SettingsView extends Component{
   
   goback(){
     if (this.props.cow) {
-      AsyncStorage.removeItem('logged');
-                                      this.props.navigation.navigate('Login');
+      
+      RNRestart.Restart();
   }
   }
 
   renderButton(){
-    if(this.props.loading){
-      return <TouchableOpacity> <Spinner2 size="large"/> </TouchableOpacity>;
-    }
-    else{
+    
      return <TouchableOpacity  onPress={()=>{
-                        Alert.alert(
-                  'Alert',
-                  'Are you sure you want to delete ?',
-                  [
-                    {text: 'No', onPress:() => console.log('Cancel Pressed'), style:'cancel'},
-                    {text: 'Yes', onPress:() => {
-                        const Id = this.props.navigation.state.params.per
-                        AsyncStorage.removeItem('logged');
-                                      
-                        this.props.delacoun({Id});
-                        RNRestart.Restart();
-                        //this.props.navigation.navigate('Login');
-                      }},
-                  ],
-                  {cancelable:true}
-                  );}} > 
+      const Id = this.props.navigation.state.params.per
+      AsyncStorage.removeItem('logged');
+      this.props.delacoun({Id});
+     // RNRestart.Restart();
+                     }} > 
                   <Text style={{fontSize:20}}>Delete Account</Text>
                   </TouchableOpacity>;
-    }
+    
   }
     render(){
     return(
@@ -50,32 +36,33 @@ class SettingsView extends Component{
          <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
           <TouchableOpacity onPress={() =>
             this.props.navigation.navigate("ChangePassword",{per: this.props.navigation.state.params.per})}>
-            <Text style={{fontSize:20}}>Change Password </Text>
+            <Text style={{fontSize:20}}>Change Password</Text>
             </TouchableOpacity>
             </View>
             <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
           <TouchableOpacity onPress={()=>{
-                            Alert.alert(
-                                'Alert',
-                                'Are you sure you want to log out ?',
-                                [
-                                    {text: 'No', onPress:() => console.log('Cancel Pressed'), style:'cancel'},
-                                    {text: 'Yes', onPress:() => {
-                                      const Id = this.props.navigation.state.params.per
-                                      //this.props.delacoun2({Id});
-                                      AsyncStorage.removeItem('logged');
-                                      RNRestart.Restart();
-                                      //this.props.navigation.navigate('Login');
-                                     }},
-                                ],
-                                {cancelable:true}
-                            );
-                          }} >
+            AsyncStorage.getItem('tocken').then((toke)=>{
+              if (toke) {
+               // console.log('token',toke);
+                
+                const Id = this.props.navigation.state.params.per
+                const token = JSON.parse(toke)
+                AsyncStorage.removeItem('tocken');
+                AsyncStorage.removeItem('logged');
+                this.props.delacoun2({Id,token});
+                console.log('token',token);
+                
+                }
+                
+            
+            }).done()
+            }} >
             <Text style={{fontSize:20}}>Log Out</Text>
             </TouchableOpacity>
             </View>
             <View style={{marginTop:50,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
             {this.renderButton()}
+            {this.goback()}
             </View>
         </View>
       

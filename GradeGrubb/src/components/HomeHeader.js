@@ -10,15 +10,17 @@ const HomeHeader = (props) =>{
   <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto',marginLeft:10}} onPress={() =>
             props.navigate(props.boo)}> 
           <Icon name="angle-left" size={40}   color={"white"} />
-            <View>
-          <Text style={{fontSize:15, color:"white"}}>back</Text>
-          </View>
+            
         </TouchableOpacity> 
 
-    <View numberOfLines={1} style={{alignSelf:'center',alignItems:'center',position:'absolute',left: 0, right: 0,marginTop:'8%', marginLeft:'10%' , marginRight:'10%',top: 0,}}>
+    <View numberOfLines={1} style={{alignSelf:'center',alignItems:'center', marginLeft:'10%' , marginRight:'10%',top: 0,}}>
         <Text style={{fontSize:25,fontWeight:'bold', color:"white", alignSelf:'center'}}>{props.ti}</Text>
         </View>
        
+        <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',opacity: 0.7,margin:'auto',marginLeft:10}}> 
+        <Text style={{fontSize:25,fontWeight:'bold',opacity: 0.7, color:"#1995ad", alignSelf:'center'}}></Text>
+            
+        </TouchableOpacity> 
         
     </View>
     );

@@ -1,12 +1,14 @@
 //const IP = '192.168.2.48'
 //const IP = 'https://www.gradegrubb.com'
 //const IP = '10.192.79.207' 172.20.10.9
-//const IP = 'http://192.168.0.65/gg/gg' 
+//const IP = 'http://172.20.10.2/gg/gg' 
 const IP = 'http://127.0.0.1/gg/gg'
+
 
 
 import ImagePicker from 'react-native-image-crop-picker'
 import RNFetchBlob from 'rn-fetch-blob'
+import { AsyncStorage } from "react-native"
 
 export const emailChanged = (text) => {
     return{
@@ -121,6 +123,15 @@ export const numchanged = (text) => {
     };
 };
 
+
+export const numchanged2 = (text) => {
+        return{
+            type: 'num_changed2',
+            payload: text
+        };
+    };
+
+
 ////////    IP ADDRESS
 export const loginUser = ({email, password}) => {
     
@@ -183,22 +194,18 @@ Id: Id
   };
 };
 
-
-
-export const delacoun2 = ({Id}) => {
-    
+export const delacoun2 = ({Id,token}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user'});
-
-    
-    fetch(IP+'/Ap/delacoo2.php', {
+fetch(IP+'/Ap/delacoo2.php', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-Id: Id
+    Id: Id,
+    token:token
       }),
     }).then((response) => response.json()).then(users => {
    if( typeof users.Id != 'undefined'){
@@ -361,7 +368,7 @@ name: nname
 export const setdevice = ({fcmtoken,apnstoken,Id}) => {
     
     return (dispatch) => {
-    dispatch({type: 'Login_user2'});
+    dispatch({type: 'Login_usertoken'});
    
         
     fetch(IP+'/Ap/setdevice.php', {
@@ -376,7 +383,7 @@ fcmtoken: fcmtoken,
 value:Id
     }),
     }).then((response) => response.json()).then(users => {
-        
+             AsyncStorage.setItem('tocken', JSON.stringify(fcmtoken));
        dispatch({type: 'justdone', payload: users});
     });
    }
@@ -1352,7 +1359,7 @@ activeRowKey:Id
 
 
 
-export const cn22 = ({nname,sub,Name,num}) => {
+export const cn22 = ({nname,sub,Name,num,num2}) => {
     
     return (dispatch) => {
     dispatch({type: 'Login_user'});
@@ -1374,6 +1381,7 @@ subname:sub,
 name: nname,
 Addsubjectt:Name,
 worth: num,
+outof:num2
     }),
     }).then((response) => response.json()).then(users => {
 if( typeof users.Id != 'undefined'){

@@ -14,7 +14,7 @@ const HomeHeader5 = (props) =>{
             props.navigate(props.screen)}> 
           <Icon name="angle-left" size={40}   color={'white'} />
             <View>
-          <Text style={{fontSize:15, color:"white"}}>back</Text>
+         
           </View>
         </TouchableOpacity> 
 

@@ -18,14 +18,15 @@ class PushNotificationController extends Component {
   }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
 
    
     FCM.requestPermissions().then(()=>{
       
  
     
-     
+   AsyncStorage.getItem('tocken').then((token)=>{
+        if (!token) {   
 
     FCM.getFCMToken().then(token => {
       
@@ -49,19 +50,23 @@ class PushNotificationController extends Component {
     }
 
       
+  
+        console.log('tockendfnkjgvjkfdngkjfng',token);
+        
+      AsyncStorage.getItem("logged").then((value) => {
+        //console.log("Dfgdfg");
+        
+        this.setState({"Id":JSON.parse(value)});
       
-
-    AsyncStorage.getItem("logged").then((value) => {
-      //console.log("Dfgdfg");
-      
-      this.setState({"Id":JSON.parse(value)});
+        let Id =  parseInt(value);
+        const {fcmtoken,apnstoken} = this.state;
+       // console.log(value,fcmtoken,apnstoken);
+        
+        this.props.setdevice({fcmtoken,apnstoken,Id});
+       }).done();
+      }
+    }).done();
     
-      let Id =  parseInt(value);
-      const {fcmtoken,apnstoken} = this.state;
-     // console.log(value,fcmtoken,apnstoken);
-      
-      this.props.setdevice({fcmtoken,apnstoken,Id});
-     }).done();
    
 
 

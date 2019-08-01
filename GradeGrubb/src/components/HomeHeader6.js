@@ -14,14 +14,14 @@ const HomeHeader6 = (props) =>{
             props.navigate(props.screen)}> 
           <Icon name="angle-left" size={40}   color={'white'} />
             <View>
-          <Text style={{fontSize:15, color:"white"}}>back</Text>
+          
           </View>
         </TouchableOpacity> 
 
     <View numberOfLines={1} style={{alignSelf:'center',alignItems:'center',margin:'auto'}}>
         <Text style={{fontSize:20,fontWeight:'bold', color:'white'}}>{props.ti}</Text>
         </View>
-        <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto', marginRight:20}} onPress={()=>{
+        <TouchableOpacity style={{ alignSelf:'center',alignItems:'center',margin:'auto',opacity: 0.7, marginRight:20}} onPress={()=>{
 
                     
                           }} > 
