@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import RNRestart from 'react-native-restart';
-import {Text,StyleSheet,View,SafeAreaView,TouchableOpacity,Alert,AsyncStorage} from 'react-native';
+import {Text,StyleSheet,View,SafeAreaView,TouchableOpacity,AsyncStorage} from 'react-native';
 import {HomeHeader,Spinner2} from './index';
 import {connect} from 'react-redux';
 import {delacoun,delacoun2} from '../actions';
@@ -20,6 +20,7 @@ class SettingsView extends Component{
      return <TouchableOpacity  onPress={()=>{
       const Id = this.props.navigation.state.params.per
       AsyncStorage.removeItem('logged');
+      AsyncStorage.removeItem('tocken');
       this.props.delacoun({Id});
      // RNRestart.Restart();
                      }} > 
