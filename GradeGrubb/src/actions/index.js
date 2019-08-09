@@ -1,7 +1,7 @@
 //const IP = '192.168.2.48'
 const IP = 'https://www.gradegrubb.com'
 //const IP = '10.192.79.207' 172.20.10.9
-//const IP = 'http://172.20.10.11/gg/gg' 
+//const IP = 'http://172.20.10.2/gg/gg' 
 //const IP = 'http://127.0.0.1/gg/gg'
 
 
@@ -9,6 +9,11 @@ const IP = 'https://www.gradegrubb.com'
 import ImagePicker from 'react-native-image-crop-picker'
 import RNFetchBlob from 'rn-fetch-blob'
 import { AsyncStorage } from "react-native"
+import _ from 'lodash';
+import {
+    Alert
+  } from 'react-native';
+
 
 export const emailChanged = (text) => {
     return{
@@ -759,9 +764,30 @@ export const markFetchNotice = ({name,Sname,sid}) => {
       };
 
 
+   
 
 export const grademarks = ({name,Sname,ele,Ids,scores,room,worth,RealSubNAme}) => {
-    return (dispatch) => {
+
+    let olderThan18 = [];
+
+    for (let i = 0; i < scores.length; i++) {
+        if(scores[i] > worth){
+            olderThan18.push(scores[i])
+        }
+    }
+
+    console.log(olderThan18); // [34, 23, 51, 40]
+
+return (dispatch) => {
+    if (olderThan18.length > 0) {
+        
+        dispatch({type: 'alertaway'});
+       
+        }
+        else{
+    
+
+    
 dispatch({type: 'Login_user2'});
 fetch(IP+'/Ap/grademarks.php', {
     method: 'POST',
@@ -783,6 +809,7 @@ RealSubNAme:RealSubNAme
    dispatch({type: 'StopLoader'});
     });
    }
+        }
   };
 
 

@@ -5,7 +5,7 @@ const FormInput = (props) =>{
 
     return(
         <View style = {styles.viewStyle}>
-            <TextInput /* keyboardType= "twitter" */ value={props.val} onChangeText={props.ct} placeholder = {props.ph} autoCorrect={false} secureTextEntry = {props.bool} style = {styles.inputStyle}/>
+            <TextInput value={props.val} onChangeText={props.ct} placeholder = {props.ph} autoCorrect={false}  style = {styles.inputStyle}/>
         </View>
     );
 };

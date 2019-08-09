@@ -97,7 +97,7 @@ class TsubjectViewS extends Component {
    }
  
    renderRow(item,sectionID, rowID){
-    return <SubjectListS num ={rowID} School={this.state.item.school} Tid = {this.state.item.id} Image = {this.state.item.Image} item={item} nav={this.state.nav}/>
+    return <SubjectListS num ={parseInt(rowID)+1} School={this.state.item.school} Tid = {this.state.item.id} Image = {this.state.item.Image} item={item} nav={this.state.nav}/>
    }
 
   render() {

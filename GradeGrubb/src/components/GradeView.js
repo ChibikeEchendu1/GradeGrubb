@@ -16,6 +16,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Alert,
   ListView,
   SafeAreaView,
   KeyboardAvoidingView,
@@ -103,6 +104,18 @@ class GradeView extends Component {
     }
   }
 
+  goBack2(){
+    if (this.props.setalert) {
+  Alert.alert(
+    'Alert Title',
+    'All Grades Must be less than ' + this.state.worth,
+    [
+      {text: 'OK', onPress: () => console.log('OK Pressed')},
+    ],
+    {cancelable: false},
+  );
+    }}
+
    renderButton(){
     if(this.props.loading){
       return <Spinner size="large"/>;
@@ -150,6 +163,7 @@ class GradeView extends Component {
         </View> 
             
             {this.goBack()}
+            {this.goBack2()}
             
             </KeyboardAvoidingView>
             </SafeAreaView>
@@ -177,7 +191,7 @@ const styles = StyleSheet.create({
     
   
   
-  return {grades,scores:state.pro.scores,loading: state.pro.loading1, Ids:state.pro.Id, set2:state.pro.set2};
+  return {grades,scores:state.pro.scores,loading: state.pro.loading1, Ids:state.pro.Id,setalert:state.pro.setalert, set2:state.pro.set2};
   };
   
   export default connect(mapStateToProps,{greFetch,grademarks,markChanged2})(GradeView);

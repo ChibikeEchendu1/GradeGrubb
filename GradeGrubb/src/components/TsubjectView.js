@@ -114,7 +114,7 @@ class TsubjectView extends Component {
    }
  
    renderRow(item,sectionID, rowID){
-    return <SubjectList num ={rowID} School={this.state.item.school} Tname={this.state.item} Tid = {this.state.item.id} item={item} nav={this.state.nav} />
+    return <SubjectList num ={parseInt(rowID)+1} School={this.state.item.school} Tname={this.state.item} Tid = {this.state.item.id} item={item} nav={this.state.nav} />
    }
 
   render() {

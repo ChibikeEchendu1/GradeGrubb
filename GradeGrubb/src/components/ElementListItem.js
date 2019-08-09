@@ -77,6 +77,11 @@ export default class ElementListItem extends Component{
             
          </View>
          </View>   
+         <View style={{alignItems:'center'}}>
+            <Text numberOfLines={1} style={{fontSize:20,alignSelf:'center',fontWeight:'bold'}}>
+            Weight: {this.props.item.Weight}   {/* this.props.item.Name */}
+            </Text>
+         </View>
          </View>
          </TouchableOpacity>
     );

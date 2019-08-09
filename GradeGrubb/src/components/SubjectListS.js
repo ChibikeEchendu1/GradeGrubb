@@ -13,7 +13,7 @@ export default class  SubjectListS extends React.Component{
                   <Card>
             <CardItem header bordered style={{flexDirection:'row', width:'100%',justifyContent:'flex-start'}}>
             <View style={{borderWidth:0.3,borderColor:'#1995ad', borderRadius:50,width:30,height:30,alignItems:'center', justifyContent:'center', backgroundColor:'#1995ad'}}>
-            <Text style={{ color:'white',textAlign:'center',alignSelf:'center',fontSize:18,fontWeight:'bold'}}>{this.props.num + 1}</Text>
+            <Text style={{ color:'white',textAlign:'center',alignSelf:'center',fontSize:18,fontWeight:'bold'}}>{this.props.num}</Text>
             </View>
               <Text style={{ color:'#1995ad',textAlign:'center',alignSelf:'center',fontSize:18,marginLeft:20,fontWeight:'bold'}}>{this.props.item.Name}</Text>
             </CardItem>

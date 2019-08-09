@@ -45,7 +45,7 @@ export default (state = INITIAL_STATE , action) => {
         return {...state,lodingtocken:false, error:''};
 
     case 'mark_changed':
-            return {...state, gra: action.payload.grade, scores:action.payload.score }
+            return {...state, gra: action.payload.grade, setalert:false, scores:action.payload.score }
 
     case 'mark_changed2':
             return {...state, gra: action.payload }
@@ -53,6 +53,10 @@ export default (state = INITIAL_STATE , action) => {
     case 'StopLoader':
         return {...state, loading1: false, Adstu:true,set2:true, lol: action.payload}; 
 
+    case 'alertaway':
+        return {...state, setalert:true}; 
+
+        
     case 'Name_changedsub': 
         return {...state, Namesub: action.payload}; 
         
