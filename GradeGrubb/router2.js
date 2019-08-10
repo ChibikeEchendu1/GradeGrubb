@@ -181,14 +181,14 @@ import AttendStudent from './src/pages/AttendStudent'
     )},
   
     third2:{screen:  StackNavigator({
-      Annoucment:{ screen: Annoucment, navigationOptions: {
+      ToolsEvent:{ screen: ToolsEvent, navigationOptions: {
         gesturesEnabled: false,
         headerLeft:null
     },},
-    ToolsEvent:{ screen: ToolsEvent, navigationOptions: {
-      gesturesEnabled: false,
-      headerLeft:null
-  },}
+      Annoucment:{ screen: Annoucment, navigationOptions: {
+        gesturesEnabled: false,
+        headerLeft:null
+    },}
     },
     {headerMode: 'none'})}
   

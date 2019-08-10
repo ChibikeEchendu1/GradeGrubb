@@ -9,8 +9,8 @@
   "dependencies": {
     "lodash": "^4.17.10",
     "native-base": "^2.8.1",
-    "react": "16.3.1",
-    "react-native": "^0.55.4",
+    "react": "16.8.3",
+    "react-native": "^0.59.10",
     "react-native-check-box": "^2.1.0",
     "react-native-elements": "^0.19.1",
     "react-native-fcm": "^16.2.4",
@@ -25,19 +25,22 @@
     "react-navigation": "v1.0.0-beta.26",
     "react-navigation-redux-helpers": "^2.0.2",
     "react-redux": "^5.0.7",
+    "react-timer-mixin": "^0.13.4",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
-    "rn-fetch-blob": "^0.10.13",
+    "rn-fetch-blob": "^0.10.16",
     "strip-ansi": "^4.0.0"
   },
   "devDependencies": {
-    "babel-jest": "23.0.1",
-    "babel-preset-react-native": "4.0.0",
-    "jest": "23.1.0",
-    "react-test-renderer": "16.3.1"
+    "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "react-test-renderer": "16.8.3"
   },
   "jest": {
     "preset": "react-native"

@@ -23,8 +23,8 @@ const Header = (props) =>{
 const styles = StyleSheet.create({
     viewStyle: {
         backgroundColor:'#1995ad',
-      position:Platform.OS === 'ios' ? 'relative' :'relative',
-       top: Platform.OS === 'ios' ? 0 :0, 
+      //position:Platform.OS === 'ios' ? 'relative' :'relative',
+       //top: Platform.OS === 'ios' ? 0 :0, 
        opacity: 0.7,
         flexDirection: 'column',
         width: '100%',

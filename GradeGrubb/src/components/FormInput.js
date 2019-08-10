@@ -5,7 +5,7 @@ const FormInput = (props) =>{
 
     return(
         <View style = {styles.viewStyle}>
-            <TextInput value={props.val} onChangeText={props.ct} placeholder = {props.ph} autoCorrect={false}  style = {styles.inputStyle}/>
+            <TextInput value={props.val} onChangeText={props.ct} secureTextEntry={props.bool} placeholder = {props.ph} autoCorrect={false}  style = {styles.inputStyle}/>
         </View>
     );
 };

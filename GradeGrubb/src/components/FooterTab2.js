@@ -58,7 +58,7 @@ export default class FooterTab2 extends React.Component{
         <SafeAreaView style = {styles.viewStyle}>
 
         <TouchableOpacity style = {styles.tab}
-        onPress={()=>this.navigate("Tsubject")}> 
+        onPress={()=>this.navigate("second")}> 
         <Icon name="leanpub" size={23} color={this.isActive(1)} style={{marginTop:'12%'}}/>
             <View>
             <Text style={this.textStyle2(1)}>Subjects</Text>
@@ -74,14 +74,14 @@ export default class FooterTab2 extends React.Component{
           <Text style={{fontSize:12,marginLeft:'25%',color:"#B0B0B0" }} >Home</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style = {styles.tab}  onPress={()=>this.navigate("Thome")}>
+        <TouchableOpacity style = {styles.tab}  onPress={()=>this.navigate("one")}>
          <Icon name="user" color={this.isActive(0)} size={26} style={{marginTop:'10%', marginLeft:'25%'}}/>
           <Text style={this.textStyle(0)}>Profile</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style = {styles.tab} 
         
-        onPress={()=>this.navigate("NewSubject")}>
+        onPress={()=>this.navigate("third")}>
        <Icon name="plus-circle" size={26} color={this.isActive(2)}style={{marginTop:'10%'}}/>
           <Text style={this.textStyle2(2)}>Create</Text>
         </TouchableOpacity>

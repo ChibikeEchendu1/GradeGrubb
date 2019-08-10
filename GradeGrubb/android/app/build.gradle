@@ -96,9 +96,14 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.2"
-    
+     compileSdkVersion 28
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
    
     
     dexOptions {
@@ -115,22 +120,21 @@ dexOptions {
     
     defaultConfig {
         applicationId "com.gradegrubb"
-        minSdkVersion 16
+       minSdkVersion 16
         targetSdkVersion 28
         vectorDrawables.useSupportLibrary = true
         versionCode 3
         multiDexEnabled true 
         versionName "3.0"
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
+       
     }
     splits {
         abi {
             reset()
             enable enableSeparateBuildPerCPUArchitecture
             universalApk false  // If true, also generate a universal APK
-            include "armeabi-v7a", "x86"
+            include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+
         }
     }
     buildTypes {
@@ -144,7 +148,7 @@ dexOptions {
         variant.outputs.each { output ->
             // For each separate APK per architecture, set a unique version code as described here:
             // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
-            def versionCodes = ["armeabi-v7a":1, "x86":2]
+            def versionCodes = ["armeabi-v7a":1, "x86":2, "arm64-v8a": 3, "x86_64": 4]
             def abi = output.getFilter(OutputFile.ABI)
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =
@@ -167,8 +171,9 @@ dependencies {
     compile project(':react-native-vector-icons')
     compile project(':react-native-image-crop-picker')
     compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "com.android.support:appcompat-v7:23.0.1"
+    compile "com.android.support:appcompat-v7:27.0.0"
     compile "com.facebook.react:react-native:+"
+    compile ("com.facebook.react:react-native:0.59.10") { force = true }
    // compile 'com.google.firebase:firebase-core:16.0.1'
     //compile 'com.google.firebase:firebase-notifications'
     compile 'com.firebase:firebase-client-android:2.5.0'

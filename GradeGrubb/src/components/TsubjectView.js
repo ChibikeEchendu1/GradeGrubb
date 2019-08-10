@@ -123,7 +123,7 @@ class TsubjectView extends Component {
    
     <SafeAreaView style={styles.container}>
         <Header ti="Subjects" />
-        <View style={{justifyContent: 'flex-start',  height:Platform.OS === 'ios' ? '87%' :'87%', width:'100%'}}>
+        <View style={{justifyContent: 'flex-start',  height:Platform.OS === 'ios' ? '93%' :'93%', width:'100%'}}>
         {
           this.renderButton()
         }

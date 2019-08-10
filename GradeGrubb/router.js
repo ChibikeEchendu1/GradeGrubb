@@ -166,14 +166,15 @@ SElementnotice:{screen:SElementnotice},
     )},
   
     third2:{screen:  StackNavigator({
-      Annoucment:{ screen: Annoucment, navigationOptions: {
+      ToolsEvent:{ screen: ToolsEvent, navigationOptions: {
         gesturesEnabled: false,
         headerLeft:null
     },},
-    ToolsEvent:{ screen: ToolsEvent, navigationOptions: {
-      gesturesEnabled: false,
-      headerLeft:null
-  },}
+      Annoucment:{ screen: Annoucment, navigationOptions: {
+        gesturesEnabled: false,
+        headerLeft:null
+    },}
+   
     },
     {headerMode: 'none'})}
   
@@ -201,29 +202,7 @@ SElementnotice:{screen:SElementnotice},
 },
 {headerMode: 'none'}) 
 
- //fourth tab
-/* export const Router = StackNavigator({
-  NewSubject:{ screen: NewSubject},
-  NewStudent: { screen: NewStudent },
-  AddStudent: { screen: AddStudent },
 
-},
-{headerMode: 'none'} */
-
-//third tab
-  /* export const Router = StackNavigator({
-  Tsubject:{ screen: Tsubject},
-  Students: { screen: Students },
-  Elements: { screen: Elements},
-  Grade:{screen: Grade},
-    EditOptions:{screen:EditOptions},
-    NewName:{screen:NewName},
-    AddElement:{screen:AddElement},
-    AddStudent:{screen:AddStudent},
-    RemoveStudent:{screen:RemoveStudent}
-},
-{headerMode: 'none'}
-)  */
 
 
 
