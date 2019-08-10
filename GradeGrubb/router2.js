@@ -131,7 +131,8 @@ import AttendStudent from './src/pages/AttendStudent'
   
   ,{
     tabBarPosition: "bottom",
-
+    animationEnabled: false,
+    lazy: true, swipeEnabled:false,
     tabBarComponent: props => {
       const x = 1;
       //console.log(this.state.item.id);
@@ -197,6 +198,8 @@ import AttendStudent from './src/pages/AttendStudent'
   
   ,{
     tabBarPosition: "bottom",
+    animationEnabled: false,
+    lazy: true, swipeEnabled:false,
     tabBarOptions: {
       activeTintColor: '#e91e63',
     },

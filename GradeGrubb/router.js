@@ -137,9 +137,12 @@ SElementnotice:{screen:SElementnotice},
 
 }
 
+
   
   ,{
     tabBarPosition: "bottom",
+    animationEnabled: false,
+    lazy: true, swipeEnabled:false,
     tabBarComponent: props => {
       return (
         <FooterTab2 navigator={props}>
@@ -183,6 +186,8 @@ SElementnotice:{screen:SElementnotice},
   
   ,{
     tabBarPosition: "bottom",
+    animationEnabled: false,
+    lazy: true, swipeEnabled:false,
     tabBarComponent: props => {
       return (
         <FooterTab navigator={props}>
