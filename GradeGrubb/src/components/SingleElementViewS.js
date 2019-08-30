@@ -16,7 +16,26 @@ import {
   ListView,
   Image,
   
+  AsyncStorage,TouchableOpacity,PixelRatio,Dimensions,Platform
 } from 'react-native';
+
+
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 360;
+
+export function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
 
 
 
@@ -92,7 +111,7 @@ class SingleElementViewS extends Component {
         
         return(
             <Image
-            style={{marginTop:20, height: 100, width:100,borderRadius:50}}
+            style={{marginTop:20, height: normalize(100), width:normalize(100),borderRadius:50}}
             source={{uri: "data:image/jpeg;base64,"+this.props.navigation.state.params.Image}}
             resizeMode = 'contain'
             />

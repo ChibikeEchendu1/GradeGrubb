@@ -1,7 +1,27 @@
 import React from 'react';
-import {Text,View, StyleSheet,TouchableOpacity} from 'react-native'
+import {Text,View, StyleSheet,TouchableOpacity,PixelRatio,Platform, Dimensions} from 'react-native'
 import { Container, Header, Content, Card, CardItem,  Body } from "native-base";
 
+
+
+
+
+const {
+width: SCREEN_WIDTH,
+height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 360;
+
+export function normalize(size) {
+const newSize = size * scale 
+if (Platform.OS === 'ios') {
+  return Math.round(PixelRatio.roundToNearestPixel(newSize))
+} else {
+  return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+}
+}
 export default class  SubjectList extends React.Component{
     
          
@@ -20,17 +40,25 @@ export default class  SubjectList extends React.Component{
                    <Card>
             <CardItem header bordered style={{flexDirection:'row', width:'100%',justifyContent:'flex-start'}}>
             <View style={{borderWidth:0.3,borderColor:'#1995ad', borderRadius:50,width:30,height:30,alignItems:'center', justifyContent:'center', backgroundColor:'#1995ad'}}>
-            <Text style={{ color:'white',textAlign:'center',alignSelf:'center',fontSize:18,fontWeight:'bold'}}>{this.props.num}</Text>
+            <Text style={{ color:'white',textAlign:'center',alignSelf:'center',fontSize:normalize(18),fontWeight:'bold'}}>{this.props.num}</Text>
             </View>
-              <Text style={{ color:'#1995ad',textAlign:'center',alignSelf:'center',marginLeft:20,fontSize:18,fontWeight:'bold'}}>  {this.props.item.Name}</Text>
+              <Text style={{ color:'#1995ad',textAlign:'center',alignSelf:'center',marginLeft:20,fontSize:normalize(18),fontWeight:'bold'}}>  {this.props.item.Name}</Text>
             </CardItem>
             <CardItem bordered >
               <Body>
-              <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
-                    Class Size: {this.props.item.Size}
-                </Text>
+              
                 <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
                     Class Average: {this.props.item.Average}% 
+                </Text>
+
+                <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
+                    Highest Class Average: {this.props.item.MAX}%
+                </Text>
+                <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
+                    Lowest Class Average: {this.props.item.MIN}% 
+                </Text>
+                <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
+                    Class Size: {this.props.item.Size}
                 </Text>
                 <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
                     Class: {this.props.item.Room2}

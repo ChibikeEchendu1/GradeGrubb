@@ -16,7 +16,26 @@ import {
   ListView,
   Image,
   
+  AsyncStorage,TouchableOpacity,PixelRatio,Dimensions,Platform
 } from 'react-native';
+
+
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 360;
+
+export function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
 
 
 
@@ -104,7 +123,7 @@ class SingleElementViewSnotic extends Component {
         
         return(
             <Image
-            style={{marginTop:20, height: 120, width:120,borderRadius:60}}
+            style={{marginTop:20, height: normalize(100), width:normalize(100),borderRadius:60}}
             source={{uri: "data:image/jpeg;base64,"+this.props.im}}
             resizeMode = 'contain'
             />
@@ -122,8 +141,8 @@ class SingleElementViewSnotic extends Component {
         <HomeHeader navigate={this.props.navigation.goBack} ti={this.state.studentname} boo=""/>{/* //this.state.studentname}/> */}
         <View style={{marginTop:0, alignItems:'center', justifyContent:'center',  height:'30%', backgroundColor: 'white'}}>
         {this.renderImage()}
-        <Text style={{fontSize:18, fontWeight:'bold',marginTop:5, textAlign:'center'}}>Average</Text>
-        <Text style={{fontSize:16, marginBottom:30, fontWeight:'bold', textAlign:'center'}}>{this.props.Av}</Text>
+        <Text style={{fontSize:normalize(18), fontWeight:'bold',marginTop:5, textAlign:'center'}}>Average</Text>
+        <Text style={{fontSize:normalize(16), marginBottom:30, fontWeight:'bold', textAlign:'center'}}>{this.props.Av}</Text>
         </View>
     
         <View style={{justifyContent: 'flex-start', height: '57%', width:'100%'}}>

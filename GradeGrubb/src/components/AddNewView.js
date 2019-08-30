@@ -1,9 +1,25 @@
 import React, {Component} from 'react';
 import {HomeHeader,Spinner2} from './index';
-import {Text, TextInput, StyleSheet,View,SafeAreaView,TouchableOpacity,TouchableWithoutFeedback,KeyboardAvoidingView,Platform, Keyboard} from 'react-native';
+import {Text, TextInput, StyleSheet,View,SafeAreaView,Dimensions,TouchableOpacity,TouchableWithoutFeedback,PixelRatio,KeyboardAvoidingView,Platform, Keyboard} from 'react-native';
 import {NameChangedSub22,numchanged,cn22,numchanged2} from '../actions';
 import {connect} from 'react-redux';
 
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 360;
+
+export function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
 class AddNewView extends Component{
 
     state = {
@@ -71,13 +87,13 @@ class AddNewView extends Component{
       <SafeAreaView style ={styles.container}>
          <HomeHeader navigate={this.props.navigation.goBack} ti="New Element"/>
          <TouchableWithoutFeedback style={{height:'10%'}} onPress={Keyboard.dismiss}><View>
-             <Text style={{width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:15}}>
-             This is where you add content to your subject First, name the subject element eg Classwork1 , Homework1</Text>
+             <Text style={{width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:normalize(15)}}>
+             This is where you add content to your subject</Text>
               
              
              
               
-              <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:20}}>Give the element a name</Text>
+              <Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(20)}}>Give the element a name</Text>
               </View>
              </TouchableWithoutFeedback>
              <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'padding'}>
@@ -90,7 +106,7 @@ class AddNewView extends Component{
           value={this.props.Name}
         /></View>
 
-<Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:20}}>What is the Element Marked Out of</Text>
+<Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:normalize(20)}}>What is the Element Marked Out of</Text>
              
              <View style={{flexDirection: 'row', alignItems:'center'}}>
              <TextInput
@@ -102,7 +118,7 @@ class AddNewView extends Component{
             />
              </View>
 
-        <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:20}}>What is the Element Weight</Text>
+        <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:normalize(20)}}>What is the Element Weight</Text>
              
          <View style={{flexDirection: 'row', alignItems:'center'}}>
          <TextInput

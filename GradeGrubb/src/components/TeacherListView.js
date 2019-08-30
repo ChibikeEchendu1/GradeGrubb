@@ -16,8 +16,26 @@ import {
   View,SafeAreaView,
   Image,
   ListView,TouchableOpacity
-  
+  ,PixelRatio,Dimensions
 } from 'react-native';
+
+
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 360;
+
+export function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
  
 
 
@@ -123,7 +141,7 @@ class TeacherListView extends Component {
           
           return(
               <Image
-              style={{marginTop:20, height:Platform.OS === 'ios' ? 120 :100,alignSelf:'center', width:120,borderRadius:Platform.OS === 'ios' ? 60:50}}
+              style={{marginTop:20, height:Platform.OS === 'ios' ? 120 :normalize(100),alignSelf:'center', width:120,borderRadius:Platform.OS === 'ios' ? 60:50}}
               source={{uri: "data:image/jpeg;base64,"+this.props.navigation.state.params.item.Image}}
               resizeMode = 'contain'
               />
@@ -164,7 +182,7 @@ class TeacherListView extends Component {
 
         </TouchableOpacity>
         <ImageButton press={this.onButtonPress.bind(this)}/>
-        <Text style={{fontSize:25,marginTop:3, fontWeight:'bold', textAlign:'center'}}>{this.props.navigation.state.params.item.Name}</Text>
+        <Text style={{fontSize:normalize(20),marginTop:3, fontWeight:'bold', textAlign:'center'}}>{this.props.navigation.state.params.item.Name}</Text>
         </View>
         
         <View style={{alignItems:'center', backgroundColor:'#DDDDDD',borderBottomWidth:1, borderColor:'#AAAAAA'}}>

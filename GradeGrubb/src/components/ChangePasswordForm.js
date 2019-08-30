@@ -71,7 +71,7 @@ onButtonPress(){
     if(this.props.error){
       return(
         <View>
-          <Text style={{alignSelf: 'center', color: 'red'}}> {this.props.error}</Text>
+          <Text style={{alignSelf: 'center',fontSize: 10, color: 'red'}}> {this.props.error}</Text>
         </View>
       );
     }
@@ -120,7 +120,7 @@ renderButton(){
       </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
       
-      <View style={{position: 'absolute', bottom: 20, alignSelf: 'center', height: 60, width: "100%"}}>
+      <View style={{position: 'absolute', bottom: 0, alignSelf: 'center', height: 60, width: "100%"}}>
       <Link val = {"Cancel"} screen = {"Profile"} navigate={this.props.navigation.navigate}/>
        </View>
        {this.goback()} 

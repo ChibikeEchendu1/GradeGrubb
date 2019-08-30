@@ -1,11 +1,28 @@
 import React from 'react';
-import {Text,View, StyleSheet,Image,TouchableOpacity,Platform,Alert} from 'react-native'
+import {Text,View, StyleSheet,Image,TouchableOpacity,Platform,Alert,PixelRatio,Dimensions} from 'react-native'
 import Swipeout from 'react-native-swipeout';
 import {delpro} from '../actions';
 import {connect} from 'react-redux';
 import { AsyncStorage } from "react-native"
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Myimage from '../.././images/p.png';
+
+const {
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
+  } = Dimensions.get('window');
+  
+  // based on iphone 5s's scale
+  const scale = SCREEN_WIDTH / 360;
+  
+  export function normalize(size) {
+    const newSize = size * scale 
+    if (Platform.OS === 'ios') {
+      return Math.round(PixelRatio.roundToNearestPixel(newSize))
+    } else {
+      return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+    }
+  }
 
 class  ProfileHome extends React.Component{
 
@@ -24,7 +41,7 @@ class  ProfileHome extends React.Component{
                 
                 return(
                     <Image
-                    style={{height: 60, width:60, borderRadius: Platform.OS === 'ios' ? 30 : 50}}
+                    style={{height:  normalize(60), width:normalize(60), borderRadius: Platform.OS === 'ios' ? 30 : 50}}
                     source={Myimage}
                     resizeMode = 'contain'
                     />
@@ -35,7 +52,7 @@ class  ProfileHome extends React.Component{
                 
                 return(
                     <Image
-                    style={{height: 60, width:60,borderRadius: Platform.OS === 'ios' ? 30 : 50}}
+                    style={{height: normalize(60), width:normalize(60),borderRadius: Platform.OS === 'ios' ? 30 : 50}}
                     source={{uri: "data:image/jpeg;base64,"+this.props.item.Image}}
                     resizeMode = 'contain'
                     />
@@ -126,11 +143,11 @@ class  ProfileHome extends React.Component{
                  {this.renderImage()}
                 <View  style={{alignSelf:"flex-end", width:"60%"}}>
                 
-                <Text numberOfLines={1} style={{fontSize:17}}>
+                <Text numberOfLines={1} style={{fontSize:normalize(17)}}>
                     {this.props.item.Type} 
                 </Text>
                 
-                <Text numberOfLines={1} style={{fontWeight:'bold', fontSize:20}}>
+                <Text numberOfLines={1} style={{fontWeight:'bold', fontSize:normalize(20)}}>
                     {this.props.item.Name}
                 </Text>
               

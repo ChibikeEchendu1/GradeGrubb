@@ -12,9 +12,26 @@ import {
   SafeAreaView,
   Image,
   Platform,
-  AsyncStorage,TouchableOpacity
+  AsyncStorage,TouchableOpacity,PixelRatio,Dimensions
 } from 'react-native';
 
+
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 360;
+
+export function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
 
 class PerformanceView extends Component {
 
@@ -40,7 +57,7 @@ class PerformanceView extends Component {
           
           return(
               <Image
-              style={{ marginTop:5, height: 120, width:120}}
+              style={{ marginTop:5, height: normalize(120), width:normalize(120)}}
               source={Myimage}
               resizeMode = 'contain'
               />
@@ -51,7 +68,7 @@ class PerformanceView extends Component {
           
           return(
               <Image
-              style={{ marginTop:5, height: Platform.OS === 'ios' ? 120 : 130, width: Platform.OS === 'ios' ? 120 : 130,borderRadius: Platform.OS === 'ios' ? 60 : 50}}
+              style={{ marginTop:5, height: Platform.OS === 'ios' ? 120 : normalize(130), width: Platform.OS === 'ios' ? 120 : normalize(130),borderRadius: Platform.OS === 'ios' ? 60 : 50}}
               source={{uri: "data:image/jpeg;base64,"+this.props.navigation.state.params.item.Image}}
               resizeMode = 'contain'
               />
@@ -75,7 +92,7 @@ class PerformanceView extends Component {
                 return <Spinner2 size="small"/>;
               }
               else{
-             return <Text style={{fontSize:13, fontWeight:'bold'}}>
+             return <Text style={{fontSize:normalize(13), fontWeight:'bold'}}>
              Number of Subjects: {this.props.Vals.Count}
                  </Text>;
             
@@ -88,7 +105,7 @@ class PerformanceView extends Component {
        return <Spinner2 size="small"/>;
      }
      else{
-             return <Text style={{fontSize:13, fontWeight:'bold'}}>
+             return <Text style={{fontSize:normalize(13), fontWeight:'bold'}}>
              Worst Class: {this.props.Vals.Worst_Class}
                  </Text>;
             
@@ -100,7 +117,7 @@ class PerformanceView extends Component {
        return <Spinner2 size="small"/>;
      }
      else{
-             return <Text style={{fontSize:13, fontWeight:'bold'}}>
+             return <Text style={{fontSize:normalize(13), fontWeight:'bold'}}>
              Best Class: {this.props.Vals.Best_Class}
                  </Text>;
             
@@ -150,8 +167,8 @@ class PerformanceView extends Component {
         
         </TouchableOpacity>
         <ImageButton2 press={this.onButtonPress.bind(this)}/>
-        <Text style={{fontSize:25, fontWeight:'bold',textAlign:'center'}}> {this.state.item.name}</Text>
-        <Text style={{fontSize:20, marginBottom:20, fontWeight:'bold',textAlign:'center'}}>({this.state.item.school})</Text>
+        <Text style={{fontSize:normalize(25), fontWeight:'bold',textAlign:'center'}}> {this.state.item.name}</Text>
+        <Text style={{fontSize:normalize(20), marginBottom:20, fontWeight:'bold',textAlign:'center'}}>({this.state.item.school})</Text>
         </View>
         <View style={{ marginTop:'3%' ,height:Platform.OS === 'ios' ? '75%' :'80%',}}>
 
@@ -180,7 +197,7 @@ class PerformanceView extends Component {
 
 
          <View style={styles.listStyle}>
-            <Text style={{fontSize:13,fontWeight:'bold'}}>
+            <Text style={{fontSize:normalize(13),fontWeight:'bold'}}>
                Average: {this.props.Vals.Average}
             </Text>
          </View> 

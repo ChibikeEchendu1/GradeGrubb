@@ -1,6 +1,24 @@
 import React, {Component} from 'react';
 import {FormInput,Card,LogoHouse,FormButton,Link,Spinner} from './index';
-import {Text,StyleSheet,View,TouchableOpacity} from 'react-native';
+import {Text,StyleSheet,View,TouchableOpacity, AsyncStorage,PixelRatio,Dimensions,Platform} from 'react-native';
+
+
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 360;
+
+export function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
 
 export default class SingleElementListItem2 extends Component{
      
@@ -60,7 +78,7 @@ export default class SingleElementListItem2 extends Component{
         <View style={styles.listStyle}>
             <View style={{flexDirection:'column'}}>
                 <View>
-            <Text  numberOfLines={1} style={{alignSelf:'center',fontSize:20,fontWeight:'bold'}}>
+            <Text  numberOfLines={1} style={{alignSelf:'center',fontSize:normalize(20),fontWeight:'bold'}}>
                 {this.props.item.Name} 
             </Text>
             </View>
@@ -70,24 +88,25 @@ export default class SingleElementListItem2 extends Component{
             </Text>
                 </View>
          </View>
-         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:this.avgCol(this.props.item.Grade/this.props.item.Worth*100)}}>
-            <Text style={{fontSize:13,fontWeight:'bold'}}>
+         
+         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:'#3B3F40'}}>
+            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:this.avgCol(this.props.item.Grade/this.props.item.Worth*100)}}>
               My Score  {this.props.item.Grade}/{this.props.item.Worth} -- ({(this.props.item.Grade/this.props.item.Worth*100).toFixed(2)}%)
             </Text> 
          </View> 
-         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:this.avgCol(this.props.item.Ave/this.props.item.Worth*100)}}>
-            <Text style={{fontSize:13,fontWeight:'bold'}}>
+         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:'#3B3F40'}}>
+            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:this.avgCol(this.props.item.Ave/this.props.item.Worth*100)}}>
               Avg Score  {this.props.item.Ave}/{this.props.item.Worth} -- ({(this.props.item.Ave/this.props.item.Worth*100).toFixed(2)}%)
             </Text> 
          </View>
-         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:this.avgCol(this.props.item.Max/this.props.item.Worth*100)}}>
-            <Text style={{fontSize:13,fontWeight:'bold'}}>
-              Max Score  {this.props.item.Max}/{this.props.item.Worth} -- ({(this.props.item.Max/this.props.item.Worth*100).toFixed(2)}%)
+         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:'#3B3F40'}}>
+            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:this.avgCol(this.props.item.Max/this.props.item.Worth*100)}}>
+              Highest Score  {this.props.item.Max}/{this.props.item.Worth} -- ({(this.props.item.Max/this.props.item.Worth*100).toFixed(2)}%)
             </Text> 
          </View>
-         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:this.avgCol(this.props.item.Min/this.props.item.Worth*100)}}>
-            <Text style={{fontSize:13,fontWeight:'bold'}}>
-              Min Score  {this.props.item.Min}/{this.props.item.Worth} -- ({(this.props.item.Min/this.props.item.Worth*100).toFixed(2)}%)
+         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:'#3B3F40'}}>
+            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:this.avgCol(this.props.item.Min/this.props.item.Worth*100)}}>
+              Lowest Score  {this.props.item.Min}/{this.props.item.Worth} -- ({(this.props.item.Min/this.props.item.Worth*100).toFixed(2)}%)
             </Text> 
          </View>
          

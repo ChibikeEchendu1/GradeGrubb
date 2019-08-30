@@ -16,6 +16,7 @@ class RemoveStudentListItem2 extends Component{
         console.log(text);
         this.props.Students[text]["check"]= !this.props.Students[text]["check"]
         console.log(this.props.Students);
+        this.setState({check:this.props.Students[text]["check"]})
         }
      
   onSelect = (element) => {

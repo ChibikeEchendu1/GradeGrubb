@@ -13,11 +13,29 @@ import {
   View,
   SafeAreaView,
   Image,
-  Platform
+  Platform,
+  PixelRatio,
+  Dimensions
  
 } from 'react-native';
 
 
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 360;
+
+export function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
 class ThomeView extends Component {
     state ={
         teacher:{
@@ -85,7 +103,7 @@ class ThomeView extends Component {
        return <Spinner2 size="small"/>;
      }
      else{
-             return <Text style={{fontSize:13}}>
+             return <Text style={{fontSize:normalize(13)}}>
             Best Class: {this.props.Vals.Best_Class}
                  </Text>;
             
@@ -109,7 +127,7 @@ class ThomeView extends Component {
             else{
               return(
                     <Image
-                    style={{height: Platform.OS === 'ios' ? 120 : 100,  width: Platform.OS === 'ios' ? 120 : 100,borderRadius: Platform.OS === 'ios' ? 60 : 50}}
+                    style={{height: Platform.OS === 'ios' ? 120 : normalize(100),  width: Platform.OS === 'ios' ? 120 : normalize(100),borderRadius: Platform.OS === 'ios' ? 60 : 50}}
                     source={{uri: "data:image/jpeg;base64,"+this.props.Vals.Image}}
                     resizeMode = 'contain'
                     />
@@ -135,7 +153,7 @@ class ThomeView extends Component {
             else{
               return(
                     <Image
-                    style={{height: Platform.OS === 'ios' ? 120 : 100,  width: Platform.OS === 'ios' ? 120 : 100,borderRadius: Platform.OS === 'ios' ? 60 : 50}}
+                    style={{height: Platform.OS === 'ios' ? 120 : normalize(100),  width: Platform.OS === 'ios' ? 120 : normalize(100),borderRadius: Platform.OS === 'ios' ? 60 : 50}}
                     source={{uri: "data:image/jpeg;base64,"+this.state.item.Image}}
                     resizeMode = 'contain'
                     />
@@ -156,7 +174,7 @@ class ThomeView extends Component {
               return(
                 [
                 <Icon key="1" color={'#1995ad'} name="sign-in" size={22} />,
-                <Text key="2" style={{fontSize:13,color:'#1995ad'}}> Attendace</Text>
+                <Text key="2" style={{fontSize:normalize(13),color:'#1995ad'}}> Attendace</Text>
                 ]
                  );
     
@@ -178,7 +196,7 @@ class ThomeView extends Component {
                 return <Spinner2 size="small"/>;
               }
               else{
-             return <Text style={{fontSize:13}}>
+             return <Text style={{fontSize:normalize(13)}}>
              Number of Subjects: {this.props.Vals.Count}
                  </Text>;
             
@@ -209,11 +227,10 @@ class ThomeView extends Component {
        </View>
         <ImageButton3 press={this.onButtonPress.bind(this)}/>
        
-        <Text style={{fontSize:25, fontWeight:'bold', marginTop:10}}> {item.Name}</Text>
-        <Text style={{fontSize:20,alignSelf:"center", fontWeight:'bold'}}>({this.state.item.school})</Text>
+        <Text style={{fontSize:normalize(20),alignSelf:"center", fontWeight:'bold'}}>({this.state.item.school})</Text>
         </View>
     
-        <View style={{ height: '50%',justifyContent:'flex-end', width:'95%'}}>
+        <View style={{ height: '50%', marginBottom:90,justifyContent:'flex-end', width:'95%'}}>
         <View style={styles.listStyle} >
         {this.rendercount()}
         </View>  
@@ -221,7 +238,7 @@ class ThomeView extends Component {
         {this.rendertotal()}
         </View>  
         <View style={styles.listStyle}>
-            <Text style={{fontSize:13}}>
+            <Text style={{fontSize:normalize(13)}}>
             Worst Class: {this.props.Vals.Worst_Class}
             </Text>
         </View> 
@@ -244,11 +261,11 @@ const styles = StyleSheet.create({
   ImageStyle:{
     //borderWidth: 1,
     flexDirection:'column',
-    height: '50%',
+    height: '40%',
     width: '100%',
     justifyContent:'flex-end',
     alignItems: 'center',  
-    
+    marginBottom:30
 },
 listStyle: {
     padding:27,

@@ -49,7 +49,7 @@ class LoginForm extends Component {
      if(this.props.error){
        return(
          <View>
-           <Text style={{alignSelf: 'center', color: 'red'}}> {this.props.error}</Text>
+           <Text style={{alignSelf: 'center',fontSize: 10, color: 'red'}}> {this.props.error}</Text>
          </View>
        );
      }
@@ -69,6 +69,8 @@ class LoginForm extends Component {
     goToProfile(){
       if(this.props.done == 'true'){
         const {vall,Active} = this.props;
+        console.log(vall,"value of log");
+        
         AsyncStorage.setItem('logged',JSON.stringify(vall));
       AsyncStorage.setItem('blocked', JSON.stringify(Active));
       this.props.navigation.navigate('Profile', {vall});
@@ -79,7 +81,7 @@ class LoginForm extends Component {
     const {vall} = this.props;
     return (
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'position'} style ={styles.container}>
+      <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'padding'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
         <LogoHouse/>
@@ -103,7 +105,7 @@ class LoginForm extends Component {
         </TouchableWithoutFeedback>
         </KeyboardAvoidingView>
       <View style ={{flex: 1}}>
-      <View style={{position: 'absolute', bottom: 20, alignSelf: 'center', height: 60, width: "100%"}}>
+      <View style={{position: 'absolute', bottom: 0, alignSelf: 'center', height: 60, width: "100%"}}>
        <Link val = {"Create Account"} screen = {"SignUp"} navigate={this.props.navigation.navigate}/>
        </View>
        </View>

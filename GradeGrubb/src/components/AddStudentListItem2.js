@@ -15,6 +15,7 @@ class AddStudentListItem2 extends Component{
         this.props.Students[text]["check"]= !this.props.Students[text]["check"]
      // data.check = !data.check;
         console.log(this.props.Students);
+        this.setState({check:this.props.Students[text]["check"]})
         
         //this.props.grades[text]["Grade"] = (id);
         //console.log(this.props.grades[text]["Grade"]);

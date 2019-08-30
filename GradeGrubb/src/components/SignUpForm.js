@@ -60,7 +60,7 @@ onButtonPress(){
     if(this.props.error){
       return(
         <View>
-          <Text style={{alignSelf: 'center', color: 'red'}}> {this.props.error}</Text>
+          <Text style={{alignSelf: 'center',fontSize: 9, color: 'red'}}> {this.props.error}</Text>
         </View>
       );
     }
@@ -82,7 +82,7 @@ renderButton(){
     return (
     
     <SafeAreaView style={styles.container}>
-    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'position'} style ={styles.container}>
+    <KeyboardAvoidingView  behavior = {(Platform.OS === 'ios') ? 'position' : 'padding'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={styles.container}>
         <View>
             <LogoHouse2/>
@@ -110,7 +110,7 @@ renderButton(){
       
       <View style ={{flex: 1}}>
       
-       <View style={{position: 'absolute', bottom: 20, alignSelf: 'center', height: 60, width: "100%"}}>
+       <View style={{position: 'absolute', bottom: 0, alignSelf: 'center', height: 60, width: "100%"}}>
        <Link val = {"login"} navigate={this.props.navigation.goBack}/>
        </View>
        </View>

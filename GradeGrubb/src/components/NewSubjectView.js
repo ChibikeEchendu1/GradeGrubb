@@ -73,7 +73,7 @@ class NewSubjectView extends Component{
      
       <SafeAreaView style={styles.container}>
       <Header ti="New Subject"/>
-      <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'position'} style ={styles.container}>
+      <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'padding'} style ={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View>
          

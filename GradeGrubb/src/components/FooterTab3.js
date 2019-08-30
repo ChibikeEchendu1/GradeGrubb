@@ -1,7 +1,27 @@
 import React from 'react';
-import {View, Text, Platform,Image,StyleSheet,SafeAreaView, TouchableOpacity} from 'react-native'
+import {View, Text, Platform,Image,StyleSheet,SafeAreaView, TouchableOpacity,PixelRatio,Dimensions} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+ 
+
+
+
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 360;
+
+export function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
 export default class FooterTab2 extends React.Component{
     navigate(screen){
         this.getNavigationProps().navigation.navigate(screen);

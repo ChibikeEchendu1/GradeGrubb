@@ -1,6 +1,25 @@
 import React, {Component} from 'react';
 import {FormInput,Card,LogoHouse,FormButton,Link,Spinner} from './index';
-import {Text,StyleSheet,View,TouchableOpacity} from 'react-native';
+import {Text,StyleSheet,View,TouchableOpacity, AsyncStorage,PixelRatio,Dimensions,Platform} from 'react-native';
+
+
+const {
+  width: SCREEN_WIDTH,
+  height: SCREEN_HEIGHT,
+} = Dimensions.get('window');
+
+// based on iphone 5s's scale
+const scale = SCREEN_WIDTH / 360;
+
+export function normalize(size) {
+  const newSize = size * scale 
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2
+  }
+}
+
 
 export default class SingleElementListItem extends Component{
      
@@ -60,7 +79,7 @@ export default class SingleElementListItem extends Component{
         <View style={styles.listStyle}>
             <View style={{flexDirection:'column',width:'65%'}}>
                 <View>
-            <Text  numberOfLines={1} style={{fontSize:16}}>
+            <Text  numberOfLines={1} style={{fontSize:normalize(16)}}>
                 {this.props.item.Name}
             </Text>
             </View>
@@ -70,8 +89,8 @@ export default class SingleElementListItem extends Component{
             </Text>
                 </View>
          </View>
-         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, backgroundColor:this.avgCol(this.props.item.Grade/this.props.item.Worth*100)}}>
-            <Text style={{fontSize:13}}>
+         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, backgroundColor:'#3B3F40'}}>
+            <Text style={{fontWeight :'500', fontSize:13,color:this.avgCol(this.props.item.Grade/this.props.item.Worth*100)}}>
                 {this.props.item.Grade}/{this.props.item.Worth}
             </Text> 
          </View>  

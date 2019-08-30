@@ -59,7 +59,7 @@ onButtonPress(){
     if(this.props.error){
       return(
         <View>
-          <Text style={{alignSelf: 'center', color: 'red'}}> {this.props.error}</Text>
+          <Text style={{alignSelf: 'center',fontSize: 10, color: 'red'}}> {this.props.error}</Text>
         </View>
       );
     }
@@ -68,9 +68,11 @@ onButtonPress(){
   next(){
     if(this.props.forset2){
       const {user} = this.props;
-        AsyncStorage.setItem('logged',JSON.stringify(user));
+      console.log(parseInt(user),"value of log");
+
+        AsyncStorage.setItem('logged',JSON.stringify(parseInt(user)));
       AsyncStorage.setItem('blocked', JSON.stringify("Done"));
-      this.props.navigation.navigate("Profile",{Id: this.props.user});
+      this.props.navigation.navigate("Profile",{Id: parseInt(this.props.user)});
     }
   }
 
@@ -129,7 +131,7 @@ renderButton(){
        </View>
       </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
-      <View style={{position: 'absolute', bottom: 20, alignSelf: 'center', height: 60, width: "100%"}}>
+      <View style={{position: 'absolute', bottom: 0, alignSelf: 'center', height: 60, width: "100%"}}>
       <Link val = {"Cancel"} screen = {"Profile"} navigate={this.props.navigation.navigate}/>
        </View>
       </SafeAreaView>

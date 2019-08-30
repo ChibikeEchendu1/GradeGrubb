@@ -14,8 +14,9 @@ class AddStudentListItem extends Component{
         console.log(text);
         this.props.Students[text]["check"]= !this.props.Students[text]["check"]
      // data.check = !data.check;
+     //this.props.Students[index]["check"] = !this.props.Students[index]["check"]
         console.log(this.props.Students);
-        
+        this.setState({check:this.props.Students[text]["check"]})
         //this.props.grades[text]["Grade"] = (id);
         //console.log(this.props.grades[text]["Grade"]);
        // this.props.markChanged(this.props.grades,this.props.scores);// id is text and text is id. but we dont care
