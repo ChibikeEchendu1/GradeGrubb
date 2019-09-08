@@ -6,7 +6,10 @@ import SignUp from './src/pages/SignUp';
 import Tools from './src/pages/Tools';
 import ToolsEvent from './src/pages/ToolsEvent';
 import Splash from './src/pages/Splash';
+import ToolsEventnotTeacher from './src/pages/ToolsEventnotTeacher';
 import Profile from './src/pages/profile';
+import EditElement from './src/pages/EditElement';
+import Editform from './src/pages/Editform';
 import SendMessage from './src/pages/SendMessage'
 import FooterTab from './src/components/FooterTab';
 import FooterTab2 from './src/components/FooterTab2';
@@ -77,7 +80,7 @@ import AttendStudent from './src/pages/AttendStudent'
     Thome:{screen: Thome, navigationOptions: {
       gesturesEnabled: false,
       headerLeft:null
-  }, }, AttendStudent:{screen:AttendStudent},},  {headerMode: 'none'})  },
+  }, }, AttendStudent:{screen:AttendStudent},ToolsEventnotTeacher:{screen:ToolsEventnotTeacher}},  {headerMode: 'none'})  },
 
   
   
@@ -109,7 +112,8 @@ import AttendStudent from './src/pages/AttendStudent'
         NewName:{screen:NewName},
        RemoveElement:{screen:RemoveElement},
         AddStudent2:{screen:AddStudent2},
-        RemoveStudent:{screen:RemoveStudent}},
+        RemoveStudent:{screen:RemoveStudent},
+        EditElement:{screen:EditElement},Editform:{screen:Editform}},
     {headerMode: 'none'}
     )},
  

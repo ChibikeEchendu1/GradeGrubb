@@ -45,10 +45,10 @@ export default class  SubjectListS extends React.Component{
                     Class Average: {this.props.item.CAverage}%
                 </Text>
                 <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
-                    Highest Class Average: {this.props.item.MAX}%
+                    Highest Average: {this.props.item.MAX}%
                 </Text>
                 <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
-                    Lowest Class Average: {this.props.item.MIN}% 
+                    Lowest Average: {this.props.item.MIN}% 
                 </Text>
                 <Text numberOfLines={1} style={{fontSize:13,marginBottom:4,textAlign:'center',fontWeight:'bold'}}>
                     Class Size: {this.props.item.Size}

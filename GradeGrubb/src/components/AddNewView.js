@@ -99,7 +99,7 @@ class AddNewView extends Component{
              <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'padding'}>
          <View>
          <TextInput
-          style={{borderBottomWidth:1,  width:'96%',alignSelf:"center", height: 40,borderColor:"#C0C0C0", padding:5, marginTop:2}}
+          style={{borderBottomWidth:1,  width:'96%',alignSelf:"center", height: normalize(40),borderColor:"#C0C0C0", padding:5, marginTop:2}}
           placeholder="Subject Name"
           autoFocus={true}
           onChangeText={this.onNameChanged.bind(this)}
@@ -110,7 +110,7 @@ class AddNewView extends Component{
              
              <View style={{flexDirection: 'row', alignItems:'center'}}>
              <TextInput
-              style={{borderBottomWidth:1, width:'60%', height: 40,borderColor:"#C0C0C0", padding:5,marginLeft:10 , marginTop:2}}
+              style={{borderBottomWidth:1, width:'60%', height: normalize(40),borderColor:"#C0C0C0", padding:5,marginLeft:10 , marginTop:2}}
               placeholder="Marking Out Of"
               keyboardType='numeric'
               onChangeText={this.onnumchanged2.bind(this)}
@@ -122,7 +122,7 @@ class AddNewView extends Component{
              
          <View style={{flexDirection: 'row', alignItems:'center'}}>
          <TextInput
-          style={{borderBottomWidth:1, width:'20%', height: 40,borderColor:"#C0C0C0", padding:5,marginLeft:10 , marginTop:2}}
+          style={{borderBottomWidth:1, width:'20%', height: normalize(40),borderColor:"#C0C0C0", padding:5,marginLeft:10 , marginTop:2}}
           placeholder="Worth"
           keyboardType='numeric'
           onChangeText={this.onnumchanged.bind(this)}

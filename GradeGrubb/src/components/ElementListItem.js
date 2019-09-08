@@ -80,7 +80,7 @@ export default class ElementListItem extends Component{
          <View style={{alignSelf:'center', flexDirection:'row'}}>
          <View style={{padding:5}}>
             <Text style={{fontSize:20,fontWeight:'bold'}}>
-            Highest Avg: <Text style={{fontSize:20,borderWidth:1,width:'50%',fontWeight:'bold',backgroundColor:'#3B3F40', color:this.avgCol(this.props.item.MAX)}}>
+            Highest Avg: <Text style={{fontSize:20,borderWidth:1,width:'50%',fontWeight:'bold',backgroundColor:'#3B3F40', color:this.avgCol(this.props.item.MIN)}}>
                {this.props.item.MIN}% 
             </Text> 
             </Text> 
@@ -89,7 +89,7 @@ export default class ElementListItem extends Component{
          </View> 
          <View style={{flexDirection:'row',alignSelf:'center', padding:5}}>
             <Text style={{fontSize:20,fontWeight:'bold'}}>
-            Lowest Avg:   <Text style={{fontSize:20,borderWidth:1,width:'50%',fontWeight:'bold',backgroundColor:'#3B3F40', color:this.avgCol(this.props.item.MIN)}}>
+            Lowest Avg:   <Text style={{fontSize:20,borderWidth:1,width:'50%',fontWeight:'bold',backgroundColor:'#3B3F40', color:this.avgCol(this.props.item.MAX)}}>
                {this.props.item.MAX}% 
             </Text>
             </Text> 
@@ -116,6 +116,9 @@ const styles = StyleSheet.create({
         //height:'10%',
         borderBottomWidth:0.5,
         borderColor:"#DDDDDD"
+
+
+       
     }
 
    

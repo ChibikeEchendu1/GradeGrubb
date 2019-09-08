@@ -64,7 +64,7 @@ export default class SingleElementListItem2 extends Component{
             col = "#ff6600";
         }
         else if (average < 50 && average >= 0){
-            col = "#ff0000";
+            col = "#b22222";
         }
         else{
             col = "#eeeeee"
@@ -89,23 +89,23 @@ export default class SingleElementListItem2 extends Component{
                 </View>
          </View>
          
-         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:'#3B3F40'}}>
-            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:this.avgCol(this.props.item.Grade/this.props.item.Worth*100)}}>
+         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:this.avgCol(this.props.item.Grade/this.props.item.Worth*100)}}>
+            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:'black'}}>
               My Score  {this.props.item.Grade}/{this.props.item.Worth} -- ({(this.props.item.Grade/this.props.item.Worth*100).toFixed(2)}%)
             </Text> 
          </View> 
-         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:'#3B3F40'}}>
-            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:this.avgCol(this.props.item.Ave/this.props.item.Worth*100)}}>
+         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:this.avgCol(this.props.item.Ave/this.props.item.Worth*100)}}>
+            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:'black'}}>
               Avg Score  {this.props.item.Ave}/{this.props.item.Worth} -- ({(this.props.item.Ave/this.props.item.Worth*100).toFixed(2)}%)
             </Text> 
          </View>
-         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:'#3B3F40'}}>
-            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:this.avgCol(this.props.item.Max/this.props.item.Worth*100)}}>
+         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:this.avgCol(this.props.item.Max/this.props.item.Worth*100)}}>
+            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:'black'}}>
               Highest Score  {this.props.item.Max}/{this.props.item.Worth} -- ({(this.props.item.Max/this.props.item.Worth*100).toFixed(2)}%)
             </Text> 
          </View>
-         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:'#3B3F40'}}>
-            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:this.avgCol(this.props.item.Min/this.props.item.Worth*100)}}>
+         <View style={{borderWidth:1,borderColor:"#C0C0C0",marginRight:10, padding:5, width:"96%", alignItems:'center',  backgroundColor:this.avgCol(this.props.item.Min/this.props.item.Worth*100)}}>
+            <Text style={{fontWeight:'500',fontSize:13,fontWeight:'bold',color:'black'}}>
               Lowest Score  {this.props.item.Min}/{this.props.item.Worth} -- ({(this.props.item.Min/this.props.item.Worth*100).toFixed(2)}%)
             </Text> 
          </View>
@@ -128,8 +128,6 @@ const styles = StyleSheet.create({
         borderTopWidth:0.5,
         backgroundColor: 'white',
         borderColor:"#1995ad"
-    }
-
-   
+    }  
 });
 

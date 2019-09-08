@@ -511,6 +511,25 @@ name: nname
    }
 };
 
+export const AnnoucFetchTeach = ({Name,nname}) => {
+        return (dispatch) => {
+        dispatch({type: 'Login_user2'});
+        fetch(IP+'/Ap/AnnoucFetchTeach.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            Id: Name,
+    name: nname
+        }),
+        }).then((response) => response.json()).then(users => {
+           dispatch({type: 'AnnoFetchDone', payload: users});
+        });
+       }
+    };
+
 export const EventFetch = ({valll,nname}) => {
         return (dispatch) => {
         dispatch({type: 'Login_user2'});
@@ -532,6 +551,7 @@ export const EventFetch = ({valll,nname}) => {
 
 
 
+
 export const eleFetch = ({name,Sname}) => {
     return (dispatch) => {
     dispatch({type: 'Login_user2'});
@@ -550,6 +570,32 @@ Sname: Sname
     });
    }
   };
+
+
+export const eleFetchForedit = ({nname,sub,TopicNAme}) => {
+
+    console.log("schoolname",nname);
+    console.log("subjectname",sub);
+    console.log("TopicNAme",TopicNAme);
+    
+        return (dispatch) => {
+        dispatch({type: 'Login_user2'});
+        fetch(IP+'/Ap/eleFetchForedit.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+        nname: nname,
+        sub: sub,
+        TopicNAme:TopicNAme
+        }),
+        }).then((response) => response.json()).then(users => {
+           dispatch({type: 'EFetchEdit', payload: users});
+        });
+       }
+      };
 
 export const stuFetch = ({name,Sname,room}) => {
     return (dispatch) => {
@@ -696,6 +742,26 @@ Sname: Subname,
     });
    }
 };
+
+
+export const remstuclassedit = ({School,Subname}) => {
+                return (dispatch) => {
+    dispatch({type: 'Login_user2'});
+    fetch(IP+'/Ap/remstuclassedit.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+    name: School,
+    Sname: Subname,   
+    }),
+        }).then((response) => response.json()).then(users => {
+        dispatch({type: 'remclassFetchDone2', payload: users});
+        });
+       }
+    };
 
 
 
@@ -1285,6 +1351,8 @@ else{
 };
 
 
+
+
 export const fetchclass = ({nname}) => {
             
 return (dispatch) => {
@@ -1422,6 +1490,45 @@ if( typeof users.Id != 'undefined'){
    }
   };
 };
+
+
+export const submitForedit = ({nname,sub,num,num2,TopicNAme,Name}) => {
+    
+        return (dispatch) => {
+        dispatch({type: 'Login_user'});
+    
+       
+        
+            
+        fetch(IP+'/Ap/submitForedit.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+    subname:sub,
+    name: nname,
+    worth: num,
+    outof:num2,
+    TopicNAme:TopicNAme,
+    NEWNAME:Name
+        }),
+        }).then((response) => response.json()).then(users => {
+    if( typeof users.Id != 'undefined'){
+           dispatch({type: 'LoginUserFaill'});
+        }
+       else{
+          dispatch({type: 'LoginUserFail', payload: users});
+        }
+            
+        });
+       
+      };
+    };
+
+
+
 
 export const savePro = (id, val) => {
       let profile = {id, val}

@@ -120,14 +120,13 @@ dexOptions {
     
     defaultConfig {
         applicationId "com.gradegrubb"
-       minSdkVersion 16
+        minSdkVersion 16
         targetSdkVersion 28
         vectorDrawables.useSupportLibrary = true
-        versionCode 8
+        versionCode 11
         multiDexEnabled true 
         versionName "3.0"
-       
-    }
+     }
     splits {
         abi {
             reset()

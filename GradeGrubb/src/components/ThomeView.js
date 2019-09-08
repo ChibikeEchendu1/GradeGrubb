@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Header} from './Header';
+import {HeaderSetTeacher} from './HeaderSetTeacher';
 import {ImageButton3,Spinner2} from './index';
 import {connect} from 'react-redux';
 import {chanegepic,SubTinfo,SaveInfo} from '../actions';
@@ -213,7 +213,7 @@ class ThomeView extends Component {
     return (
      <SafeAreaView style={styles.container}>
     
-    <Header  ti='Profile'/>
+    <HeaderSetTeacher item={this.state.item} nav={this.props.navigation}  ti='Profile'/>
       
         <View style={{width:"90%", flexDirection:'column', height:"87%"}}>
         <View style={styles.ImageStyle}>

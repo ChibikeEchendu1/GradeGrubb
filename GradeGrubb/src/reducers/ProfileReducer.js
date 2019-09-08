@@ -99,6 +99,9 @@ export default (state = INITIAL_STATE , action) => {
         return {...state, infols: action.payload, loading1: false};
     case 'EFetchDone':
         return {...state, Eles: action.payload, loading1: false};
+
+    case 'EFetchEdit':
+        return {...state, num: action.payload.Weight, num2: action.payload.worth,elesub2:action.payload.Name, loading1: false};    
         
     case 'StFetchDone':
         return {...state, stu: action.payload, loading1: false};

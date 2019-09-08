@@ -6,6 +6,7 @@ import Tools from './src/pages/Tools';
 import ToolsEvent from './src/pages/ToolsEvent';
 import SignUp from './src/pages/SignUp';
 import Splash from './src/pages/Splash';
+import ToolsEventnotTeacher from './src/pages/ToolsEventnotTeacher';
 import Profile from './src/pages/profile';
 import Notice from './src/pages/Notice';
 import FooterTab from './src/components/FooterTab';
@@ -15,12 +16,14 @@ import Elements from './src/pages/Elements';
 import ToolsEventnot from  './src/pages/ToolsEventnot';
 import Students from './src/pages/Students';
 import Thome from './src/pages/Thome';
+import EditElement from './src/pages/EditElement';
 import SettingsOption from './src/pages/SettingsOption';
 import Annoucmentnotice from './src/pages/Annoucmentnotice';
 import SElementnotice from './src/pages/SElementnotice';
 import Element from './src/pages/Element';
 import Grade from './src/pages/Grade';
 import EditOptions from './src/pages/EditOptions';
+import Editform from './src/pages/Editform';
 import NewName from './src/pages/NewName';
 import Code2 from './src/pages/Code2';
 import Code3 from './src/pages/Code3';
@@ -95,7 +98,7 @@ SElementnotice:{screen:SElementnotice},
     Thome:{screen: Thome, navigationOptions: {
       gesturesEnabled: false,
       headerLeft:null
-    }, }, AttendStudent:{screen:AttendStudent},},{headerMode: 'none'})},
+    }, }, AttendStudent:{screen:AttendStudent},ToolsEventnotTeacher:{screen:ToolsEventnotTeacher}},{headerMode: 'none'})},
 
 
     second:{screen: StackNavigator({
@@ -120,7 +123,10 @@ SElementnotice:{screen:SElementnotice},
         NewName:{screen:NewName},
        RemoveElement:{screen:RemoveElement},
         AddStudent2:{screen:AddStudent2},
-        RemoveStudent:{screen:RemoveStudent}},
+        RemoveStudent:{screen:RemoveStudent},
+        EditElement:{screen:EditElement},
+        Editform:{screen:Editform}
+      },
     {headerMode: 'none'}
     )},
  
