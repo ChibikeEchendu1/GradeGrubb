@@ -140,7 +140,7 @@ this.checkAll = this.checkAll.bind(this);
       return (
      
           <SafeAreaView style ={styles.container}>
-          <HomeHeader ti="Remove Element" navigate={this.props.navigation.goBack}/>
+          <HomeHeader ti="Remove Topic" navigate={this.props.navigation.goBack}/>
           <View style={{flexDirection:'column', marginTop:0, height:'15%', backgroundColor: 'white'}}>
           <View>
               <TouchableOpacity  onPress= {this.checkAll.bind(this)}>

@@ -35,12 +35,12 @@ componentWillReceiveProps(){
 
     
     render(){
-       const {id, item,school,Tid,Subname,classRoom } = this.props;
+       const {id, item,school,Tid,Subname,classRoom,total } = this.props;
     return(
          
         <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
-        <TouchableOpacity onPress={() =>
-          this.props.navigation.navigate("Editform", {ClassRoom:classRoom,Name: item.Name, School:school, Tid:Tid, id:id, Subname:Subname })}>
+        <TouchableOpacity onPress={() => {
+         this.props.navigation.navigate("Editform", {ClassRoom:classRoom,Name: item.Name,total:total, School:school, Tid:Tid, id:id, Subname:Subname })}}>
           <Text style={{fontSize:20}}>{item.Name}</Text>
           </TouchableOpacity>
           </View>  

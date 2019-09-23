@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import {Spinner} from './index';
 import StudentListItem from './StudentListItem';
 import {  Button } from 'native-base';
-import {stuFetch} from '../actions';
+import {stuFetch,eleFetch} from '../actions';
 import {connect} from 'react-redux';
 import {
   StyleSheet,
@@ -52,6 +52,7 @@ constructor(props){
 
     const {name,Sname,room} = this.state;
     this.props.stuFetch({name,Sname,room});
+    this.props.eleFetch({name,Sname});
 
     const ds = new ListView.DataSource({
         rowHasChanged: (r1, r2) => r1 !== r2
@@ -122,7 +123,11 @@ constructor(props){
         <SafeAreaView style ={styles.container}>
    
                 
-                  <Button style={{ height:'10%', width:'100%', justifyContent:'center', borderBottomWidth:0.5, borderColor:'#DDDDDD',backgroundColor:'white'}} transparent onPress={()=>{this.props.navigation.navigate('EditOptions',{Tid: this.state.Tid,id:this.state.id,Name: this.state.Name, Subname: this.state.name,Room:this.state.room, Sname:this.state.Sname})}}>
+                  <Button style={{ height:'10%', width:'100%', justifyContent:'center', borderBottomWidth:0.5, borderColor:'#DDDDDD',backgroundColor:'white'}} transparent onPress={()=>{let profit = _.sumBy(this.props.elements, function (day) {
+ 
+ return parseFloat(day.Weight);
+
+}); this.props.navigation.navigate('EditOptions',{Tid: this.state.Tid,id:this.state.id,Name: this.state.Name, Subname: this.state.name,Room:this.state.room, Sname:this.state.Sname,total:profit})}}>
                 
                   <Text style={{fontSize:25, color:'#1995ad'}}>Edit</Text>
                
@@ -149,14 +154,18 @@ const styles = StyleSheet.create({
     const students = _.map(state.pro.stu,(Val,uid) =>{
       return {...Val,uid};
     });
+
+    const elements = _.map(state.pro.Eles,(Val,uid) =>{
+      return {...Val};
+    });
   
     console.log(state);
     
   
-  return {students,loading:state.pro.loading1};
+  return {students,elements,loading:state.pro.loading1};
   };
   
-  export default connect(mapStateToProps,{stuFetch})(StudentView);
+  export default connect(mapStateToProps,{stuFetch,eleFetch})(StudentView);
    
   
   

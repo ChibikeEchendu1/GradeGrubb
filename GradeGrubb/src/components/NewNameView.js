@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { HomeHeader, Spinner2} from './index';
-import {Text, TextInput,SafeAreaView, StyleSheet,View,TouchableOpacity,TouchableWithoutFeedback,KeyboardAvoidingView, Keyboard, Platform} from 'react-native';
-import {NameChangedSub,cn} from '../actions';
+import {Text, TextInput,SafeAreaView, StyleSheet,View,TouchableOpacity,TouchableWithoutFeedback,KeyboardAvoidingView, Keyboard, Platform,Alert} from 'react-native';
+import {NameChangedSub,cn,DeleteSub} from '../actions';
 import {connect} from 'react-redux';
 class NewNameView extends Component{
 
@@ -37,6 +37,31 @@ class NewNameView extends Component{
          <Text style={{fontSize:20, marginRight:10, color:"#1995ad"}}> Finish </Text>
          </View>
          </TouchableOpacity>;
+        }
+      }
+
+      renderButton2(){
+        if(this.props.loading){
+          return <Spinner2 size="small"/>;
+        }
+        else{
+         return  <TouchableOpacity style={{alignItems:'center',marginTop:15}} onPress={()=>{
+          Alert.alert(
+            'Delete Subject',
+            'Are you sure you wish to delete this subject',
+            [
+              
+              {text: 'No', onPress: () => console.log('OK Pressed')},
+              {text: 'Yes', onPress: () =>{const {nname,Id} = this.state; console.log({nname,Id});
+               this.props.DeleteSub({nname,Id})}},
+              
+            ],
+            {cancelable: false},
+          );
+      }
+      }>
+      <Text style={{fontSize:20,color:'red'}}>Delete Subject </Text>
+      </TouchableOpacity>
         }
       }
 
@@ -76,6 +101,8 @@ class NewNameView extends Component{
         {this.renderError()}
         </View>
         <View>
+        {this.renderButton2()}
+         
         {this.goBackk()}
         </View>
         </View>
@@ -105,4 +132,4 @@ const mapStateToProps = state =>{
     }
   };
   
-  export default connect(mapStateToProps,{NameChangedSub,cn})(NewNameView);
+  export default connect(mapStateToProps,{NameChangedSub,cn,DeleteSub})(NewNameView);

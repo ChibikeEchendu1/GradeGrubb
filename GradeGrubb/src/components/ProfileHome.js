@@ -136,7 +136,7 @@ class  ProfileHome extends React.Component{
             <TouchableOpacity style={styles.listStyle}  onPress={() =>{
                 let pro = {type:this.props.item.Type, school:this.props.item.School, Image:this.props.item.Image, name:this.props.item.Name, id:this.props.item.Id}
                 AsyncStorage.setItem('pro', JSON.stringify(pro));
-                this.props.item.off == 0 ? this.props.navigate("Offer",{school:this.props.item.School}) : this.props.navigate(this.getNavigationType(this.props.item.Type),{item:this.props.item,school:this.props.item.School})
+                this.props.item.off == 1 ? this.props.navigate(this.getNavigationType(this.props.item.Type),{item:this.props.item,school:this.props.item.School}) : this.props.navigate("Offer",{school:this.props.item.School,num:this.props.item.off}) 
                 }} >
             
             

@@ -33,37 +33,39 @@ class PushNotificationController extends Component {
       console.log("TOKEN (getFCMToken)", token);
       
       this.setState({"fcmtoken":token});
+
+      FCM.getInitialNotification().then(notif => {
+        console.log("INITIAL NOTIFICATION", notif)
+      });
+  
+      if (Platform.OS === "ios"){
+        FCM.getAPNSToken().then(token2 => {
+          console.log("APNS TOKEN (getFCMToken)", token2);
+          this.setState({"apnstoken":token2});
+        });
+      }
+  
+        
+    
+          console.log('tockendfnkjgvjkfdngkjfng',token);
+          
+        AsyncStorage.getItem("logged").then((value) => {
+          //console.log("Dfgdfg");
+          
+          this.setState({"Id":JSON.parse(value)});
+        
+          let Id =  parseInt(value);
+          const {fcmtoken,apnstoken} = this.state;
+         // console.log(value,fcmtoken,apnstoken);
+          
+          this.props.setdevice({token,apnstoken,Id});
+         }).done();
       
     });
 
     
 
-    FCM.getInitialNotification().then(notif => {
-      console.log("INITIAL NOTIFICATION", notif)
-    });
-
-    if (Platform.OS === "ios"){
-      FCM.getAPNSToken().then(token => {
-        console.log("APNS TOKEN (getFCMToken)", token);
-        this.setState({"apnstoken":token});
-      });
-    }
-
-      
-  
-        console.log('tockendfnkjgvjkfdngkjfng',token);
-        
-      AsyncStorage.getItem("logged").then((value) => {
-        //console.log("Dfgdfg");
-        
-        this.setState({"Id":JSON.parse(value)});
-      
-        let Id =  parseInt(value);
-        const {fcmtoken,apnstoken} = this.state;
-       // console.log(value,fcmtoken,apnstoken);
-        
-        this.props.setdevice({fcmtoken,apnstoken,Id});
-       }).done();
+   
       }
     }).done();
     

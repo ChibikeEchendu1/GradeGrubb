@@ -370,7 +370,7 @@ name: nname
    }
 };
 
-export const setdevice = ({fcmtoken,apnstoken,Id}) => {
+export const setdevice = ({token,apnstoken,Id}) => {
     
     return (dispatch) => {
     dispatch({type: 'Login_usertoken'});
@@ -384,11 +384,11 @@ export const setdevice = ({fcmtoken,apnstoken,Id}) => {
     },
     body: JSON.stringify({
 apnstoken: apnstoken,
-fcmtoken: fcmtoken,
+fcmtoken: token,
 value:Id
     }),
     }).then((response) => response.json()).then(users => {
-             AsyncStorage.setItem('tocken', JSON.stringify(fcmtoken));
+             AsyncStorage.setItem('tocken', JSON.stringify(token));
        dispatch({type: 'justdone', payload: users});
     });
    }
@@ -530,7 +530,7 @@ export const AnnoucFetchTeach = ({Name,nname}) => {
        }
     };
 
-export const EventFetch = ({valll,nname}) => {
+export const EventFetch = ({valll,nname}) =>{
         return (dispatch) => {
         dispatch({type: 'Login_user2'});
         fetch(IP+'/Ap/EventfetchS.php', {
@@ -596,6 +596,36 @@ export const eleFetchForedit = ({nname,sub,TopicNAme}) => {
         });
        }
       };
+
+  
+
+    export const DeleteSub = ({nname,Id}) => {
+        return (dispatch) => {
+            dispatch({type: 'Login_user'});
+       
+        fetch(IP+'/Ap/delsub.php', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+        name: nname,
+        Id: Id,
+            }),
+            }).then((response) => response.json()).then(users => {
+        // dispatch({type: 'LoginUserFail', payload: users});
+        if( typeof users.Id != 'undefined'){
+               dispatch({type: 'LoginUserFaill'});
+            }
+           else{
+              dispatch({type: 'LoginUserFail', payload: users});
+            }
+                
+            });
+           
+          };
+        };
 
 export const stuFetch = ({name,Sname,room}) => {
     return (dispatch) => {

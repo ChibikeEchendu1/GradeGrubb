@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {HomeHeader,Spinner2} from './index';
-import {Text, TextInput, StyleSheet,View,SafeAreaView,Dimensions,TouchableOpacity,TouchableWithoutFeedback,PixelRatio,KeyboardAvoidingView,Platform, Keyboard} from 'react-native';
+import {Text, TextInput, StyleSheet,View,SafeAreaView,Dimensions,TouchableOpacity,TouchableWithoutFeedback,PixelRatio,KeyboardAvoidingView,Platform, Keyboard,Alert} from 'react-native';
 import {NameChangedSub22,numchanged,cn22,numchanged2} from '../actions';
 import {connect} from 'react-redux';
 
@@ -33,10 +33,21 @@ class AddNewView extends Component{
       }
 
       onnumchanged(text){
+        
         this.props.numchanged(text);
       }
 
       onnumchanged2(text){
+        if (text == 0 && text !='') {
+          Alert.alert(
+            'Invalid Value',
+            '0 is not a vaild value',
+            [
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            {cancelable: false},
+          );
+            }
         this.props.numchanged2(text);
       }
 
@@ -85,28 +96,28 @@ class AddNewView extends Component{
     return(
      
       <SafeAreaView style ={styles.container}>
-         <HomeHeader navigate={this.props.navigation.goBack} ti="New Element"/>
+         <HomeHeader navigate={this.props.navigation.goBack} ti="New Topic"/>
          <TouchableWithoutFeedback style={{height:'10%'}} onPress={Keyboard.dismiss}><View>
-             <Text style={{width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:normalize(15)}}>
-             This is where you add content to your subject</Text>
+             <Text style={{width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(15)}}>
+             Total Weight Thus Far: {this.props.navigation.state.params.total}</Text>
               
              
              
               
-              <Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(20)}}>Give the element a name</Text>
+              <Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(20)}}>Give the Topic a name</Text>
               </View>
              </TouchableWithoutFeedback>
              <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'padding'}>
          <View>
          <TextInput
           style={{borderBottomWidth:1,  width:'96%',alignSelf:"center", height: normalize(40),borderColor:"#C0C0C0", padding:5, marginTop:2}}
-          placeholder="Subject Name"
+          placeholder="Topic Name"
           autoFocus={true}
           onChangeText={this.onNameChanged.bind(this)}
           value={this.props.Name}
         /></View>
 
-<Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:normalize(20)}}>What is the Element Marked Out of</Text>
+<Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(20)}}>What is the Topic Marked Out of</Text>
              
              <View style={{flexDirection: 'row', alignItems:'center'}}>
              <TextInput
@@ -118,12 +129,12 @@ class AddNewView extends Component{
             />
              </View>
 
-        <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:normalize(20)}}>What is the Element Weight</Text>
+        <Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(20)}}>What is the Topic Weight</Text>
              
          <View style={{flexDirection: 'row', alignItems:'center'}}>
          <TextInput
           style={{borderBottomWidth:1, width:'20%', height: normalize(40),borderColor:"#C0C0C0", padding:5,marginLeft:10 , marginTop:2}}
-          placeholder="Worth"
+          placeholder="Weight"
           keyboardType='numeric'
           onChangeText={this.onnumchanged.bind(this)}
           value={this.props.num}

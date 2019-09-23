@@ -98,14 +98,14 @@ this.renderRow=this.renderRow.bind(this);
    
    
      renderRow(item){
-      return <EditElementListItem item={item} navigation={this.props.navigation} Subname = {this.state.Subname} Tid = {this.state.Tid} id = {this.state.id} school={this.state.School} classRoom = {this.state.classRoom}/>
+      return <EditElementListItem item={item} total={this.props.navigation.state.params.total} navigation={this.props.navigation} Subname = {this.state.Subname} Tid = {this.state.Tid} id = {this.state.id} school={this.state.School} classRoom = {this.state.classRoom}/>
      }
   
     render() {
       return (
      
           <SafeAreaView style ={styles.container}>
-          <HomeHeader ti="Edit Element" navigate={this.props.navigation.goBack}/>
+          <HomeHeader ti="Edit Topic" navigate={this.props.navigation.goBack}/>
           
 
         <View style={{justifyContent: 'flex-start', height: '71%', width:'100%'}}>

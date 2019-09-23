@@ -107,8 +107,8 @@ class GradeView extends Component {
   goBack2(){
     if (this.props.setalert) {
   Alert.alert(
-    'Alert Title',
-    'All Grades Must be less than ' + this.state.worth,
+    'Invalid Value',
+    'All Grades Must be less than or equal to ' + this.state.worth,
     [
       {text: 'OK', onPress: () => console.log('OK Pressed')},
     ],

@@ -44,7 +44,7 @@ export default class EditView extends Component{
         <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
           <TouchableOpacity  onPress={() =>
             this.props.navigation.navigate("NewName", {ClassRoom:this.state.classRoom, School:this.state.School, Tid:this.state.id, Subname:this.state.Subname} )}>
-            <Text style={{fontSize:normalize(20)}}>Edit Name </Text>
+            <Text style={{fontSize:normalize(20)}}>Edit Subject </Text>
             </TouchableOpacity>
             </View>
              
@@ -65,14 +65,14 @@ export default class EditView extends Component{
             <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
           <TouchableOpacity  onPress={() =>
             this.props.navigation.navigate("RemoveElement", {ClassRoom:this.state.classRoom,Name: this.state.Name, School:this.state.School, Tid:this.state.Tid, id:this.state.id, Subname:this.state.Subname })}>
-            <Text style={{fontSize:normalize(20)}}>Remove Element</Text>
+            <Text style={{fontSize:normalize(20)}}>Remove Topic</Text>
             </TouchableOpacity>
             </View>
 
             <View style={{marginTop:10,padding:15, borderBottomWidth:1, borderBottomColor:"#D3D3D3"}}>
           <TouchableOpacity  onPress={() =>
-            this.props.navigation.navigate("EditElement", {ClassRoom:this.state.classRoom,Name: this.state.Name, School:this.state.School, Tid:this.state.Tid, id:this.state.id, Subname:this.state.Subname })}>
-            <Text style={{fontSize:normalize(20)}}>Edit An Element</Text>
+            this.props.navigation.navigate("EditElement", {ClassRoom:this.state.classRoom,Name: this.state.Name, School:this.state.School, Tid:this.state.Tid, id:this.state.id, Subname:this.state.Subname,total: this.props.navigation.state.params.total})}>
+            <Text style={{fontSize:normalize(20)}}>Edit An Topic</Text>
             </TouchableOpacity>
             </View>
         </View>

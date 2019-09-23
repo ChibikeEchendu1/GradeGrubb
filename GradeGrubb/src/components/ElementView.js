@@ -117,7 +117,11 @@ class ElementView extends Component {
         <SafeAreaView style ={styles.container}>
           
                 
-                  <Button style={{ height:'10%', width:'100%', justifyContent:'center',borderBottomWidth:0.5,borderColor:'#DDDDDD', backgroundColor:'white'}} onPress={()=>{this.props.navigation.navigate("AddNew",{Tid: this.state.Tid,id: this.state.id,Subname: this.state.name, Sname:this.state.Sname,Name:this.state.Name ,Room:this.state.Room})}}>
+                  <Button style={{ height:'10%', width:'100%', justifyContent:'center',borderBottomWidth:0.5,borderColor:'#DDDDDD', backgroundColor:'white'}} onPress={()=>{ let profit = _.sumBy(this.props.elements, function (day) {
+ 
+ return parseFloat(day.Weight);
+
+}); this.props.navigation.navigate("AddNew",{Tid: this.state.Tid,id: this.state.id,Subname: this.state.name, Sname:this.state.Sname,Name:this.state.Name ,Room:this.state.Room,total:profit})}}>
                  
                   <Text style={{fontSize:25, color:'#1995ad'}}>Add New</Text>
                 
