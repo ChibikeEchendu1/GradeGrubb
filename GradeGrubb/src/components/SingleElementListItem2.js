@@ -83,6 +83,11 @@ export default class SingleElementListItem2 extends Component{
             </Text>
             </View>
             <View>
+            <Text  numberOfLines={1} style={{alignSelf:'center',fontSize:normalize(15),fontWeight:'bold'}}>
+                {this.props.item.Type} 
+            </Text>
+            </View>
+            <View>
             <Text style={{alignSelf:'center',fontSize:15,fontWeight:'bold'}}>
                 {this.props.item.Date}
             </Text>

@@ -62,15 +62,20 @@ export default class ElementListItem extends Component{
               {this.props.item.Name}   {/* this.props.item.Name */}
             </Text>
          </View>
+         <View style={{alignItems:'center'}}>
+            <Text numberOfLines={1} style={{fontSize:15,alignSelf:'center',fontWeight:'bold'}}>
+              {this.props.item.Type}   {/* this.props.item.Name */}
+            </Text>
+         </View>
          <View style={{alignSelf:'center', flexDirection:'row'}}>
          <View style={{padding:5}}>
-            <Text style={{fontSize:20,fontWeight:'bold'}}>
+            <Text style={{fontSize:15,fontWeight:'bold'}}>
             Out of:  {this.props.item.worth} |
             </Text> 
          </View> 
          <View style={{flexDirection:'row', padding:5}}>
-            <Text style={{fontSize:20,fontWeight:'bold'}}>
-            Avg:   <Text style={{fontSize:20,borderWidth:1,width:'50%',fontWeight:'bold',backgroundColor:'#3B3F40', color:this.avgCol(this.props.item.Ave)}}>
+            <Text style={{fontSize:15,fontWeight:'bold'}}>
+            Avg:   <Text style={{fontSize:15,borderWidth:1,width:'50%',fontWeight:'bold',backgroundColor:'#3B3F40', color:this.avgCol(this.props.item.Ave)}}>
                {this.props.item.Ave}% 
             </Text>
             </Text> 
@@ -79,8 +84,8 @@ export default class ElementListItem extends Component{
          </View>  
          <View style={{alignSelf:'center', flexDirection:'row'}}>
          <View style={{padding:5}}>
-            <Text style={{fontSize:20,fontWeight:'bold'}}>
-            Highest Avg: <Text style={{fontSize:20,borderWidth:1,width:'50%',fontWeight:'bold',backgroundColor:'#3B3F40', color:this.avgCol(this.props.item.MIN)}}>
+            <Text style={{fontSize:15,fontWeight:'bold'}}>
+            Highest Mark: <Text style={{fontSize:15,borderWidth:1,width:'50%',fontWeight:'bold',backgroundColor:'#3B3F40', color:this.avgCol(this.props.item.MIN)}}>
                {this.props.item.MIN}% 
             </Text> 
             </Text> 
@@ -88,15 +93,15 @@ export default class ElementListItem extends Component{
         
          </View> 
          <View style={{flexDirection:'row',alignSelf:'center', padding:5}}>
-            <Text style={{fontSize:20,fontWeight:'bold'}}>
-            Lowest Avg:   <Text style={{fontSize:20,borderWidth:1,width:'50%',fontWeight:'bold',backgroundColor:'#3B3F40', color:this.avgCol(this.props.item.MAX)}}>
+            <Text style={{fontSize:15,fontWeight:'bold'}}>
+            Lowest Mark:   <Text style={{fontSize:15,borderWidth:1,width:'50%',fontWeight:'bold',backgroundColor:'#3B3F40', color:this.avgCol(this.props.item.MAX)}}>
                {this.props.item.MAX}% 
             </Text>
             </Text> 
             
          </View> 
          <View style={{alignItems:'center'}}>
-            <Text numberOfLines={1} style={{fontSize:20,alignSelf:'center',fontWeight:'bold'}}>
+            <Text numberOfLines={1} style={{fontSize:15,alignSelf:'center',fontWeight:'bold'}}>
             Weight: {this.props.item.Weight}   {/* this.props.item.Name */}
             </Text>
          </View>

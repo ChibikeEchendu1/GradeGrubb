@@ -23,6 +23,12 @@ export const emailChanged = (text) => {
 };
 
 
+export const TypeChanged = (text) => {
+    return{
+                type: 'text_changed',
+                payload: text
+            };
+}
 
 export const messageChnage = (text) => {
         return{
@@ -572,7 +578,7 @@ Sname: Sname
   };
 
 
-export const eleFetchForedit = ({nname,sub,TopicNAme}) => {
+export const eleFetchForedit = ({nname,sub,TopicNAme,update}) => {
 
     console.log("schoolname",nname);
     console.log("subjectname",sub);
@@ -589,7 +595,8 @@ export const eleFetchForedit = ({nname,sub,TopicNAme}) => {
         body: JSON.stringify({
         nname: nname,
         sub: sub,
-        TopicNAme:TopicNAme
+        TopicNAme:TopicNAme,
+        update:update
         }),
         }).then((response) => response.json()).then(users => {
            dispatch({type: 'EFetchEdit', payload: users});
@@ -597,6 +604,34 @@ export const eleFetchForedit = ({nname,sub,TopicNAme}) => {
        }
       };
 
+
+    
+
+    export const eleFetchForAdd = ({nname,sub,TopicNAme}) => {
+
+        console.log("schoolname",nname);
+        console.log("subjectname",sub);
+        console.log("TopicNAme",TopicNAme);
+        
+            return (dispatch) => {
+            dispatch({type: 'Login_user2'});
+            fetch(IP+'/Ap/eleFetchForAdd.php', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+            nname: nname,
+            sub: sub,
+            TopicNAme:TopicNAme
+            }),
+            }).then((response) => response.json()).then(users => {
+               dispatch({type: 'EFetchEditAdd', payload: users});
+            });
+           }
+          };
+    
   
 
     export const DeleteSub = ({nname,Id}) => {
@@ -1484,7 +1519,7 @@ activeRowKey:Id
 
 
 
-export const cn22 = ({nname,sub,Name,num,num2}) => {
+export const cn22 = ({nname,sub,Name,num,num2,type}) => {
     
     return (dispatch) => {
     dispatch({type: 'Login_user'});
@@ -1506,7 +1541,8 @@ subname:sub,
 name: nname,
 Addsubjectt:Name,
 worth: num,
-outof:num2
+outof:num2,
+type:type
     }),
     }).then((response) => response.json()).then(users => {
 if( typeof users.Id != 'undefined'){
@@ -1522,7 +1558,7 @@ if( typeof users.Id != 'undefined'){
 };
 
 
-export const submitForedit = ({nname,sub,num,num2,TopicNAme,Name}) => {
+export const submitForedit = ({nname,sub,num,num2,TopicNAme,Name,type}) => {
     
         return (dispatch) => {
         dispatch({type: 'Login_user'});
@@ -1542,7 +1578,8 @@ export const submitForedit = ({nname,sub,num,num2,TopicNAme,Name}) => {
     worth: num,
     outof:num2,
     TopicNAme:TopicNAme,
-    NEWNAME:Name
+    NEWNAME:Name,
+    type:type
         }),
         }).then((response) => response.json()).then(users => {
     if( typeof users.Id != 'undefined'){

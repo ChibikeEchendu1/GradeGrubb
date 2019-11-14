@@ -105,7 +105,7 @@ this.renderRow=this.renderRow.bind(this);
       return (
      
           <SafeAreaView style ={styles.container}>
-          <HomeHeader ti="Edit Topic" navigate={this.props.navigation.goBack}/>
+          <HomeHeader ti="Edit Assessment" navigate={this.props.navigation.goBack}/>
           
 
         <View style={{justifyContent: 'flex-start', height: '71%', width:'100%'}}>

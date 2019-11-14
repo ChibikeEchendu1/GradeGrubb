@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {HomeHeader,Spinner2} from './index';
-import {Text, TextInput, StyleSheet,View,SafeAreaView,Dimensions,TouchableOpacity,TouchableWithoutFeedback,PixelRatio,KeyboardAvoidingView,Platform, Keyboard,Alert} from 'react-native';
-import {NameChangedSub22,numchanged,cn22,numchanged2} from '../actions';
+import {Text,Picker, TextInput, StyleSheet,View,SafeAreaView,Dimensions,TouchableOpacity,TouchableWithoutFeedback,PixelRatio,KeyboardAvoidingView,Platform, Keyboard,Alert} from 'react-native';
+import {NameChangedSub22,numchanged,cn22,numchanged2,eleFetchForAdd,TypeChanged} from '../actions';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 
 const {
   width: SCREEN_WIDTH,
@@ -26,11 +27,14 @@ class AddNewView extends Component{
         Id:this.props.navigation.state.params.Tid,
         nname: this.props.navigation.state.params.Sname,
         sub: this.props.navigation.state.params.Subname,
+        type:0
         }
      
     onNameChanged(text){
         this.props.NameChangedSub22(text);
       }
+
+      
 
       onnumchanged(text){
         
@@ -52,12 +56,19 @@ class AddNewView extends Component{
       }
 
       onFinButtonPress(){
-        const {nname,sub} = this.state;
+        const {nname,sub,type} = this.state;
         const {Name,num,num2} = this.props;
        // console.log("gvhgvhg");
 
-    this.props.cn22({nname,sub,Name,num,num2});
+    this.props.cn22({nname,sub,Name,num,num2,type});
      }
+
+     componentDidMount(){
+
+      const {nname,sub} = this.state;
+     this.props.eleFetchForAdd({nname,sub});
+      
+   }
 
       renderError(){
         if(this.props.error){
@@ -78,6 +89,41 @@ class AddNewView extends Component{
         }
       }
 
+      renderTypes(){
+                return(
+          _.map(this.props.types, ({Name,Id},index) => {
+                                  return  <Picker.Item label={Name} value={Id} />
+                                })
+                );
+          }
+          renderTypesView(){
+            if(this.props.loading){
+              return  <Spinner2 size="small"/> 
+            }
+            else{
+
+              if (this.props.types.length == 0) {
+                console.log('hgjf');
+                return null
+              }
+              
+              return<View>
+          <Text style={{width:'96%',alignSelf:"center", padding:5, marginTop:15,fontSize:normalize(12)}}>Type</Text>
+
+          <Picker
+          style={{width:'100%',height: Platform.OS === 'ios' ? null : 50,borderWidth: Platform.OS === 'ios' ? null : 1}}
+          selectedValue={this.state.type}
+          onValueChange={(text) =>{
+           console.log(text);
+           
+              this.setState({type:text})
+            
+          }}>
+          {this.renderTypes()}
+          </Picker>
+          </View>
+            }
+          }
       
       
       renderButton(){
@@ -96,15 +142,12 @@ class AddNewView extends Component{
     return(
      
       <SafeAreaView style ={styles.container}>
-         <HomeHeader navigate={this.props.navigation.goBack} ti="New Topic"/>
+         <HomeHeader navigate={this.props.navigation.goBack} ti="New Assessment"/>
          <TouchableWithoutFeedback style={{height:'10%'}} onPress={Keyboard.dismiss}><View>
-             <Text style={{width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(15)}}>
+             <Text style={{width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(10)}}>
              Total Weight Thus Far: {this.props.navigation.state.params.total}</Text>
-              
-             
-             
-              
-              <Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(20)}}>Give the Topic a name</Text>
+           
+              <Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(12)}}>Give the Assessment a name</Text>
               </View>
              </TouchableWithoutFeedback>
              <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'padding'}>
@@ -117,7 +160,7 @@ class AddNewView extends Component{
           value={this.props.Name}
         /></View>
 
-<Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(20)}}>What is the Topic Marked Out of</Text>
+<Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(12)}}>What is the Assessment Marked Out of</Text>
              
              <View style={{flexDirection: 'row', alignItems:'center'}}>
              <TextInput
@@ -129,7 +172,7 @@ class AddNewView extends Component{
             />
              </View>
 
-        <Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(20)}}>What is the Topic Weight</Text>
+        <Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(12)}}>What is the Assessment Weight</Text>
              
          <View style={{flexDirection: 'row', alignItems:'center'}}>
          <TextInput
@@ -140,6 +183,8 @@ class AddNewView extends Component{
           value={this.props.num}
         />
          </View>
+
+    {this.renderTypesView()}
         <View style={{marginRight:20,marginBottom:5,alignItems:"flex-end", marginLeft:20, alignSelf:'flex-end'}}>
        {this.renderButton()}
           </View>
@@ -159,9 +204,17 @@ const styles = StyleSheet.create({
     });
 
 const mapStateToProps = state =>{
+
+  const types = _.map(state.pro.types,(Val,uid) =>{
+    return {...Val};
+  });
+
+
     return{
+      types,
        error:state.auth.error,
        Name: state.pro.elesub2,
+       type:state.auth.type,
        num: state.pro.num,
        num2: state.pro.num2,
        loading: state.auth.loading,
@@ -169,5 +222,5 @@ const mapStateToProps = state =>{
      }
   };
   
-  export default connect(mapStateToProps,{NameChangedSub22,numchanged,cn22,numchanged2})(AddNewView) ;
+  export default connect(mapStateToProps,{NameChangedSub22,numchanged,cn22,numchanged2,eleFetchForAdd,TypeChanged})(AddNewView) ;
 

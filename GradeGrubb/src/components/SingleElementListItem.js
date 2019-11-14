@@ -82,6 +82,13 @@ export default class SingleElementListItem extends Component{
             <Text  numberOfLines={1} style={{fontSize:normalize(16)}}>
                 {this.props.item.Name}
             </Text>
+            
+            </View>
+            <View>
+            <Text  numberOfLines={1} style={{fontSize:normalize(14)}}>
+                {this.props.item.Type}
+            </Text>
+            
             </View>
             <View>
             <Text style={{fontSize:13}}>

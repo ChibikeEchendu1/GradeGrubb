@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {HomeHeader,Spinner2} from './index';
-import {Text, TextInput, StyleSheet,View,SafeAreaView,Dimensions,TouchableOpacity,TouchableWithoutFeedback,PixelRatio,KeyboardAvoidingView,Platform, Keyboard,Alert} from 'react-native';
+import {Text,Picker, TextInput, StyleSheet,View,SafeAreaView,Dimensions,TouchableOpacity,TouchableWithoutFeedback,PixelRatio,KeyboardAvoidingView,Platform, Keyboard,Alert} from 'react-native';
 import {NameChangedSub22,numchanged,submitForedit,numchanged2,eleFetchForedit} from '../actions';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 
 const {
   width: SCREEN_WIDTH,
@@ -27,10 +28,15 @@ class EditViewForm extends Component{
         nname: this.props.navigation.state.params.School,
         TopicNAme: this.props.navigation.state.params.Name,
         sub: this.props.navigation.state.params.Subname,
+        type:0
         }
      
     onNameChanged(text){
         this.props.NameChangedSub22(text);
+      }
+
+      onTypeChanged(text){
+        this.props.TypeChanged(text);
       }
 
       onnumchanged(text){
@@ -55,17 +61,18 @@ class EditViewForm extends Component{
       }
 
       onFinButtonPress(){
-        const {nname,sub,TopicNAme} = this.state;
+        const {nname,sub,TopicNAme,type} = this.state;
         const {num,num2,Name} = this.props;
        // console.log("gvhgvhg");
 
-    this.props.submitForedit({nname,sub,num,num2,TopicNAme,Name});
+    this.props.submitForedit({nname,sub,num,num2,TopicNAme,Name,type});
      }
 
      componentDidMount(){
 
         const {nname,sub,TopicNAme} = this.state;
-       this.props.eleFetchForedit({nname,sub,TopicNAme});
+        const update = 1;
+       this.props.eleFetchForedit({nname,sub,TopicNAme,update});
         
      }
 
@@ -85,6 +92,36 @@ class EditViewForm extends Component{
          //elijah code here navigate to elemet view.
 
          this.props.navigation.navigate("Tools",{Tid: this.props.navigation.state.params.Tid,dbName: this.state.sub, School:this.state.nname,Room:this.props.navigation.state.params.ClassRoom,Id:this.props.navigation.state.params.id,Name:this.props.navigation.state.params.Name})
+        }
+      }
+
+
+      renderTypesView(){
+        if(this.props.loading){
+          return  <Spinner2 size="small"/> 
+        }
+        else{
+
+          if (this.props.types.length == 0) {
+            console.log('hgjf');
+            return null
+          }
+          
+          return<View>
+      <Text style={{width:'96%',alignSelf:"center", padding:5, marginTop:15,fontSize:normalize(12)}}>Type</Text>
+
+      <Picker
+      style={{width:'100%',height: Platform.OS === 'ios' ? null : 50,borderWidth: Platform.OS === 'ios' ? null : 1}}
+      selectedValue={this.state.type}
+      onValueChange={(text) =>{
+       console.log(text);
+       
+          this.setState({type:text})
+        
+      }}>
+      {this.renderTypes()}
+      </Picker>
+      </View>
         }
       }
 
@@ -131,6 +168,14 @@ class EditViewForm extends Component{
         }
       }
 
+      renderTypes(){
+                return(
+          _.map(this.props.types, ({Name,Id},index) => {
+                                  return  <Picker.Item label={Name} value={Id} />
+                                })
+                );
+          }
+
       renderInput3(){
         if(this.props.loading1){
           return  <Spinner2 size="small"/> 
@@ -153,30 +198,38 @@ class EditViewForm extends Component{
       <SafeAreaView style ={styles.container}>
          <HomeHeader navigate={this.props.navigation.goBack} ti={this.state.TopicNAme}/>
          <TouchableWithoutFeedback style={{height:'10%'}} onPress={Keyboard.dismiss}><View>
-         <Text style={{width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(15)}}>
+         <Text style={{width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(10)}}>
              Total Weight Thus Far: {this.props.navigation.state.params.total}</Text>
+
+
+           
+             
+              
+              
               </View>
 
              </TouchableWithoutFeedback>
              <KeyboardAvoidingView  behavior = {!!(Platform.OS === 'ios') ? 'padding' : 'padding'}>
 
 
-             <Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(20)}}>Give the Topic a name</Text>
+             <Text  style={{ width:'96%',alignSelf:"center", padding:5, marginTop:2,fontSize:normalize(12)}}>Give the Assessment a name</Text>
              <View>
             {this.renderInput3()}
          </View>
 
-<Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:normalize(20)}}>What is the Topic Marked Out of</Text>
+<Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:normalize(12)}}>What is the Assessment Marked Out of</Text>
              
              <View style={{flexDirection: 'row', alignItems:'center'}}>
              {this.renderInput1()}
              </View>
 
-        <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:normalize(20)}}>What is the Topic Weight</Text>
+        <Text  style={{ width:'96%',alignSelf:"center", padding:12, marginTop:2,fontSize:normalize(12)}}>What is the Assessment Weight</Text>
              
          <View style={{flexDirection: 'row', alignItems:'center'}}>
          {this.renderInput2()}
          </View>
+
+{this.renderTypesView()}
         <View style={{marginRight:20,marginBottom:5,alignItems:"flex-end", marginLeft:20, alignSelf:'flex-end'}}>
        {this.renderButton()}
           </View>
@@ -196,7 +249,13 @@ const styles = StyleSheet.create({
     });
 
 const mapStateToProps = state =>{
+
+  const types = _.map(state.pro.types,(Val,uid) =>{
+    return {...Val};
+  });
+
     return{
+      types,
        error:state.auth.error,
        Name: state.pro.elesub2,
        num: state.pro.num,

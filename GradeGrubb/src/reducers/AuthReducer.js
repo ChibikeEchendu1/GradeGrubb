@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
     email: '',
     message:'',
+    type:'',
      //password: '',
     // password2: '',
     // password3: '',
@@ -29,6 +30,10 @@ export default (state = INITIAL_STATE , action) => {
 
     case   'message_changed':
             return {...state, message: action.payload};
+
+    case 'text_changed':
+            return {...state,message: action.payload };
+
     case 'email_changed':
             return {...state, email: action.payload};
 

@@ -133,10 +133,10 @@ class  ProfileHome extends React.Component{
 
         return(
             <Swipeout {...swipeSettings} >
-            <TouchableOpacity style={styles.listStyle}  onPress={() =>{
+            <TouchableOpacity style={styles.listStyle}  onPress={() => {
                 let pro = {type:this.props.item.Type, school:this.props.item.School, Image:this.props.item.Image, name:this.props.item.Name, id:this.props.item.Id}
                 AsyncStorage.setItem('pro', JSON.stringify(pro));
-                this.props.item.off == 1 ? this.props.navigate(this.getNavigationType(this.props.item.Type),{item:this.props.item,school:this.props.item.School}) : this.props.navigate("Offer",{school:this.props.item.School,num:this.props.item.off}) 
+                this.props.item.off == 1||5 ? this.props.navigate(this.getNavigationType(this.props.item.Type),{item:this.props.item,school:this.props.item.School}) : this.props.navigate("Offer",{school:this.props.item.School,num:this.props.item.off}) //remove the || 5 later or in next update
                 }} >
             
             
