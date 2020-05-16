@@ -3,70 +3,56 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-import _ from 'lodash';
-import React, { Component} from 'react';
-import {Spinner,Footer1,HeaderSet} from './index';
-import ProfileHome from './ProfileHome';
-import {fetchPro} from '../actions';
+import _ from "lodash";
+import React, { Component } from "react";
+import { Spinner, Footer1, HeaderSet, LogoHouse } from "./index";
+import ProfileHome from "./ProfileHome";
+import { fetchPro } from "../actions";
 //import PushNotificationController2 from "../../services/PushNotificationController2";
 import PushNotificationController from "../../services/PushNotificationController";
-import {connect} from 'react-redux';
-import { AsyncStorage } from "react-native"
-import {
-  StyleSheet,
-  View,
-  ListView,
-  SafeAreaView,
-} from 'react-native';
-
-
-
+import { connect } from "react-redux";
+import { AsyncStorage } from "react-native";
+import { StyleSheet, View, ListView, SafeAreaView, Text } from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 class ProfileView extends Component {
-constructor(props){
-  super(props)
+	constructor(props) {
+		super(props);
 
-  
-  this.state ={
-    vall: 0,//this.props.navigation.state.params.vall,
-    blocked:"",
-   
-      nav: this.props.navigation.navigate
-  }
-  this.renderRow=this.renderRow.bind(this);
-    
-}
- 
+		this.state = {
+			vall: 0, //this.props.navigation.state.params.vall,
+			blocked: "",
 
-  
-  getProfiles(){
-    return  this.props.profiles;
-  }
-  
-  
-  componentWillMount(){ //componentDidMount
-      AsyncStorage.getItem("logged").then((value) => {
-       
-        this.setState({"vall":JSON.parse(value)});
-      
+			nav: this.props.navigation.navigate
+		};
+		this.renderRow = this.renderRow.bind(this);
+	}
 
-       let vall =  parseInt(value);
-        this.props.fetchPro({vall});
-       }).done();
+	getProfiles() {
+		return this.props.profiles;
+	}
 
-       AsyncStorage.getItem("blocked").then((value2) => {
-       ;
-        this.setState({"blocked":JSON.parse(value2)});
-      
-       }).done();
+	componentWillMount() {
+		//componentDidMount
+		AsyncStorage.getItem("logged")
+			.then(value => {
+				this.setState({ vall: JSON.parse(value) });
 
-       
-       const {navigate} = this.props
-  }
+				let vall = parseInt(value);
+				this.props.fetchPro({ vall });
+			})
+			.done();
 
-  
-   
-  /* componentWillMount(){ //componentDidMount
+		AsyncStorage.getItem("blocked")
+			.then(value2 => {
+				this.setState({ blocked: JSON.parse(value2) });
+			})
+			.done();
+
+		const { navigate } = this.props;
+	}
+
+	/* componentWillMount(){ //componentDidMount
     AsyncStorage.getItem("logged").then((value) => {
       
       this.setState({"vall":JSON.parse(value)});
@@ -88,7 +74,7 @@ constructor(props){
     
 } */
 
-  /*  componentWillReceiveProps(){
+	/*  componentWillReceiveProps(){
 
       
       const {vall} = this.state;
@@ -103,75 +89,81 @@ constructor(props){
 
    } */
 
-   renderButton(){
-    if(this.props.loading || this.props.lodingtocken){
-      return <Spinner size="large"/>;
-    }
-    else{
-      const ds = new ListView.DataSource({
-        rowHasChanged: (r1, r2) => r1 !== r2
-    });
-    this.dataSource = ds.cloneWithRows(this.getProfiles())
-     return <ListView
-     dataSource={this.dataSource}
-     enableEmptySections = {true}
-     renderRow={this.renderRow}
-     />
-      ;
-    }
-  }
+	renderButton() {
+		if (this.props.loading || this.props.lodingtocken) {
+			return <Spinner size="large" />;
+		} else {
+			if (this.props.profiles.length == 0) {
+				console.log(this.props.profiles, "helooooooo");
 
-   renderRow(item){  
-    
-    return <ProfileHome navigate={this.state.nav} item={item} id={this.state.vall} save={this.props.savePro}/>
-   }
+				return (
+					<View
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							alignSelf: "center",
+							justifyContent: "flex-end",
+							alignItems: "center",
+							height: "90%"
+						}}
+					>
+						<LogoHouse />
+						<Text>Use the code from the school to add the account</Text>
+						<Text style={{ color: "#1995ad" }}>PRESS ADD PROFILE</Text>
+						<Icon key="1" color={"#1995ad"} name="caret-down" size={90} />
+					</View>
+				);
+			} else {
+				const ds = new ListView.DataSource({
+					rowHasChanged: (r1, r2) => r1 !== r2
+				});
+				this.dataSource = ds.cloneWithRows(this.getProfiles());
+				return <ListView dataSource={this.dataSource} enableEmptySections={true} renderRow={this.renderRow} />;
+			}
+		}
+	}
 
-  render() {
-    //const{vall}= 1//this.props.navigation.state.params
-    return (
-    
-    <SafeAreaView style={styles.container}>
-        <HeaderSet ti='Home' per = {this.state.vall} active ={(this.props.redup == 1) ? 'red' : 'white'} pro={this.props.profiles}   nav={this.props.navigation}/>
-        <View style={{justifyContent: 'flex-start', height: '69%',marginTop:'5%', width:'100%'}}>
-        {this.renderButton()}
-        </View>
-          
-       <Footer1 navigation={this.props.navigation} Id = {this.state.vall} Active = {this.state.blocked}/>
-       <PushNotificationController navigate={this.state.nav} per = {this.state.vall} />
-      </SafeAreaView>
-     
-       
-      
-    );
-  }
-                                    
+	renderRow(item) {
+		return <ProfileHome navigate={this.state.nav} item={item} id={this.state.vall} save={this.props.savePro} />;
+	}
+
+	render() {
+		//const{vall}= 1//this.props.navigation.state.params
+		return (
+			<SafeAreaView style={styles.container}>
+				<HeaderSet
+					ti="Home"
+					per={this.state.vall}
+					active={this.props.redup == 1 ? "red" : "white"}
+					pro={this.props.profiles}
+					nav={this.props.navigation}
+				/>
+				<View style={{ justifyContent: "flex-start", height: "69%", marginTop: "5%", width: "100%" }}>{this.renderButton()}</View>
+
+				<Footer1 navigation={this.props.navigation} Id={this.state.vall} Active={this.state.blocked} />
+				<PushNotificationController navigate={this.state.nav} per={this.state.vall} />
+			</SafeAreaView>
+		);
+	}
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  
-    backgroundColor: '#FFFFFF',
-  },
+	container: {
+		flex: 1,
 
- 
-  
+		backgroundColor: "#FFFFFF"
+	}
 });
 
-const mapStateToProps = state =>{
-  
-    const profiles = _.map(state.pro.pros,(Val,uid) =>{
-      return {...Val};
-    });
-  
+const mapStateToProps = state => {
+	const profiles = _.map(state.pro.pros, (Val, uid) => {
+		return { ...Val };
+	});
 
-  return {profiles,
-    loading: state.pro.loading1,
-    redup:state.pro.redup,
-    lodingtocken:state.pro.lodingtocken
-    };
+	return { profiles, loading: state.pro.loading1, redup: state.pro.redup, lodingtocken: state.pro.lodingtocken };
 };
 
-
-export default connect(mapStateToProps,{fetchPro}) (ProfileView);
-  
+export default connect(
+	mapStateToProps,
+	{ fetchPro }
+)(ProfileView);
