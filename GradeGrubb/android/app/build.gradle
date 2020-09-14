@@ -124,7 +124,7 @@ dexOptions {
         minSdkVersion 16
         targetSdkVersion 28
         vectorDrawables.useSupportLibrary = true
-        versionCode 16
+        versionCode 17
         multiDexEnabled true 
         versionName "3.0"
      }
